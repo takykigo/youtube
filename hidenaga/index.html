@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>豊臣秀長：天下を支えた男</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #E5E5E5;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 320px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 400px;
+            }
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -11px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background-color: #2EB5B0;
+            border: 4px solid #36357E;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8 xl:max-w-screen-xl">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-6xl font-bold text-[#36357E] mb-2">豊臣秀長</h1>
+            <p class="text-xl md:text-2xl text-[#FF5376] font-semibold">天下を支えた、知られざる「もう一人の英雄」</p>
+            <p class="max-w-3xl mx-auto mt-4 text-gray-600">
+                兄・豊臣秀吉の天下統一事業。その輝かしい功績の影には、常に弟・秀長の存在がありました。彼は単なる補佐役ではなく、軍事、政治、経済の全てにおいて豊臣政権を支え続けた、最高の「ナンバーツー」でした。
+            </p>
+        </header>
+
+        <section id="overview" class="mb-12">
+             <div class="bg-white rounded-lg shadow-lg p-6 md:p-8 text-center">
+                 <h2 class="text-2xl font-bold text-[#36357E] mb-2">大和郡山城主</h2>
+                 <p class="text-6xl md:text-8xl font-bold text-[#F5B947] tracking-tighter">100<span class="text-4xl md:text-6xl text-[#36357E]">万石</span></p>
+                 <p class="text-gray-600 mt-2">秀長は最終的に大和・紀伊・和泉などを領する100万石の大大名となり、その経済力と影響力で政権の安定に貢献しました。</p>
+            </div>
+        </section>
+
+        <section id="timeline" class="mb-12">
+            <h2 class="text-3xl font-bold text-center text-[#36357E] mb-8">栄光への軌跡：生涯と功績</h2>
+            <div class="relative max-w-2xl mx-auto border-l-4 border-[#36357E] pl-10">
+
+                <div class="relative mb-10 timeline-item">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <p class="font-bold text-xl text-[#2EB5B0]">1540年</p>
+                        <h3 class="text-lg font-semibold mt-1">誕生</h3>
+                        <p class="text-sm text-gray-600 mt-2">尾張国中村にて、後の豊臣秀吉の弟として生まれる。</p>
+                    </div>
+                </div>
+
+                <div class="relative mb-10 timeline-item">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <p class="font-bold text-xl text-[#2EB5B0]">1570年</p>
+                        <h3 class="text-lg font-semibold mt-1">金ヶ崎の戦い</h3>
+                        <p class="text-sm text-gray-600 mt-2">兄・秀吉と共に殿（しんがり）を務め、織田信長の窮地を救う。その冷静な判断力が光った。</p>
+                    </div>
+                </div>
+
+                <div class="relative mb-10 timeline-item">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <p class="font-bold text-xl text-[#2EB5B0]">1577年</p>
+                        <h3 class="text-lg font-semibold mt-1">中国攻め</h3>
+                        <p class="text-sm text-gray-600 mt-2">山陰方面軍の総大将として但馬国を平定。信長から但馬一国を与えられ、大名としてのキャリアをスタートさせる。</p>
+                    </div>
+                </div>
+
+                <div class="relative mb-10 timeline-item">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <p class="font-bold text-xl text-[#2EB5B0]">1585年</p>
+                        <h3 class="text-lg font-semibold mt-1">四国征伐</h3>
+                        <p class="text-sm text-gray-600 mt-2">10万を超える大軍の総大将として四国を平定。この功績により、100万石の大名となる。</p>
+                    </div>
+                </div>
+
+                <div class="relative mb-10 timeline-item">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <p class="font-bold text-xl text-[#2EB5B0]">1587年</p>
+                        <h3 class="text-lg font-semibold mt-1">九州征伐</h3>
+                        <p class="text-sm text-gray-600 mt-2">日向方面の総大将として島津軍と対峙し、勝利に貢献。従二位権大納言に叙任される。</p>
+                    </div>
+                </div>
+                
+                <div class="relative mb-10 timeline-item">
+                    <div class="bg-white p-6 rounded-lg shadow-lg">
+                        <p class="font-bold text-xl text-[#FF5376]">1591年</p>
+                        <h3 class="text-lg font-semibold mt-1">逝去</h3>
+                        <p class="text-sm text-gray-600 mt-2">52歳で病没。彼の死は、豊臣政権から最大の「調整役」と「安定装置」を失わせることを意味した。</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="pillars" class="mb-12">
+            <h2 class="text-3xl font-bold text-center text-[#36357E] mb-8">政権を支えた3つの才能</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-[#36357E] text-center mb-4">軍事の才</h3>
+                    <p class="text-sm text-gray-600 mb-4">秀長は単なる勇将ではなく、大軍を動かす戦略眼と、兵站を完璧にこなす実務能力を兼ね備えていました。彼の指揮する軍は常に安定しており、秀吉の快進撃を後方から支えました。</p>
+                    <div class="chart-container">
+                        <canvas id="militaryChart"></canvas>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-[#36357E] text-center mb-4">政治の才</h3>
+                    <p class="text-sm text-gray-600 mb-4">秀長の真骨頂は、その温厚な人柄と卓越した調整能力にありました。暴走しがちな秀吉の「ブレーキ役」であり、対立する家臣団の「鎹（かすがい）」として、政権の軋轢を和らげました。</p>
+                    <div class="chart-container">
+                        <canvas id="politicalChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-[#36357E] text-center mb-4">経済の才</h3>
+                    <p class="text-sm text-gray-600 mb-4">質素倹約を旨としながらも、巧みな金策で豊臣政権の財政を支えました。領国経営にも手腕を発揮し、後の太閤検地のモデルとなる先進的な検地を実施しています。</p>
+                    <div class="chart-container">
+                        <canvas id="economicChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="network" class="mb-12">
+            <h2 class="text-3xl font-bold text-center text-[#36357E] mb-8">人間関係のネットワーク</h2>
+            <p class="max-w-3xl mx-auto text-center text-gray-600 mb-8">
+                秀長は、敵味方を問わず多くの人々から信頼されていました。彼が中心にいることで、豊臣政権という巨大な組織は円滑に機能していたのです。
+            </p>
+            <div class="bg-white rounded-lg shadow-lg p-8">
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-8">
+                    
+                    <div class="text-center">
+                        <p class="font-bold text-lg text-[#36357E]">武断派</p>
+                        <p class="text-sm">(加藤清正など)</p>
+                    </div>
+                    
+                    <div class="w-16 h-1 bg-[#2EB5B0] hidden md:block"></div>
+                    <div class="w-1 h-16 bg-[#2EB5B0] md:hidden"></div>
+
+                    <div class="relative p-4 border-4 border-[#F5B947] rounded-full text-center">
+                        <h3 class="text-2xl font-bold text-[#36357E]">豊臣秀長</h3>
+                        <p class="text-sm text-[#FF5376]">調整役</p>
+                    </div>
+                    
+                    <div class="w-16 h-1 bg-[#2EB5B0] hidden md:block"></div>
+                    <div class="w-1 h-16 bg-[#2EB5B0] md:hidden"></div>
+                    
+                    <div class="text-center">
+                        <p class="font-bold text-lg text-[#36357E]">文治派</p>
+                        <p class="text-sm">(石田三成など)</p>
+                    </div>
+                </div>
+                <div class="flex justify-center mt-4 md:mt-0">
+                    <div class="w-1 h-8 bg-[#2EB5B0]"></div>
+                </div>
+                <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-12">
+                     <div class="text-center">
+                        <p class="font-bold text-lg text-[#36357E]">豊臣秀吉</p>
+                        <p class="text-sm">(兄・主君)</p>
+                    </div>
+                     <div class="text-center">
+                        <p class="font-bold text-lg text-[#36357E]">徳川家康</p>
+                        <p class="text-sm">(好敵手)</p>
+                    </div>
+                     <div class="text-center">
+                        <p class="font-bold text-lg text-[#36357E]">諸大名</p>
+                        <p class="text-sm">(長宗我部元親など)</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <footer class="text-center pt-8 border-t border-gray-300">
+            <h2 class="text-2xl font-bold text-[#36357E] mb-4">知られざる偉大なナンバーツー</h2>
+            <p class="max-w-3xl mx-auto text-gray-600">
+                豊臣秀長は、単なる秀吉の弟ではありませんでした。彼こそが、巨大な豊臣政権を内側から支える「柱石」であり、人間関係の「潤滑油」でした。彼の早すぎる死がなければ、歴史は大きく変わっていたかもしれません。
+            </p>
+        </footer>
+
+    </div>
+
+    <script>
+        const wrapLabel = (label) => {
+            const maxLength = 16;
+            if (label.length <= maxLength) {
+                return label;
+            }
+            const words = label.split(' ');
+            const lines = [];
+            let currentLine = '';
+            for (const word of words) {
+                if ((currentLine + ' ' + word).trim().length > maxLength) {
+                    lines.push(currentLine.trim());
+                    currentLine = word;
+                } else {
+                    currentLine = (currentLine + ' ' + word).trim();
+                }
+            }
+            if (currentLine) {
+                lines.push(currentLine.trim());
+            }
+            return lines;
+        };
+        
+        const tooltipTitleCallback = (tooltipItems) => {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        };
+
+        const chartColors = {
+            purple: '#36357E',
+            teal: '#2EB5B0',
+            pink: '#FF5376',
+            yellow: '#F5B947',
+            grey: '#E5E5E5'
+        };
+
+        const defaultChartOptions = {
+            maintainAspectRatio: false,
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                    labels: {
+                        color: '#333'
+                    }
+                },
+                tooltip: {
+                    callbacks: {
+                        title: tooltipTitleCallback
+                    }
+                }
+            },
+        };
+
+        const militaryCtx = document.getElementById('militaryChart').getContext('2d');
+        new Chart(militaryCtx, {
+            type: 'radar',
+            data: {
+                labels: ['戦略・指揮', '後方支援(兵站)', '防御戦(殿)', '攻城戦', '人望・統率'],
+                datasets: [{
+                    label: '軍事的才能',
+                    data: [85, 95, 90, 80, 100],
+                    backgroundColor: 'rgba(46, 181, 176, 0.2)',
+                    borderColor: chartColors.teal,
+                    pointBackgroundColor: chartColors.teal,
+                    pointBorderColor: '#fff',
+                    pointHoverBackgroundColor: '#fff',
+                    pointHoverBorderColor: chartColors.teal
+                }]
+            },
+            options: {
+                ...defaultChartOptions,
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(0, 0, 0, 0.1)' },
+                        grid: { color: 'rgba(0, 0, 0, 0.1)' },
+                        pointLabels: { color: '#333' },
+                        ticks: {
+                           backdropColor: 'transparent',
+                           color: '#666'
+                        }
+                    }
+                },
+                plugins: {
+                    ...defaultChartOptions.plugins,
+                    legend: { display: false }
+                }
+            }
+        });
+
+        const politicalCtx = document.getElementById('politicalChart').getContext('2d');
+        new Chart(politicalCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['調整役 (鎹)', '抑制役 (ブレーキ)', '信頼 (人望)'],
+                datasets: [{
+                    label: '政治的役割',
+                    data: [45, 30, 25],
+                    backgroundColor: [chartColors.teal, chartColors.pink, chartColors.yellow],
+                    borderColor: '#fff',
+                    borderWidth: 4,
+                    hoverOffset: 8
+                }]
+            },
+            options: { ...defaultChartOptions }
+        });
+
+        const economicCtx = document.getElementById('economicChart').getContext('2d');
+        new Chart(economicCtx, {
+            type: 'bar',
+            data: {
+                labels: ['領国経営', '中央財政への貢献', '蓄財・倹約'],
+                datasets: [{
+                    label: '経済的手腕 (概念値)',
+                    data: [90, 85, 75],
+                    backgroundColor: [chartColors.yellow, chartColors.teal, chartColors.pink],
+                    borderColor: '#fff',
+                    borderWidth: 2,
+                    borderRadius: 5
+                }]
+            },
+            options: {
+                ...defaultChartOptions,
+                scales: {
+                    y: { beginAtZero: true, grid: { display: false } },
+                    x: { grid: { display: false } }
+                },
+                plugins: {
+                    ...defaultChartOptions.plugins,
+                    legend: { display: false }
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
