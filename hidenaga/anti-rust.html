@@ -5,36 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>60代からの「体の錆び」を止める習慣</title>
     <style>
-    body { 
-        font-family: sans-serif; 
-        background: #f0f2f5; 
-        margin: 0; 
-        padding: 20px; 
-        display: flex; 
-        flex-direction: column; 
-        align-items: center; 
-    }
-    .slide-container { 
-        /* max-width を 900px から 1200px (または 100%) に広げます */
-        max-width: 1200px; 
-        width: 100%; 
-        margin-bottom: 30px; 
-        background: white; 
-        border-radius: 8px; 
-        overflow: hidden; 
-        box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
-    }
-    .slide-container img { 
-        width: 100%; 
-        display: block; 
-        height: auto; 
-    }
-    h1 { color: #2c3e50; text-align: center; margin-bottom: 10px; }
-</style>
+        body { 
+            font-family: sans-serif; 
+            background: #f0f2f5; 
+            margin: 0; 
+            padding: 0; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+        }
+        /* この max-width を 100% にすることで画面いっぱいに広がります */
+        .slide-container { 
+            width: 100%; 
+            max-width: 100%; 
+            background: white; 
+            margin-bottom: 5px; 
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1); 
+        }
+        .slide-container img { 
+            width: 100%; 
+            display: block; 
+            height: auto; 
+        }
+        h1 { color: #2c3e50; text-align: center; padding: 20px 10px 10px; margin: 0; background: #fff; width: 100%; }
+        .intro-text { padding: 10px 20px 30px; background: #fff; width: 100%; text-align: center; color: #555; margin-bottom: 20px; }
+    </style>
 </head>
 <body>
     <h1>60代からの「体の錆び」を止めるメカニズム</h1>
-    <p>順天堂大学・小林弘幸教授の研究に基づく健康習慣の解説資料です。</p>
+    <div class="intro-text">順天堂大学・小林弘幸教授の研究に基づく健康習慣の解説資料です。</div>
 
     <div class="slide-container"><img src="../r1.png"></div>
     <div class="slide-container"><img src="../r2.png"></div>
@@ -52,6 +51,6 @@
     <div class="slide-container"><img src="../r14.png"></div>
     <div class="slide-container"><img src="../r15.png"></div>
 
-    <p style="text-align:center; color:#888;">資料提供：順天堂大学 小林弘幸教授</p>
+    <p style="text-align:center; color:#888; padding: 40px;">資料提供：順天堂大学 小林弘幸教授</p>
 </body>
 </html>
