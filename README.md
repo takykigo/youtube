@@ -10,3 +10,4 @@
 
 ### 🇯🇵 政治・経済
 * [【解説】電撃解散の真実と戦略シナリオ](https://takykigo.github.io/youtube/hidenaga/strategy.html)
+* [【健康】免疫学と生活習慣：安保徹氏の知見（Web解説）](https://takykigo.github.io/youtube/hidenaga/immunology.html)
