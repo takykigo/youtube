@@ -30,3 +30,6 @@
 ## 💰 資産運用・マネーリテラシー
 * [【徹底比較】株式・ETF・投資信託：初心者からプロまで必見ガイド](https://takykigo.github.io/youtube/hidenaga/investment-guide.html)
   * 各商品のメリット・デメリットから、自分に合った投資スタイルの見つけ方までを1枚で解説。
+## 💰 資産運用・マネーリテラシー
+* [【図解】株式・ETF・投資信託：初心者からプロまで必見ガイド](https://takykigo.github.io/youtube/hidenaga/investment-chart.html)
+  * YouTube動画で使用した比較図。積立の「習慣化装置」としての投資信託の価値や、日銀がETFを採用した背景を整理。
