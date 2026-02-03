@@ -1,9 +1,10 @@
 # ライフサイエンス・アーカイブ：生命の理と時間の解像度
 
-## 🩸 血管の物語：物流インフラの維持と再建（最新決定版）
+## 🩸 血管の物語：物流インフラの維持と再建（完全アーカイブ）
+* [【完結編】100年血管：維持と再生の実践マニュアル（追加5枚全文）](https://takykigo.github.io/youtube/hidenaga/vascular-complete.html)
+  * **最新・追加版**。NOによる再生の3つの奇跡と、ふくらはぎ運動・分食・睡眠の具体的プロトコルを網羅。
 * [【決定版】100年血管：健康寿命を左右する体内物流システムの維持と再生](https://takykigo.github.io/youtube/hidenaga/100year-vascular.html)
-  * **一字一句再現版**。血管の3層構造、老化ドミノのメカニズム、HbA1cの判定基準、そしてNO（一酸化窒素）を出す5つの習慣までを体系化した完全資料。
-
+  * 基礎から老化ドミノのメカニズム、HbA1c判定基準までの全文化資料。
 * [【修復編】血管の老化と再生：高血糖の襲撃と魔法の物質NOの攻防戦](https://takykigo.github.io/youtube/hidenaga/vascular-repair.html)
 * [【基礎編】体内10万キロの物流システム：血管の物語](https://takykigo.github.io/youtube/hidenaga/vascular.html)
 
