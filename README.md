@@ -36,3 +36,11 @@
 ## 💰 金融市場・資産運用分析
 * [【ブリーフィング】株式・ETF・投資信託の構造的理解と市場動向](https://takykigo.github.io/youtube/hidenaga/investment-briefing.html)
   * なぜ日銀はETFを選んだのか？「合理性のETF」と「習慣化の投資信託」の違いを徹底解剖。
+ 
+  * # ライフサイエンス・金融戦略 アーカイブ
+
+## 🏛 金融・市場分析（シニア・アナリスト・レポート）
+* [【市場分析】株式・ETF・投資信託の構造的差異とグローバル資金動向（2025）](https://takykigo.github.io/youtube/hidenaga/market-analysis-2025.html)
+  * シニア・アナリストによるハイエンド・レポート。日銀のETF戦略、投資信託の「習慣化装置」としての機能、グローバル市場規模の定量的比較。
+* [【徹底比較】株式・ETF・投資信託：初心者からプロまで必見ガイド](https://takykigo.github.io/youtube/hidenaga/investment-guide.html)
+* [【図解】株式・ETF・投資信託 徹底比較チャート（画像版）](https://takykigo.github.io/youtube/hidenaga/investment-chart.html)
