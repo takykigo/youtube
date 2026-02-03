@@ -50,3 +50,13 @@
 * [【白書全文】金融政策評価：日銀によるETF買い入れの妥当性と市場への影響分析](https://takykigo.github.io/youtube/hidenaga/boj-etf-whitepaper.html)
   * **最新ドキュメント**。中央銀行がなぜETFという「政策装置」を選んだのか。70兆円の出口戦略とNISAの関係を読み解く。
 * [【市場分析】株式・ETF・投資信託の構造的差異とグローバル資金動向（2025）](https://takykigo.github.io/youtube/hidenaga/market-analysis-2025.html)
+# 資産運用・市場分析 完全アーカイブ
+
+## 💰 投資の入り口：初心者向けガイド（NEW）
+* [【初心者必見】迷子にならない「資産選択ガイド」：個別株・ETF・投資信託の使い分け](https://takykigo.github.io/youtube/hidenaga/asset-selection-guide.html)
+  * **最新・完結編**。カレーに例えた分かりやすい解説から、家計管理に最適な「習慣化装置」の秘密まで。
+
+## 🏛 金融政策・プロフェッショナル分析
+* [【白書全文】金融政策評価：日銀によるETF買い入れの妥当性と市場への影響分析](https://takykigo.github.io/youtube/hidenaga/boj-etf-whitepaper.html)
+* [【市場分析】株式・ETF・投資信託の構造的差異とグローバル資金動向（2025）](https://takykigo.github.io/youtube/hidenaga/market-analysis-2025.html)
+* [【徹底比較】株式・ETF・投資信託：初心者からプロまで必見ガイド](https://takykigo.github.io/youtube/hidenaga/investment-guide.html)
