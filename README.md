@@ -27,3 +27,6 @@
 ## 🧬 生命の理：詳細解説・決定版資料
 * [【決定版】100年血管：健康寿命を左右する体内物流システムの維持と再生](https://takykigo.github.io/youtube/hidenaga/100year-vascular.html)
   * 文献ベースで一字一句漏らさず体系化した詳細テキストドキュメント。
+## 💰 資産運用・マネーリテラシー
+* [【徹底比較】株式・ETF・投資信託：初心者からプロまで必見ガイド](https://takykigo.github.io/youtube/hidenaga/investment-guide.html)
+  * 各商品のメリット・デメリットから、自分に合った投資スタイルの見つけ方までを1枚で解説。
