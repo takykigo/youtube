@@ -33,3 +33,6 @@
 ## 💰 資産運用・マネーリテラシー
 * [【図解】株式・ETF・投資信託：初心者からプロまで必見ガイド](https://takykigo.github.io/youtube/hidenaga/investment-chart.html)
   * YouTube動画で使用した比較図。積立の「習慣化装置」としての投資信託の価値や、日銀がETFを採用した背景を整理。
+## 💰 金融市場・資産運用分析
+* [【ブリーフィング】株式・ETF・投資信託の構造的理解と市場動向](https://takykigo.github.io/youtube/hidenaga/investment-briefing.html)
+  * なぜ日銀はETFを選んだのか？「合理性のETF」と「習慣化の投資信託」の違いを徹底解剖。
