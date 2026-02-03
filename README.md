@@ -44,3 +44,9 @@
   * シニア・アナリストによるハイエンド・レポート。日銀のETF戦略、投資信託の「習慣化装置」としての機能、グローバル市場規模の定量的比較。
 * [【徹底比較】株式・ETF・投資信託：初心者からプロまで必見ガイド](https://takykigo.github.io/youtube/hidenaga/investment-guide.html)
 * [【図解】株式・ETF・投資信託 徹底比較チャート（画像版）](https://takykigo.github.io/youtube/hidenaga/investment-chart.html)
+# ライフサイエンス・金融戦略 アーカイブ
+
+## 🏛 金融・市場分析（政策評価・白書）
+* [【白書全文】金融政策評価：日銀によるETF買い入れの妥当性と市場への影響分析](https://takykigo.github.io/youtube/hidenaga/boj-etf-whitepaper.html)
+  * **最新ドキュメント**。中央銀行がなぜETFという「政策装置」を選んだのか。70兆円の出口戦略とNISAの関係を読み解く。
+* [【市場分析】株式・ETF・投資信託の構造的差異とグローバル資金動向（2025）](https://takykigo.github.io/youtube/hidenaga/market-analysis-2025.html)
