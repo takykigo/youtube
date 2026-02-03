@@ -17,4 +17,9 @@
 * [【全文公開】時間の密度を上げるドキュメント（テキスト版）](https://takykigo.github.io/youtube/hidenaga/analysis.html)
 * [【図解】大人の1年があっという間な理由（スライド構成版）](https://takykigo.github.io/youtube/hidenaga/time-hacking.html)
 
+## 🩸 血管の物語：ビジュアル・アーカイブ
+* [【全15枚スライド集】100年血管：健康寿命を左右する物流システムの維持と再生](https://takykigo.github.io/youtube/hidenaga/slides-collection.html)
+  * 全15枚の図解スライドを一覧できます。血管の構造からNO（一酸化窒素）による再生、具体的な生活習慣までをビジュアルで解説。
 
+## 🧬 生命の理：テキスト全文版（詳細解説）
+* [【決定版】100年血管：健康寿命を左右する体内物流システムの維持と再生](https://takykigo.github.io/youtube/hidenaga/100year-vascular.html)
