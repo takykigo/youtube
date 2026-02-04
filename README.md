@@ -60,3 +60,7 @@
 * [【白書全文】金融政策評価：日銀によるETF買い入れの妥当性と市場への影響分析](https://takykigo.github.io/youtube/hidenaga/boj-etf-whitepaper.html)
 * [【市場分析】株式・ETF・投資信託の構造的差異とグローバル資金動向（2025）](https://takykigo.github.io/youtube/hidenaga/market-analysis-2025.html)
 * [【徹底比較】株式・ETF・投資信託：初心者からプロまで必見ガイド](https://takykigo.github.io/youtube/hidenaga/investment-guide.html)
+
+## 🏛 金融政策・最新分析レポート（2026）
+* [【最新】日銀ETF出口戦略：100年計画の売却と市場への影響](https://takykigo.github.io/youtube/hidenaga/boj-exit-strategy.html)
+  * **2026年1月始動**。時価80兆円の巨額資産を112年かけて処分する前例なき「100年プロジェクト」の深層解説。
