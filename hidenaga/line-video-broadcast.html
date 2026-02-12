@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【技術解説】多地点LINEビデオメッセージ実施における課題と対策</title>
+    <style>
+        body { font-family: sans-serif; background: #f9f9f9; line-height: 1.8; color: #333; margin: 0; padding: 20px; }
+        .container { max-width: 850px; margin: 0 auto; background: #fff; padding: 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        h1 { color: #00b900; border-bottom: 3px solid #00b900; padding-bottom: 10px; text-align: center; }
+        h2 { color: #1e3a8a; border-left: 5px solid #1e3a8a; padding-left: 15px; margin-top: 30px; }
+        .point-box { background: #fff4f4; border: 1px solid #ffcdd2; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        .solution-box { background: #e8f5e9; border: 1px solid #c8e6c9; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+        .warning { color: #d32f2f; font-weight: bold; }
+        .diagram { text-align: center; margin: 30px 0; background: #f1f5f9; padding: 20px; border-radius: 10px; border: 1px dashed #cbd5e1; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #e2e8f0; padding: 12px; text-align: left; }
+        th { background: #f8fafc; }
+        .footer { text-align: center; margin-top: 40px; color: #94a3b8; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>多地点LINEビデオメッセージ実施ガイド</h1>
+
+        <div class="diagram">
+            <strong>【ネットワーク構成】</strong><br>
+            A地点（配信側）：スマホ1台 ↔ B地点（受信/配信側）：スマホ10台（同空間）
+        </div>
+
+        <h2>① 最大の障壁：ハウリング（音響ループ）</h2>
+        <div class="point-box">
+            B地点で10台が同時にマイク・スピーカーをONにすると、<strong>「無限ループ」</strong>が発生します。1台が拾った音を隣のスマホが再生し、それをまた別のスマホが拾うことで、「キーン」という激しいノイズや、声が何重にも聞こえるエコーが発生します。
+        </div>
+
+        <h2>② インフラの障壁：Wi-Fi帯域の飽和</h2>
+        <p>一般的な家庭用ルーターでは、10台の同時ビデオ通信には耐えられません。</p>
+        <ul>
+            <li><strong>上り帯域不足：</strong> B地点からの映像がフリーズする。</li>
+            <li><strong>パケットロス：</strong> 音声が途切れ途切れになり、会話が成立しない。</li>
+            <li><strong>ルーターのセッション制限：</strong> 通話中に突然接続が切れる端末が発生する。</li>
+        </ul>
+
+        <h2>③ 運用上の課題と解決策（チェックリスト）</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>課題</th>
+                    <th>具体的な解決策</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>ハウリング</strong></td>
+                    <td>B地点は「代表の1台」のみ音声ON。他9台はマイクOFF・音量ゼロを徹底。</td>
+                </tr>
+                <tr>
+                    <td><strong>Wi-Fi負荷</strong></td>
+                    <td>視聴のみの端末はビデオをOFFにする。または5GHz帯のWi-Fiを使用。</td>
+                </tr>
+                <tr>
+                    <td><strong>バッテリー</strong></td>
+                    <td>ビデオ通話は激しく消耗。全員ACアダプタまたはモバイルバッテリーを接続。</td>
+                </tr>
+                <tr>
+                    <td><strong>主導権</strong></td>
+                    <td>B地点に「司会役」を配置。誰が話すかコントロールを行う。</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>🚀 おすすめの安定運用構成</h2>
+        <div class="solution-box">
+            <p><strong>B地点の構成案：</strong></p>
+            <ul>
+                <li><strong>メイン機（1台）：</strong> 音声・ビデオ共にON。外部スピーカーに接続して全員に音を届ける。</li>
+                <li><strong>サブ機（9台）：</strong> マイクOFF・スピーカーOFF。画面だけを手元で見る「モニター」として運用。</li>
+            </ul>
+        </div>
+
+        <div class="footer">
+            © テクニカル・アーカイブ：ビデオメッセージ多地点接続ガイド
+        </div>
+    </div>
+</body>
+</html>
