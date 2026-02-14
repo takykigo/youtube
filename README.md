@@ -4,17 +4,21 @@
 
 ---
 
-## 🌌 宇宙論・観測天文学（全アーカイブ）
-宇宙の起源、時空の変遷、そして観測の限界を多角的・体系的に読み解く。
+## 🌌 宇宙論・観測天文学（全6アーカイブ）
+最新のジェームズ・ウェッブ宇宙望遠鏡（JWST）の成果から、宇宙の無限性に関する哲学的考察まで。
 
-* 🔬 **[【考察】宇宙の無限性と観測の地平：証明可能性の境界](https://takykigo.github.io/youtube/hidenaga/cosmology-infinity.html)**
-  * *因果的地平線と「悪魔の証明」から迫る、宇宙の限界に関する最新の認識論的考察。*
+* 🔬 **[【考察】宇宙の無限性と観測の地平：証明可能性の境界](https://takykigo.github.io/youtube/hidenaga/cosmology-infinity-theory.html)**
+  * *因果的地平線と「悪魔の証明」から迫る、宇宙の限界に関する認識論的考察。*
 * 🔭 **[【論文】宇宙観測の最前線と時空概念の変遷](https://takykigo.github.io/youtube/hidenaga/cosmology-briefing.html)**
   * *JWSTによる最遠銀河「MoM-z14」の発見と、人類の宇宙観が辿った歴史的変遷。*
 * 🪐 **[【解説】135億年の旅を読み解く「赤方偏移」ガイド](https://takykigo.github.io/youtube/hidenaga/redshift-guide.html)**
   * *宇宙のタイムマシン「z」の仕組み。なぜ遠い宇宙の光は赤く見えるのか？*
 * 🌌 **[【物語】宇宙と時間の138億年：人類の知的好奇心が紡いだ物語](https://takykigo.github.io/youtube/hidenaga/cosmology-narrative.html)**
   * *原始の記憶から最新科学まで、人類が宇宙をどう物語ってきたかの知の軌跡。*
+* 📊 **[【技術報告】初期宇宙銀河「MoM-z14」の分析と宇宙論モデルへの影響](https://takykigo.github.io/youtube/hidenaga/mom-z14-technical-report.html)**
+  * *再電離のメカニズムとΛCDMモデルに対する構造的な再考を迫る技術分析。*
+* ⚡ **[【衝撃】宇宙の年齢を疑え：赤方偏移z=14.44が突きつける衝撃](https://takykigo.github.io/youtube/hidenaga/cosmology-age-shock.html)**
+  * *ビッグバンからわずか2億8000万年後。従来の宇宙形成シナリオを揺さぶる挑戦状。*
 
 ---
 
@@ -24,9 +28,7 @@
 
 ## 🩸 血管の物語：物流インフラの維持と再建
 * 📊 **[【全15枚スライド集】100年血管：維持と再生の図解全集](https://takykigo.github.io/youtube/hidenaga/slides-collection.html)**
-* 📄 **[【決定版】100年血管：体内物流システムの維持と再生（全文）](https://takykigo.github.io/youtube/hidenaga/100year-vascular.html)**
 
 ---
 
 © ライフサイエンス・金融・宇宙論 アーカイブポータル
-*すべての資料は、最新の科学的知見および市場統計に基づき作成されています。*
