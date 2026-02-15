@@ -2,7 +2,23 @@
 
 ご家族や視聴者の皆様と共有するための、科学的知見および市場分析に基づく包括的ドキュメント集です。
 
+# 🌌 宇宙の指紋とタイムトラベル：MoM-z14 解析アーカイブ
+
+新動画「135億年の旅を読み解く」に関連する全資料を、一字一句漏らさず公開しています。
+
+## 📸 最新インフォグラフィック
+- **[【図解】超遠方銀河 MoM-z14 と赤方偏移の仕組み](https://takykigo.github.io/youtube/hidenaga/cosmology-infographic-v2.html)**
+  - スペクトル線の移動と時間の遅れを視覚的に解説。
+
+## 📚 関連ドキュメント（全文公開）
+1. 🔬 **[MoM-z14 と赤方偏移に関する技術解説](https://takykigo.github.io/youtube/hidenaga/mom-z14-tech-spec-v2.html)**
+2. 🚀 **[136億光年のタイムトラベル：時間の正体](https://takykigo.github.io/youtube/hidenaga/time-dilation-travel.html)**
+3. 🆔 **[宇宙の指紋：赤方偏移とバルマー系列](https://takykigo.github.io/youtube/hidenaga/hydrogen-fingerprint.html)**
+4. 📈 **[宇宙論観測分析報告書：観測技術の限界](https://takykigo.github.io/youtube/hidenaga/cosmology-analysis-report.html)**
+5. 📖 **[宇宙膨張の基本原理ガイド：135億年の旅](https://takykigo.github.io/youtube/hidenaga/expanding-universe-guide.html)**
+
 ---
+© 2026 宇宙論・時空概念 解析ポータル
 
 ## 🌌 宇宙論・観測天文学（全6アーカイブ）
 最新のジェームズ・ウェッブ宇宙望遠鏡（JWST）の成果から、宇宙の無限性に関する哲学的考察まで。
