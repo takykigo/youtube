@@ -89,3 +89,4 @@
 - **[1. 給付付き税額控除：制度の基本構造と導入の意義](https://takykigo.github.io/youtube/hidenaga/tax-credit-basics.html)**
 - **[2. 逆進性対策と消費税：低所得者層への実効的な支援](https://takykigo.github.io/youtube/hidenaga/tax-credit-regressivity.html)**
 - **[3. 制度運用の課題：資産把握と就労意欲の維持](https://takykigo.github.io/youtube/hidenaga/tax-credit-challenges.html)**
+- **[給付付き税額控除に関する包括的ブリーフィング資料（全文）](https://takykigo.github.io/youtube/hidenaga/tax-credit-briefing.html)**
