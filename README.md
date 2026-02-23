@@ -81,11 +81,11 @@
 新動画「給付付き税額控除」に関連する専門資料と図解を公開しています。
 
 ### 📊 インフォグラフィック（図解）
-- **[【図解】給付付き税額控除の仕組み：減税と給付の融合](./tax-credit-system-info.html)**
-- **[【図解】消費税の逆進性：なぜ低所得者の負担が重いのか](./consumption-tax-regressivity-info.html)**
-- **[【図解】消費減税の落とし穴：格差拡大の懸念](./tax-cut-pitfalls-info.html)**
+- **[【図解】給付付き税額控除の仕組み](https://takykigo.github.io/youtube/hidenaga/tax-credit-system-info.html)**
+- **[【図解】消費税の逆進性：なぜ負担が重いのか](https://takykigo.github.io/youtube/hidenaga/consumption-tax-regressivity-info.html)**
+- **[【図解】消費減税の落とし穴：格差拡大の懸念](https://takykigo.github.io/youtube/hidenaga/tax-cut-pitfalls-info.html)**
 
 ### 📚 詳細解説書類（全文）
-- **[1. 給付付き税額控除：制度の基本構造と導入の意義](./tax-credit-basics.html)**
-- **[2. 逆進性対策と消費税：低所得者層への実効的な支援](./tax-credit-regressivity.html)**
-- **[3. 制度運用の課題：資産把握と就労意欲の維持](./tax-credit-challenges.html)**
+- **[1. 給付付き税額控除：制度の基本構造と導入の意義](https://takykigo.github.io/youtube/hidenaga/tax-credit-basics.html)**
+- **[2. 逆進性対策と消費税：低所得者層への実効的な支援](https://takykigo.github.io/youtube/hidenaga/tax-credit-regressivity.html)**
+- **[3. 制度運用の課題：資産把握と就労意欲の維持](https://takykigo.github.io/youtube/hidenaga/tax-credit-challenges.html)**
