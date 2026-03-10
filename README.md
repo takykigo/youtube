@@ -96,3 +96,5 @@
 ## 🗺️ 地政学・エネルギー構造図解
 - **[構造図解解説：ホルムズ海峡と世界経済の「窒息」メカニズム](https://takykigo.github.io/youtube/hidenaga/hormuz-chokepoint-analysis.html)**
   - イラン情勢からWTI急騰の連鎖、米国の精製設備ミスマッチ、そして家計を襲うスクリューフレーションまでを徹底解説。
+- **[原油高騰の正体と「私たちの財布」：基本概念ガイド](https://takykigo.github.io/youtube/hidenaga/crude-oil-basics-guide.html)**
+  - 3つの原油指標、石油のレシピ、精製設備のミスマッチ、ホルムズ海峡の重要性を基礎から解説。
