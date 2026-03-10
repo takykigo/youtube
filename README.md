@@ -98,3 +98,5 @@
   - イラン情勢からWTI急騰の連鎖、米国の精製設備ミスマッチ、そして家計を襲うスクリューフレーションまでを徹底解説。
 - **[原油高騰の正体と「私たちの財布」：基本概念ガイド](https://takykigo.github.io/youtube/hidenaga/crude-oil-basics-guide.html)**
   - 3つの原油指標、石油のレシピ、精製設備のミスマッチ、ホルムズ海峡の重要性を基礎から解説。
+- **[WTI 111ドルの衝撃とエネルギー地政学リスク：構造的要因の解明と組織のリスク管理戦略](https://takykigo.github.io/youtube/hidenaga/energy-geopolitics-risk-report.html)**
+  - 地政学リスクの常態化、米国の精製設備ミスマッチ、スクリューフレーションの到来、および組織が取るべき3つの戦略的提言を解説。
