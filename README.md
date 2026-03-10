@@ -93,3 +93,6 @@
 
 ## 🛢️ 世界経済・地政学リスク解析
 - **[WTI原油111ドル突破の衝撃と世界経済の構造的リスク：包括的ブリーフィング](https://takykigo.github.io/youtube/hidenaga/wti-111-impact.html)**
+## 🗺️ 地政学・エネルギー構造図解
+- **[構造図解解説：ホルムズ海峡と世界経済の「窒息」メカニズム](https://takykigo.github.io/youtube/hidenaga/hormuz-chokepoint-analysis.html)**
+  - イラン情勢からWTI急騰の連鎖、米国の精製設備ミスマッチ、そして家計を襲うスクリューフレーションまでを徹底解説。
