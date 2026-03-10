@@ -86,11 +86,10 @@
 - **[【図解】消費減税の落とし穴：格差拡大の懸念](https://takykigo.github.io/youtube/hidenaga/tax-cut-pitfalls-info.html)**
 
 ### 📚 詳細解説書類（全文）
-
-## 🛢️ 世界経済・地政学リスク解析
-- **[WTI原油111ドル突破の衝撃と世界経済の構造的リスク：包括的ブリーフィング](./wti-111-impact.html)**
-  - 原油指標の解説、米国の精製設備ミスマッチ、ホルムズ海峡のリスク、スクリューフレーションについて一字一句漏らさず解説。
 - **[1. 給付付き税額控除：制度の基本構造と導入の意義](https://takykigo.github.io/youtube/hidenaga/tax-credit-basics.html)**
 - **[2. 逆進性対策と消費税：低所得者層への実効的な支援](https://takykigo.github.io/youtube/hidenaga/tax-credit-regressivity.html)**
 - **[3. 制度運用の課題：資産把握と就労意欲の維持](https://takykigo.github.io/youtube/hidenaga/tax-credit-challenges.html)**
 - **[給付付き税額控除に関する包括的ブリーフィング資料（全文）](https://takykigo.github.io/youtube/hidenaga/tax-credit-briefing.html)**
+## 🛢️ 世界経済・地政学リスク解析
+- **[WTI原油111ドル突破の衝撃と世界経済の構造的リスク：包括的ブリーフィング](./wti-111-impact.html)**
+  - 原油指標の解説、米国の精製設備ミスマッチ、ホルムズ海峡のリスク、スクリューフレーションについて一字一句漏らさず解説。
