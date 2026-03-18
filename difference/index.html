@@ -32,7 +32,7 @@
     <main class="max-w-5xl mx-auto px-6">
         <div class="content-card">
             
-            <p class="text-xl font-bold mb-10 text-slate-700">ビットコインとサナエトークンは、同じ「仮想通貨（暗号資産）」と呼ばれていますが、 仕組みや安全性、そして作られた目的が「金（ゴールド）」と「町内会の独自ポイント」くらい根本的に異なります 。<br>両者の決定的な違いを分かりやすく整理します。</p>
+            <p class="text-xl font-bold mb-10 text-slate-700 text-center">ビットコインとサナエトークンは、同じ「仮想通貨（暗号資産）」と呼ばれていますが、 仕組みや安全性、そして作られた目的が「金（ゴールド）」と「町内会の独自ポイント」くらい根本的に異なります 。<br>両者の決定的な違いを分かりやすく整理します。</p>
 
             <h2>1. 管理者の有無とネットワークの仕組み</h2>
             <p class="mb-6 font-bold text-slate-600">最も大きな違いは、「誰がルールを決め、誰がシステムを動かしているか」という点です。</p>
@@ -56,7 +56,7 @@
                 </div>
                 <div class="sanae-theme">
                     <h3>サナエトークン（運営の意向に依存する脆弱な設計）</h3>
-                    <p>サナエトークンは、特定のプロジェクト（Japan is Back）の報酬として作られましたが、運営側が発行枚数の65％以上を保有しているなど、一部の管理者の意向で価値や流通量が左右されやすい仕組みでした。ビットコインのような「数学的な絶対性」はありません。</p>
+                    <p>サナエトークンは、特定のプロジェクト（Japan is Back）の報酬として作られましたが、運営側が発行枚数の65％以上を保有しているなど、一部の人間が価格を容易に操作できる（出口詐欺のリスクがある）極めて危険な設計になっていました。価値の根拠も「現職総理が関わっているかもしれない」という一時的な期待に過ぎず、本人が関与を否定した瞬間に価格が大暴落しました。</p>
                 </div>
             </div>
 
@@ -64,4 +64,72 @@
             <div class="space-y-6">
                 <div class="btc-theme">
                     <h3>ビットコイン</h3>
-                    <p
+                    <p>日本国内でも法律（資金決済法）で定義されており、金融庁に登録された安全な取引所（Coincheckやメルコインなど）で購入・保管が可能です。PayPayなどの大手決済インフラとも連携が進むなど、社会的な基盤として定着しつつあります。</p>
+                </div>
+                <div class="sanae-theme">
+                    <h3>サナエトークン</h3>
+                    <p>日本の法律に基づく登録を受けていない「無登録営業」の疑いがあり、現在金融庁が調査に入っています。日本の安全な取引所では一切扱われておらず、海外の特殊な取引所（DEX）でしか売買できないため、トラブルが起きても誰も守ってくれません。</p>
+                </div>
+            </div>
+
+            <h2>🧭 ひと目で分かる比較表</h2>
+            <div class="overflow-x-auto">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>比較項目</th>
+                            <th class="text-orange-600">ビットコイン（BTC）</th>
+                            <th class="text-rose-600">サナエトークン（SANAET）</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>発行・管理者</th>
+                            <td class="btc-col">誰もいない （分散型）</td>
+                            <td class="sanae-col">特定の民間団体 （NoBorder DAO）</td>
+                        </tr>
+                        <tr>
+                            <th>取引の承認方法</th>
+                            <td class="btc-col">世界中の計算競争（マイニング）</td>
+                            <td class="sanae-col">既存のチェーン（Solana）を間借り</td>
+                        </tr>
+                        <tr>
+                            <th>ルールの変更</th>
+                            <td class="btc-col">世界中の合意が必要</td>
+                            <td class="sanae-col">運営の都合で変更・中止が可能</td>
+                        </tr>
+                        <tr>
+                            <th>発行上限</th>
+                            <td class="btc-col">2100万枚（絶対に変更不可）</td>
+                            <td class="sanae-col">運営側が大量に保有（価格操作が容易）</td>
+                        </tr>
+                        <tr>
+                            <th>法的位置づけ</th>
+                            <td class="btc-col">国内取引所で合法的に売買可能</td>
+                            <td class="sanae-col">無登録営業の疑いで金融庁が調査中</td>
+                        </tr>
+                        <tr>
+                            <th>本質的な性質</th>
+                            <td class="btc-col">改ざん不可能な「デジタルゴールド」</td>
+                            <td class="sanae-col">危険性の高い「投機的なミームコイン」</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="mt-12 bg-slate-100 p-8 rounded-2xl border-2 border-slate-200">
+                <h2 class="mt-0 border-none text-2xl font-black">まとめ</h2>
+                <p class="text-lg leading-relaxed text-slate-800">
+                    ビットコインは、誰も支配できない透明なルールと世界最大の計算力によって守られた<span class="highlight-bold">「世界共通のデジタル資産」 です。一方でサナエトークンは、技術的な革新性を持たず、有名人の名前を使って資金を集めようとした 「特定の管理者に都合の良い危険な商品」</span>に過ぎません。
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="mt-20 py-12 text-center text-slate-400 text-sm border-t border-slate-200">
+        <p>© 2026 Analysis Report: Comparison of BTC and SANAE TOKEN</p>
+    </footer>
+
+</body>
+</html>
