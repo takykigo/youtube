@@ -8,76 +8,119 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
         body { font-family: 'Noto Sans JP', sans-serif; background-color: #f8fafc; color: #1e293b; line-height: 1.8; }
-        .hero-section { background: linear-gradient(135deg, #2563eb 0%, #7c3aed 100%); }
-        .comparison-card { background: white; border-radius: 2rem; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); overflow: hidden; border: 1px solid #e2e8f0; }
-        .btc-box { border-top: 8px solid #f59e0b; background-color: #fffbeb; padding: 2rem; border-radius: 1rem; }
-        .sanae-box { border-top: 8px solid #e11d48; background-color: #fff1f2; padding: 2rem; border-radius: 1rem; }
-        .label-btc { background: #f59e0b; color: white; padding: 4px 12px; border-radius: 9999px; font-weight: 900; font-size: 0.875rem; }
-        .label-sanae { background: #e11d48; color: white; padding: 4px 12px; border-radius: 9999px; font-weight: 900; font-size: 0.875rem; }
-        h2 { font-size: 1.875rem; font-weight: 900; color: #1e293b; border-left: 6px solid #6366f1; padding-left: 1rem; margin-top: 4rem; margin-bottom: 2rem; }
-        h3 { font-size: 1.25rem; font-weight: 900; margin-bottom: 1rem; display: flex; items-center; gap: 0.5rem; }
+        .hero-section { background: linear-gradient(135deg, #1e3a8a 0%, #4338ca 100%); }
+        .content-card { background: white; border-radius: 2rem; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); padding: 3rem; border: 1px solid #e2e8f0; }
+        .btc-theme { border-left: 8px solid #f59e0b; background-color: #fffbeb; padding: 1.5rem; border-radius: 0.5rem; }
+        .sanae-theme { border-left: 8px solid #e11d48; background-color: #fff1f2; padding: 1.5rem; border-radius: 0.5rem; }
+        h2 { font-size: 1.75rem; font-weight: 900; color: #1e3a8a; border-bottom: 3px solid #e2e8f0; padding-bottom: 0.5rem; margin-top: 3rem; margin-bottom: 1.5rem; }
+        h3 { font-weight: 900; margin-bottom: 1rem; font-size: 1.25rem; }
+        table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.95rem; }
+        th { background-color: #f1f5f9; font-weight: 900; text-align: center; border: 1px solid #cbd5e1; padding: 12px; }
+        td { border: 1px solid #cbd5e1; padding: 12px; vertical-align: top; }
+        .btc-col { background-color: #fffdf5; font-weight: bold; }
+        .sanae-col { background-color: #fffafa; }
     </style>
 </head>
 <body class="antialiased pb-24">
 
-    <header class="hero-section text-white py-24 px-6 text-center shadow-2xl mb-16">
-        <h1 class="text-4xl md:text-5xl font-black mb-6 leading-tight">
-            ビットコインと<br class="md:hidden">サナエトークンの違い
-        </h1>
-        <p class="text-blue-100 text-lg md:text-xl max-w-3xl mx-auto font-medium">
-            同じ「仮想通貨」でも根本的に異なる2つの仕組みを徹底解説
-        </p>
+    <header class="hero-section text-white py-20 px-6 text-center shadow-2xl mb-12">
+        <h1 class="text-3xl md:text-5xl font-black mb-4">ビットコインとサナエトークンの違い</h1>
+        <p class="text-blue-100 text-lg font-bold">【原文一字一句掲載版】</p>
     </header>
 
     <main class="max-w-5xl mx-auto px-6">
-        
-        <div class="comparison-card p-8 md:p-16">
-            <p class="text-xl md:text-2xl font-bold leading-relaxed mb-12 text-center text-slate-700">
-                ビットコインとサナエトークンは、同じ「仮想通貨（暗号資産）」と呼ばれていますが、<br class="hidden md:block">
-                <span class="text-indigo-600">仕組みや安全性、そして作られた目的が「金（ゴールド）」と「町内会の独自ポイント」くらい根本的に異なります。</span><br>
-                両者の決定的な違いを分かりやすく整理します。
-            </p>
+        <div class="content-card">
+            
+            <p class="text-xl font-bold mb-10 text-slate-700">ビットコインとサナエトークンは、同じ「仮想通貨（暗号資産）」と呼ばれていますが、 仕組みや安全性、そして作られた目的が「金（ゴールド）」と「町内会の独自ポイント」くらい根本的に異なります 。<br>両者の決定的な違いを分かりやすく整理します。</p>
 
             <h2>1. 管理者の有無とネットワークの仕組み</h2>
-            <p class="mb-8 text-lg font-medium">最も大きな違いは、「誰がルールを決め、誰がシステムを動かしているか」という点です。</p>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="btc-box">
-                    <h3><span class="label-btc">ビットコイン（管理者なし・分散型）</span></h3>
+            <p class="mb-6 font-bold text-slate-600">最も大きな違いは、「誰がルールを決め、誰がシステムを動かしているか」という点です。</p>
+            <div class="space-y-6">
+                <div class="btc-theme">
+                    <h3>ビットコイン（管理者なし・分散型）</h3>
                     <p>ビットコインには特定の企業や社長といった「管理者」が存在しません。世界中に散らばる何十万台ものコンピューター（マイナー）が、膨大な計算競争（ハッシュ値を探す作業）を行うことで取引を承認し、全員で同じ台帳（ブロックチェーン）を共有・監視しています。ルールを変更するには世界中の参加者の合意が必要なため、誰か一人の都合でシステムを操作することは不可能です。</p>
                 </div>
-                <div class="sanae-box">
-                    <h3><span class="label-sanae">サナエトークン（管理者あり・中央集権的）</span></h3>
+                <div class="sanae-theme">
+                    <h3>サナエトークン（管理者あり・中央集権的）</h3>
                     <p>サナエトークンは、「NoBorder DAO」という特定の民間団体が発行し、管理しています。独自に計算や承認を行うネットワークを持っているわけではなく、「Solana（ソラナ）」という既存のブロックチェーンのシステムを間借りして、自作のルールで発行された単なる「デジタルトークン」です。</p>
                 </div>
             </div>
 
             <h2>2. 価値の根拠とルールの厳格さ</h2>
-            <p class="mb-8 text-lg font-medium">ルールがどれだけ厳格に守られているか、そして何が価値を支えているかという点でも大きく異なります。</p>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div class="btc-box">
-                    <h3><span class="label-btc">ビットコイン（数学と計算力に裏付けられた希少性）</span></h3>
+            <p class="mb-6 font-bold text-slate-600">ルールがどれだけ厳格に守られているか、そして何が価値を支えているかという点でも大きく異なります。</p>
+            <div class="space-y-6">
+                <div class="btc-theme">
+                    <h3>ビットコイン（数学と計算力に裏付けられた希少性）</h3>
                     <p>発行上限が「2100万枚」とプログラムで厳格に固定されており、誰にも上限を増やすことはできません。また、過去の記録を改ざんするには世界中の計算力の過半数を乗っ取る必要があり（事実上不可能）、この強固なセキュリティと希少性が「デジタルゴールド」としての価値を裏付けています。</p>
                 </div>
-                <div class="sanae-box">
-                    <h3><span class="label-sanae">サナエトークン（運営の意向に依存する脆弱な設計）</span></h3>
+                <div class="sanae-theme">
+                    <h3>サナエトークン（運営の意向に依存する脆弱な設計）</h3>
                     <p>サナエトークンは、特定のプロジェクト（Japan is Back）の報酬として作られましたが、運営側が発行枚数の65％以上を保有しているなど、一部の管理者の意向で価値や流通量が左右されやすい仕組みでした。ビットコインのような「数学的な絶対性」はありません。</p>
                 </div>
             </div>
-        </div>
 
-        <div class="mt-12 bg-slate-900 text-white p-10 rounded-[2rem] shadow-xl text-center">
-            <h2 class="border-none p-0 m-0 mb-6 text-blue-400 text-2xl font-black">結論</h2>
-            <p class="text-lg text-slate-300 leading-relaxed max-w-3xl mx-auto">
-                ビットコインは「人類共有の信頼できる新しいお金」を目指して作られたのに対し、サナエトークンは「特定の団体が特定の目的のために作ったポイント」に近い存在です。この違いを理解することが、詐欺やトラブルから身を守る第一歩となります。
-            </p>
+            <h2>3. 法的な位置づけと安全性</h2>
+            <div class="space-y-6">
+                <div class="btc-theme">
+                    <h3>ビットコイン</h3>
+                    <p>日本国内でも法律（資金決済法）で定義されており、金融庁に登録された安全な取引所（Coincheckやメルコインなど）で購入・保管が可能です。PayPayなどの大手決済インフラとも連携が進むなど、社会的な基盤として定着しつつあります。</p>
+                </div>
+                <div class="sanae-theme">
+                    <h3>サナエトークン</h3>
+                    <p>日本の法律に基づく登録を受けていない「無登録営業」の疑いがあり、現在金融庁が調査に入っています。日本の安全な取引所では一切扱われておらず、海外の特殊な取引所（DEX）でしか売買できないため、トラブルが起きても誰も守ってくれません。</p>
+                </div>
+            </div>
+
+            <h2>🧭 ひと目で分かる比較表</h2>
+            <div class="overflow-x-auto">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>比較項目</th>
+                            <th class="text-orange-600">ビットコイン（BTC）</th>
+                            <th class="text-rose-600">サナエトークン（SANAET）</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th>発行・管理者</th>
+                            <td class="btc-col">誰もいない（分散型）</td>
+                            <td class="sanae-col">特定の民間団体（NoBorder DAO）</td>
+                        </tr>
+                        <tr>
+                            <th>取引の承認方法</th>
+                            <td class="btc-col">世界中の計算競争（マイニング）</td>
+                            <td class="sanae-col">既存のチェーン（Solana）を間借り</td>
+                        </tr>
+                        <tr>
+                            <th>ルールの変更</th>
+                            <td class="btc-col">世界中の合意が必要</td>
+                            <td class="sanae-col">運営の都合で変更・中止が可能</td>
+                        </tr>
+                        <tr>
+                            <th>発行上限</th>
+                            <td class="btc-col">2100万枚（絶対に変更不可）</td>
+                            <td class="sanae-col">運営側が大量に保有（価格操作が容易）</td>
+                        </tr>
+                        <tr>
+                            <th>法的位置づけ</th>
+                            <td class="btc-col">国内取引所で合法的に売買可能</td>
+                            <td class="sanae-col">無登録営業の疑いで金融庁が調査中</td>
+                        </tr>
+                        <tr>
+                            <th>本質的な性質</th>
+                            <td class="btc-col">改ざん不可能な「デジタルゴールド」</td>
+                            <td class="sanae-col">危険性の高い「投機的なミームコイン」</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
         </div>
     </main>
 
-    <footer class="mt-24 py-12 text-center text-slate-400 text-sm border-t border-slate-200">
+    <footer class="mt-20 py-12 text-center text-slate-400 text-sm border-t border-slate-200">
         <p>© 2026 Analysis Report: Comparison of BTC and SANAE TOKEN</p>
-        <p>ドキュメント原文を忠実に再現した公式比較ページ</p>
     </footer>
 
 </body>
