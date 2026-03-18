@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ビットコインの仕組みについて：公式解説レポート</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+        body { font-family: 'Noto Sans JP', sans-serif; background-color: #0f172a; color: #f8fafc; line-height: 1.8; }
+        .hero-gradient { background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%); border-bottom: 4px solid #f59e0b; }
+        .content-card { background: #ffffff; color: #1e293b; border-radius: 2rem; padding: 3rem; margin-bottom: 3rem; shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); }
+        .feature-box { border-left: 8px solid #f59e0b; background-color: #fffbeb; padding: 2rem; border-radius: 0.5rem; margin-bottom: 2.5rem; }
+        h2 { font-size: 1.75rem; font-weight: 900; color: #1e293b; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem; }
+        .highlight-gold { color: #d97706; font-weight: 900; }
+        .footer-dark { background-color: #0f172a; color: #94a3b8; }
+        b, strong { color: #b45309; font-weight: 900; }
+    </style>
+</head>
+<body class="antialiased pb-24">
+
+    <header class="hero-gradient text-white py-24 px-6 text-center shadow-2xl mb-16">
+        <h1 class="text-4xl md:text-6xl font-black mb-6 tracking-tight">
+            ビットコインの仕組みについて
+        </h1>
+        <p class="text-amber-400 text-lg md:text-xl max-w-2xl mx-auto font-bold">
+            【全文一字一句・完全掲載版】
+        </p>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-6">
+        <div class="content-card">
+            
+            <section class="mb-12">
+                <p class="text-xl md:text-2xl font-black leading-snug mb-8">
+                    ビットコインを一言でいうと、<span class="highlight-gold">「特定の会社や国が管理せず、世界中のコンピューターが共同で監視・記録し合っているデジタルなお金」</span>です。
+                </p>
+                <p class="text-slate-600 text-lg">
+                    なぜ管理者がいないのに安全に動いているのか、その画期的な仕組みは以下の3つの柱で成り立っています。
+                </p>
+            </section>
+
+            <div class="feature-box">
+                <h2>1. みんなで同じ「台帳」を持つ（ブロックチェーン）</h2>
+                <p>普通の銀行では、あなたの預金残高は「銀行の巨大なコンピューター」だけが管理しています。もし銀行のデータが書き換えられたら終わりです。 <b>しかしビットコインは、世界中に散らばる何十万台ものコンピューターが、 全員で「誰から誰へいくら送金されたか」という全く同じ取引記録（台帳）を共有・監視 しています。</b> この記録を一定期間ごとに「ブロック」という箱にまとめ、それを鎖（チェーン）のようにつないで保存するため「ブロックチェーン」と呼ばれます。</p>
+            </div>
+
+            <div class="feature-box">
+                <h2>2. 巨大な「計算競争」で正しい記録を決める（マイニング）</h2>
+                <p>管理者がいないなら、誰が台帳に新しい記録を書き込むのでしょうか？ ここで登場するのが、これまでの会話でお伝えした「巨大な宝くじ（計算競争）」です。 <b>新しい取引記録を台帳に書き込む権利は、世界中のコンピューターが参加する「超高速な暗号パズル（ハッシュ計算）」を一番早く解いた人（マイナー）</b>に与えられます。 勝者にはご褒美として「新しいビットコイン」がもらえるため、世界中のマイナーが膨大な計算力を使って競争します。過去の記録を改ざんしようとしても、この世界中の計算力（多数決）を上回ることは事実上不可能なため、強固なセキュリティが保たれています。</p>
+            </div>
+
+            <div class="feature-box">
+                <h2>3. ルールは絶対に変更できない（希少性の保証）</h2>
+                <p>日本円やドルは、国が都合に合わせていくらでも新しく刷ることができます。しかしビットコインは、 <b>「世界に2100万枚しか存在できない」というルールがプログラムでガッチリと固定 されています。</b> この「発行上限」や「計算ルール」は、特定の誰かの都合で勝手に変更することは絶対にできません。この「金（ゴールド）」のような希少性と、誰にも支配されない透明な仕組みがあるからこそ、世界中の人が「価値の保存手段（デジタルゴールド）」として信頼しているのです。</p>
+            </div>
+
+            <div class="mt-16 p-10 bg-slate-900 text-white rounded-3xl border-t-8 border-amber-500 shadow-2xl">
+                <h3 class="text-2xl font-black mb-6 flex items-center gap-2 text-amber-400">
+                    🧭 まとめ
+                </h3>
+                <p class="text-xl leading-relaxed">
+                    ビットコインとは、<span class="font-black text-amber-300">「誰にも支配されず」「誰もズルができず」「勝手に数を増やすこともできない」</span>というルールを、世界最大級の計算力で守り続けているシステムです。
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="py-12 text-center footer-dark text-sm">
+        <p class="font-bold mb-2 text-slate-300">© 2026 ビットコイン仕組み解説アーカイブ</p>
+        <p>ドキュメント原文 全文掲載</p>
+    </footer>
+
+</body>
+</html>
