@@ -97,6 +97,30 @@
 - **[構造図解解説：ホルムズ海峡と世界経済の「窒息」メカニズム](https://takykigo.github.io/youtube/hidenaga/hormuz-chokepoint-analysis.html)**
   - イラン情勢からWTI急騰の連鎖、米国の精製設備ミスマッチ、そして家計を襲うスクリューフレーションまでを徹底解説。
 - **[原油高騰の正体と「私たちの財布」：基本概念ガイド](https://takykigo.github.io/youtube/hidenaga/crude-oil-basics-guide.html)**
+
+- # AI Infrastructure Strategy: 宇宙データセンターとダイヤモンド半導体の攻防
+
+本リポジトリでは、2026年現在のAIインフラが直面する物理的限界と、それを打破するための2つの国家的戦略（宇宙DC・ダイヤモンド半導体）について詳しく解説した資料を公開しています。
+
+## 🚀 公開資料一覧
+
+1. **[宇宙データセンターの深層：AI、電力、そして国家の生存戦略](https://takykigo.github.io/youtube/space-dc-deep-dive.html)**
+   - NVIDIAが描く「軌道上のAI工場」の衝撃と、地球が抱える限界。
+2. **[次世代計算基盤戦略提言書](https://takykigo.github.io/youtube/strategic-proposal.html)**
+   - 軌道上DCと地上ダイヤモンド半導体の比較評価と戦略的投資判断。
+3. **[2030年代AIインフラの分岐点](https://takykigo.github.io/youtube/2030s-infrastructure-point.html)**
+   - ポストシリコン時代への構造的転換とロードマップ。
+4. **[【比較解説】半導体の限界を突破せよ](https://takykigo.github.io/youtube/comparison-semiconductor.html)**
+   - 真空のパラドックスと、冷却効率を劇的に変えるダイヤモンドの物性。
+5. **[宇宙AIデータセンター構想と次世代半導体技術](https://takykigo.github.io/youtube/space-ai-infrastructure-strategy.html)**
+   - AIインフラの限界を突破する戦略的選択肢（エグゼクティブ・サマリー）。
+6. **[ジェンスン・フアンの「宇宙データセンター構想」に潜む罠？](https://takykigo.github.io/youtube/jensen-huang-trap.html)**
+   - AIの未来を救うのは「空」か「石」か？フアンCEOの真意を解剖。
+7. **[【視覚解説】宇宙か、ダイヤモンドか？（比較図解）](https://takykigo.github.io/youtube/ultimate-infrastructure-comparison.html)**
+   - 2つのインフラの正体を一枚の図解で徹底解説。
+
+---
+© 2026 takykigo. All rights reserved.
   - 3つの原油指標、石油のレシピ、精製設備のミスマッチ、ホルムズ海峡の重要性を基礎から解説。
 - **[WTI 111ドルの衝撃とエネルギー地政学リスク：構造的要因の解明と組織のリスク管理戦略](https://takykigo.github.io/youtube/hidenaga/energy-geopolitics-risk-report.html)**
   - 地政学リスクの常態化、米国の精製設備ミスマッチ、スクリューフレーションの到来、および組織が取るべき3つの戦略的提言を解説。
