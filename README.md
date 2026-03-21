@@ -98,7 +98,12 @@
   - イラン情勢からWTI急騰の連鎖、米国の精製設備ミスマッチ、そして家計を襲うスクリューフレーションまでを徹底解説。
 - **[原油高騰の正体と「私たちの財布」：基本概念ガイド](https://takykigo.github.io/youtube/hidenaga/crude-oil-basics-guide.html)**
 
-- # AI Infrastructure Strategy: 宇宙データセンターとダイヤモンド半導体の攻防
+  - 3つの原油指標、石油のレシピ、精製設備のミスマッチ、ホルムズ海峡の重要性を基礎から解説。
+- **[WTI 111ドルの衝撃とエネルギー地政学リスク：構造的要因の解明と組織のリスク管理戦略](https://takykigo.github.io/youtube/hidenaga/energy-geopolitics-risk-report.html)**
+  - 地政学リスクの常態化、米国の精製設備ミスマッチ、スクリューフレーションの到来、および組織が取るべき3つの戦略的提言を解説。
+- **[【図解】WTI 111ドルの衝撃：なぜ遠い国の異変があなたの財布を直撃するのか？](https://takykigo.github.io/youtube/hidenaga/wti-111-impact-visual.html)**
+
+- - # AI Infrastructure Strategy: 宇宙データセンターとダイヤモンド半導体の攻防
 
 本リポジトリでは、2026年現在のAIインフラが直面する物理的限界と、それを打破するための2つの国家的戦略（宇宙DC・ダイヤモンド半導体）について詳しく解説した資料を公開しています。
 
@@ -121,7 +126,3 @@
 
 ---
 © 2026 takykigo. All rights reserved.
-  - 3つの原油指標、石油のレシピ、精製設備のミスマッチ、ホルムズ海峡の重要性を基礎から解説。
-- **[WTI 111ドルの衝撃とエネルギー地政学リスク：構造的要因の解明と組織のリスク管理戦略](https://takykigo.github.io/youtube/hidenaga/energy-geopolitics-risk-report.html)**
-  - 地政学リスクの常態化、米国の精製設備ミスマッチ、スクリューフレーションの到来、および組織が取るべき3つの戦略的提言を解説。
-- **[【図解】WTI 111ドルの衝撃：なぜ遠い国の異変があなたの財布を直撃するのか？](https://takykigo.github.io/youtube/hidenaga/wti-111-impact-visual.html)**
