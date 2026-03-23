@@ -9,107 +9,135 @@
         h1 { color: #0056b3; font-size: 1.8em; border-bottom: 3px solid #0056b3; padding-bottom: 15px; margin-bottom: 30px; text-align: center; }
         h2 { color: #2c3e50; font-size: 1.5em; margin-top: 40px; border-left: 6px solid #0056b3; padding-left: 15px; background: #f8f9fa; padding-top: 10px; padding-bottom: 10px; }
         h3 { color: #0056b3; font-size: 1.25em; margin-top: 25px; border-bottom: 1px solid #eee; padding-bottom: 8px; }
+        
+        /* 数式エリアのデザインを他の資料と統一 */
+        .formula-container {
+            background-color: #f8f9fa;
+            border: 2px dashed #d9534f;
+            border-radius: 10px;
+            margin: 25px 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .formula-text {
+            font-size: 1.6em;
+            font-weight: bold;
+            color: #d9534f;
+            display: block;
+        }
+
         .summary-item { margin-bottom: 15px; padding-left: 20px; position: relative; }
         .summary-item::before { content: "■"; color: #0056b3; position: absolute; left: 0; }
         .highlight-box { background: #fff4f4; border: 1px solid #ffcccc; padding: 20px; border-radius: 8px; margin: 25px 0; }
         table { width: 100%; border-collapse: collapse; margin: 20px 0; }
         th, td { border: 1px solid #ddd; padding: 12px; text-align: left; }
         th { background: #eef6ff; }
-        .formula { text-align: center; font-size: 1.4em; font-weight: bold; color: #d9534f; margin: 20px 0; padding: 15px; border: 2px dashed #d9534f; border-radius: 10px; }
         .footer { text-align: center; margin-top: 50px; font-weight: bold; color: #555; font-size: 1.1em; }
     </style>
 </head>
 <body>
 
 <div class="content-card">
-    <h1>GTC 2026 包括的ブリーフィング：AIファクトリーとエージェント革命が導くインテリジェンス経済の全貌</h1>
+    <h1>GTC 2026 包括的ブリーフィング：AIファクトリーとエージェント革命が導くインテリジェンス経済の全貌 [cite: 1]</h1>
 
-    <h2>エグゼクティブ・サマリー</h2>
-    <p>コンピューティングの世界は今、歴史的な転換点を迎えています。従来の「検索ベース（探して持ってくる）」から「生成・推論ベース（その場で考え出す）」へのパラダイムシフトにより、データセンターは単なるデータの保管庫から、知能を24時間製造する「AIファクトリー」へと進化しました。この工場が生産する「トークン」は、電気やガソリンに匹敵する次世代のコモディティ（商品）となり、世界規模の「トークン経済」を形成しています。主要な要点は以下の通りです：</p>
+    <h2>エグゼクティブ・サマリー [cite: 2]</h2>
+    <p>コンピューティングの世界は今、歴史的な転換点を迎えています。従来の「検索ベース（探して持ってくる）」から「生成・推論ベース（その場で考え出す）」へのパラダイムシフトにより、データセンターは単なるデータの保管庫から、知能を24時間製造する「AIファクトリー」へと進化しました。 [cite: 3] この工場が生産する「トークン」は、電気やガソリンに匹敵する次世代のコモディティ（商品）となり、世界規模の「トークン経済」を形成しています。 [cite: 3] 主要な要点は以下の通りです： [cite: 3]</p>
     
-    <div class="summary-item"><strong>投資規模と需要の爆発：</strong> 推論需要は過去2年間で1万倍に増加し、2027年までにAI工場建設への投資は少なくとも1兆ドル（約150兆円）に達すると予測されています。</div>
-    <div class="summary-item"><strong>新アーキテクチャ「Vera Rubin」：</strong> 前世代と比較して、同じ電力で35倍のスループット、5倍の収益性を実現する「究極のトークン製造マシン」が発表されました。</div>
-    <div class="summary-item"><strong>エージェント革命とAaaS：</strong> AIは単なる道具から自律的な「エージェント（部下）」へと進化し、ソフトウェア産業はSaaSから「AaaS (Agent as a Service)」へと転換します。</div>
-    <div class="summary-item"><strong>物理的AIの社会実装：</strong> ロボティクスと自動運転（Alpamo）が「ChatGPTモーメント」を迎え、現実世界での自律稼働が加速しています。</div>
-    <div class="summary-item"><strong>オープン・エコシステム戦略：</strong> NVIDIAは垂直統合された強力な技術を水平に開放し、ソブリンAI（主権AI）の構築を支援することで、世界中の企業や国家をAI経済へ引き上げています。</div>
+    <ul>
+        <li><strong>投資規模と需要の爆発：</strong> 推論需要は過去2年間で1万倍に増加し、2027年までにAI工場建設への投資は少なくとも1兆ドル（約150兆円）に達すると予測されています。 [cite: 4]</li>
+        <li><strong>新アーキテクチャ「Vera Rubin」：</strong> 前世代と比較して、同じ電力で35倍のスループット、5倍の収益性を実現する「究極のトークン製造マシン」が発表されました。 [cite: 5]</li>
+        <li><strong>エージェント革命とAaaS：</strong> AIは単なる道具から自律的な「エージェント（部下）」へと進化し、ソフトウェア産業はSaaSから「AaaS (Agent as a Service)」へと転換します。 [cite: 6]</li>
+        <li><strong>物理的AIの社会実装：</strong> ロボティクスと自動運転（Alpamo）が「ChatGPTモーメント」を迎え、現実世界での自律稼働が加速しています。 [cite: 7]</li>
+        <li><strong>オープン・エコシステム戦略：</strong> NVIDIAは垂直統合された強力な技術を水平に開放し、ソブリンAI（主権AI）の構築を支援することで、世界中の企業や国家をAI経済へ引き上げています。 [cite: 8]</li>
+    </ul>
 
-    <h2>1. コンピューティングの歴史的転換：AIファクトリーとトークン経済</h2>
-    <p>コンピューティングの役割は、蓄積された情報を提示する「図書館モデル」から、自律的に答えを創出する「AIファクトリーモデル」へと移行しました。</p>
+    <h2>1. コンピューティングの歴史的転換：AIファクトリーとトークン経済 [cite: 9]</h2>
+    <p>コンピューティングの役割は、蓄積された情報を提示する「図書館モデル」から、自律的に答えを創出する「AIファクトリーモデル」へと移行しました。 [cite: 10]</p>
     
-    <h3>トークン：デジタル経済の新しい石油</h3>
-    <p>AI工場で生産される「トークン（知能の粒）」は、現代の経済を動かす新たな燃料と定義されています。企業はAIに仕事をさせ、トークンを製造・販売する「トークン製造業者」へと進化します。</p>
+    <h3>トークン：デジタル経済の新しい石油 [cite: 11]</h3>
+    <p>AI工場で生産される「トークン（知能の粒）」は、現代の経済を動かす新たな燃料と定義されています。 [cite: 12] 企業はAIに仕事をさせ、トークンを製造・販売する「トークン製造業者」へと進化します。 [cite: 12]</p>
     
-    <h3>収益の方程式：ワットあたりのトークン量</h3>
-    <p>AI工場の収益性は、物理的限界がある「電力（ワット）」をいかに効率よく「トークン」に変換できるかで決まります。</p>
-    <div class="formula">収益 ＝ トークン生成量 ／ ワット</div>
-    <p>未使用の1ワットは、作れたはずの売上を捨てることと同義であり、極限の最適化（DSX）が勝敗を分けます。</p>
+    <h3>収益の方程式：ワットあたりのトークン量 [cite: 13]</h3>
+    <p>AI工場の収益性は、物理的限界がある「電力（ワット）」をいかに効率よく「トークン」に変換できるかで決まります。 [cite: 14]</p>
+    
+    <div class="formula-container">
+        <span class="formula-text">収益 ＝ トークン生成量 ／ ワット [cite: 15]</span>
+    </div>
+    
+    <p>未使用の1ワットは、作れたはずの売上を捨てることと同義であり、極限の最適化（DSX）が勝敗を分けます。 [cite: 16]</p>
 
-    <h2>2. 次世代プラットフォーム「Vera Rubin」の技術利解剖</h2>
-    <p>「Vera Rubin」は、単なるチップの集合体ではなく、エージェント型AIを駆動するために垂直統合された一つの巨大なコンピューティング・システムです。</p>
+    <h2>2. 次世代プラットフォーム「Vera Rubin」の技術的解剖 [cite: 17]</h2>
+    <p>「Vera Rubin」は、単なるチップの集合体ではなく、エージェント型AIを駆動するために垂直統合された一つの巨大なコンピューティング・システムです。 [cite: 18]</p>
     
-    <h3>ハードウェアの革新</h3>
+    <h3>ハードウェアの革新 [cite: 19]</h3>
     <table>
-        <tr><th>コンポーネント</th><th>特徴・役割</th></tr>
-        <tr><td>Kyber（カイバー）ラック</td><td>144個のGPUを単一の基板（ミッドプレーン）で直接接続し、巨大な一つの脳として機能させる。</td></tr>
-        <tr><td>Vera CPU</td><td>ツール利用に特化した頭脳。LPDDR5メモリを初採用し、ワットあたり2倍の効率でAIの手足を動かす。</td></tr>
-        <tr><td>Spectrum X</td><td>光信号（Coupe技術）を用いた究極の神経網。無駄な電力を消費せず超高速通信を実現。</td></tr>
-        <tr><td>STXラック</td><td>AIネイティブなストレージ。Bluefield 4を搭載し、猛烈なデータアクセスを支える。</td></tr>
+        <tr><th>コンポーネント [cite: 20]</th><th>特徴・役割 [cite: 20]</th></tr>
+        <tr><td>Kyber（カイバー）ラック [cite: 21]</td><td>144個のGPUを単一の基板（ミッドプレーン）で直接接続し、巨大な一つの脳として機能させる。 [cite: 21]</td></tr>
+        <tr><td>Vera CPU [cite: 22]</td><td>ツール利用に特化した頭脳。LPDDR5メモリを初採用し、ワットあたり2倍の効率でAIの手足を動かす。 [cite: 22]</td></tr>
+        <tr><td>Spectrum X [cite: 23]</td><td>光信号（Coupe技術）を用いた究極の神経網。無駄な電力を消費せず超高速通信を実現。 [cite: 23]</td></tr>
+        <tr><td>STXラック [cite: 24]</td><td>AIネイティブなストレージ。Bluefield 4を搭載し、猛烈なデータアクセスを支える。 [cite: 24]</td></tr>
     </table>
 
-    <h3>「熟考」と「出力」の分離（Dynamoソフトウェア）</h3>
-    <p>NVIDIAは推論プロセスを解剖し、特性の異なる2つのプロセッサを「Dynamo」で統合しました。</p>
+    <h3>「熟考」と「出力」の分離（Dynamoソフトウェア） [cite: 25]</h3>
+    <p>NVIDIAは推論プロセスを解剖し、特性の異なる2つのプロセッサを「Dynamo」で統合しました。 [cite: 26]</p>
     <ul>
-        <li><strong>Vera Rubin（熟考担当）：</strong> 288GBの巨大メモリで文脈を深く理解し、「何を話すか」を計算。</li>
-        <li><strong>Groq（超高速の口担当）：</strong> 考えた内容を受け取り、物理的限界スピードでトークンを吐き出す。</li>
-    </ul>
-    <p>この分業により、スループットは前世代比で35倍、1GW工場での生成速度は1秒間に7億個（2年前の350倍）に達しました。</p>
-
-    <h2>3. ソフトウェア革命：CUDA XとエージェントOS</h2>
-    <p>NVIDIAはハードウェアのみならず、アルゴリズム企業として「CUDA X」という至宝のライブラリ群を提供し、知能の社会実装を加速させています。</p>
-    
-    <h3>知能を社会実装するアルゴリズム</h3>
-    <div class="summary-item"><strong>cuDF（構造化データの達人）：</strong> 巨大なエクセルや表データを一瞬で処理。ネスレは処理速度5倍、費用83%削減を達成。</div>
-    <div class="summary-item"><strong>cuVS（非構造化データの翻訳機）：</strong> PDFや動画（世界のデータの90%）をAIが理解できるベクトルデータへ一瞬で変換。</div>
-    <div class="summary-item"><strong>業界特化マニュアル：</strong> cuOpt（物流最適化）、Aerial（AI-RAN通信）、Parabricks（ゲノム解析）など数千の道具箱を提供。</div>
-
-    <h3>エージェントOS：Open ClawとNeMo Claw</h3>
-    <div class="summary-item"><strong>Open Claw:</strong> リソース管理、ツール利用、推論、行動、マルチモーダルIOを司るオープンソースOS。</div>
-    <div class="summary-item"><strong>NeMo Claw:</strong> 企業向けの鉄壁のガードレール。プライバシールーターにより、AIが社外に機密情報を漏洩させる懸念を排除。</div>
-
-    <h2>4. フィジカルAI：現実世界への進出</h2>
-    <p>AIは画面の中の存在から、物理的な身体を持つ「フィジカルAI」へと進化し、50兆ドル規模の製造業を再定義しています。</p>
-    
-    <h3>主要な物理的AIモデル</h3>
-    <ul>
-        <li><strong>Alpamo（アルパモ）：</strong> 「自分で考えて理由を説明できる」自動運転AI。行動の理由をナレーションで説明し、状況を論理的に推論する「自動運転のChatGPTモーメント」。</li>
-        <li><strong>Groot（グルート）：</strong> 110台以上の多種多様なロボットを動かす共通の「汎用ロボット頭脳」。</li>
+        <li><strong>Vera Rubin（熟考担当）：</strong> 288GBの巨大メモリで文脈を深く理解し、「何を話すか」を計算。 [cite: 27]</li>
+        <li><strong>Groq（超高速の口担当）：</strong> 考えた内容を受け取り、物理的限界スピードでトークンを吐き出す。 [cite: 28] この分業により、スループットは前世代比で35倍、1GW工場での生成速度は1秒間に7億個（2年前の350倍）に達しました。 [cite: 28]</li>
     </ul>
 
-    <h3>「Compute is Data」：仮想空間での猛特訓</h3>
-    <p>現実世界でのデータ不足を解消するため、NVIDIAは「Omniverse」や「Isaac Lab」による仮想訓練空間を提供しています。</p>
+    <h2>3. ソフトウェア革命：CUDA XとエージェントOS [cite: 29]</h2>
+    <p>NVIDIAはハードウェアのみならず、アルゴリズム企業として「CUDA X」という至宝のライブラリ群を提供し、知能の社会実装を加速させています。 [cite: 30]</p>
+    
+    <h3>知能を社会実装するアルゴリズム [cite: 31]</h3>
     <ul>
-        <li>AI工場の巨大な計算能力（Compute）を使って「合成データ」を無数に生成。</li>
-        <li>物理法則を完璧に再現したマトリックス空間でロボットに猛特訓をさせ、安全に現実世界へ配備する。</li>
+        <li><strong>cuDF（構造化データの達人）：</strong> 巨大なエクセルや表データを一瞬で処理。ネスレは処理速度5倍、費用83%削減を達成。 [cite: 32]</li>
+        <li><strong>cuVS（非構造化データの翻訳機）：</strong> PDFや動画（世界のデータの90%）をAIが理解できるベクトルデータへ一瞬で変換。 [cite: 33]</li>
+        <li><strong>業界特化マニュアル：</strong> cuOpt（物流最適化）、Aerial（AI-RAN通信）、Parabricks（ゲノム解析）など数千の道具箱を提供。 [cite: 34]</li>
     </ul>
 
-    <h2>5. グローバル戦略と新たな組織像</h2>
-    <p>NVIDIAの戦略は「垂直統合かつ水平に開かれた」ものであり、富の独占ではなくエコシステムの拡大を優先しています。</p>
-    
-    <h3>ソブリンAIとオープンエコシステム</h3>
-    <div class="summary-item"><strong>NVIDIA Open Models:</strong> Neimotron 3 Ultra、Cosmos（物理学）、Bioneo（生物学）など、300万個のモデルを無償配布。</div>
-    <div class="summary-item"><strong>Neotron連合:</strong> MistralやPerplexityなどのAIネイティブ企業と協力し、次世代AIを共同開発。</div>
-    <div class="summary-item"><strong>ソブリンAI（主権AI）：</strong> 各国が独自の文化・言語に基づくAIを構築できるよう支援。クラウド事業者ですら中身を覗けない「コンフィデンシャル・コンピューティング（デジタル金庫）」技術を提供。</div>
-
-    <h3>未来の組織と働き方：AaaS（Agent as a Service）</h3>
-    <p>これからの企業は「道具（ソフト）」を売るビジネスから、仕事をしてくれる「デジタル部下（エージェント）」をレンタルするビジネスへと変わります。</p>
+    <h3>エージェントOS：Open ClawとNeMo Claw [cite: 35]</h3>
+    <p>AIが自律的に仕事を進める「エージェント」へと進化したことで、専用のOSが必要となりました。 [cite: 36]</p>
     <ul>
-        <li><strong>報酬体系の変革：</strong> 将来のエンジニアは「基本給 ＋ AIを雇うためのトークン予算」を支給されるようになります。</li>
-        <li><strong>個人の生産性：</strong> トークンを使いこなし、大量のエージェントに仕事を丸投げできる人材は、1人で10人分の成果を出すことが可能になります。</li>
+        <li><strong>Open Claw:</strong> リソース管理、ツール利用、推論、行動、マルチモーダルIOを司るオープンソースOS。 [cite: 37]</li>
+        <li><strong>NeMo Claw:</strong> 企業向けの鉄壁のガードレール。プライバシールーターにより、AIが社外に機密情報を漏洩させる懸念を排除。 [cite: 38]</li>
+    </ul>
+
+    <h2>4. フィジカルAI：現実世界への進出 [cite: 39]</h2>
+    <p>AIは画面の中の存在から、物理的な身体を持つ「フィジカルAI」へと進化し、50兆ドル規模の製造業を再定義しています。 [cite: 40]</p>
+    
+    <h3>主要な物理的AIモデル [cite: 41]</h3>
+    <ul>
+        <li><strong>Alpamo（アルパモ）：</strong> 「自分で考えて理由を説明できる」自動運転AI。行動の理由をナレーションで説明し、状況を論理的に推論する「自動運転のChatGPTモーメント」。 [cite: 42]</li>
+        <li><strong>Groot（グルート）：</strong> 110台以上の多種多様なロボットを動かす共通の「汎用ロボット頭脳」。 [cite: 43]</li>
+    </ul>
+
+    <h3>「Compute is Data」：仮想空間での猛特訓 [cite: 44]</h3>
+    <p>現実世界でのデータ不足を解消するため、NVIDIAは「Omniverse」や「Isaac Lab」による仮想訓練空間を提供しています。 [cite: 45]</p>
+    <ul>
+        <li>AI工場の巨大な計算能力（Compute）を使って「合成データ」を無数に生成。 [cite: 46]</li>
+        <li>物理法則を完璧に再現したマトリックス空間でロボットに猛特訓をさせ、安全に現実世界へ配備する。 [cite: 47]</li>
+    </ul>
+
+    <h2>5. グローバル戦略と新たな組織像 [cite: 48]</h2>
+    <p>NVIDIAの戦略は「垂直統合かつ水平に開かれた」ものであり、富の独占ではなくエコシステムの拡大を優先しています。 [cite: 49]</p>
+    
+    <h3>ソブリンAIとオープンエコシステム [cite: 50]</h3>
+    <ul>
+        <li><strong>NVIDIA Open Models:</strong> Neimotron 3 Ultra、Cosmos（物理学）、Bioneo（生物学）など、300万個のモデルを無償配布。 [cite: 51]</li>
+        <li><strong>Neotron連合:</strong> MistralやPerplexityなどのAIネイティブ企業と協力し、次世代AIを共同開発。 [cite: 52]</li>
+        <li><strong>ソブリンAI（主権AI）：</strong> 各国が独自の文化・言語に基づくAIを構築できるよう支援。クラウド事業者ですら中身を覗けない「コンフィデンシャル・コンピューティング（デジタル金庫）」技術を提供。 [cite: 53]</li>
+    </ul>
+
+    <h3>未来の組織と働き方：AaaS（Agent as a Service） [cite: 54]</h3>
+    <p>これからの企業は「道具（ソフト）」を売るビジネスから、仕事をしてくれる「デジタル部下（エージェント）」をレンタルするビジネスへと変わります。 [cite: 55]</p>
+    <ul>
+        <li><strong>報酬体系の変革：</strong> 将来のエンジニアは「基本給 ＋ AIを雇うためのトークン予算」を支給されるようになります。 [cite: 56]</li>
+        <li><strong>個人の生産性：</strong> トークンを使いこなし、大量のエージェントに仕事を丸投げできる人材は、1人で10人分の成果を出すことが可能になります。 [cite: 57]</li>
     </ul>
 
     <div class="highlight-box">
-        <strong>結論</strong><br>
-        我々は今、トークンが産業を動かす「新たな産業革命（ルネサンス）」の入り口にいます。20年越しのCUDAへの投資が結実し、全ての企業は自社でどうやってAIエージェントを使いこなすかという「エージェント戦略」を明確に持つことが、次の時代に生き残るための絶対条件となります。
+        <strong>結論 [cite: 58]</strong><br>
+        我々は今、トークンが産業を動かす「新たな産業革命（ルネサンス）」の入り口にいます。20年越しのCUDAへの投資が結実し、全ての企業は自社でどうやってAIエージェントを使いこなすかという「エージェント戦略」を明確に持つことが、次の時代に生き残るための絶対条件となります。 [cite: 59]
     </div>
 
     <div class="footer">
