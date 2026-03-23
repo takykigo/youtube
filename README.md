@@ -125,4 +125,27 @@
    - 2つのインフラの正体を一枚の図解で徹底解説。
 
 ---
+# NVIDIA GTC 2026 特別解説資料アーカイブ
+
+このディレクトリには、NVIDIA GTC 2026で発表された次世代コンピューティングと「知能経済（インテリジェンス・エコノミー）」に関する詳細な解説資料を格納しています。
+
+## 📑 資料ラインナップ
+
+### 1. [AIファクトリーとトークン経済（図解）](https://takykigo.github.io/youtube/gtc2026/ai-factory-v2.html)
+知能を製造する工場としてのデータセンターと、新時代の石油「トークン」の仕組みを解説します。
+
+### 2. [包括的ブリーフィング](https://takykigo.github.io/youtube/gtc2026/briefing-token-economy.html)
+Vera Rubinの技術解剖からエージェントOSまで、GTC 2026の全容を網羅した詳細テキスト資料です。
+
+### 3. [知能経済への招待状](https://takykigo.github.io/youtube/gtc2026/intelligence-economy-invitation.html)
+150兆円規模の投資がもたらす「知能の大量生産時代」と、働き方の変化についてのインサイト。
+
+### 4. [フィジカルAI入門ロードマップ](https://takykigo.github.io/youtube/gtc2026/physical-ai-roadmap.html)
+ロボットが「知能」を獲得し、現実世界で自律的に活動するための技術ステップを解説。
+
+### 5. [GTC 2026 包括的レポート](https://takykigo.github.io/youtube/gtc2026/comprehensive-report-2026.html)
+ビジネスリーダー向けに再構成された、次世代インテリジェンス経済の設計図。
+
+---
+© 2026 GTC Analysis Project
 © 2026 takykigo. All rights reserved.
