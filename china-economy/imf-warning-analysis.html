@@ -7,15 +7,17 @@
         body { font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif; line-height: 1.8; max-width: 1000px; margin: 40px auto; padding: 30px; color: #333; background-color: #fdfdfd; }
         .content-card { background: #fff; padding: 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); border-top: 5px solid #c0392b; }
         h1 { color: #c0392b; font-size: 1.8em; border-bottom: 2px solid #c0392b; padding-bottom: 15px; margin-bottom: 30px; text-align: center; font-weight: bold; }
-        h2 { color: #2c3e50; font-size: 1.5em; margin-top: 40px; border-left: 6px solid #c0392b; padding-left: 15px; background: #f9f9f9; padding-top: 10px; padding-bottom: 10px; font-weight: bold; }
-        h3 { color: #c0392b; font-size: 1.25em; margin-top: 25px; border-bottom: 1px solid #eee; padding-bottom: 8px; font-weight: bold; }
+        h2 { color: #2c3e50; font-size: 1.5em; margin-top: 40px; border-left: 6px solid #c0392b; padding-left: 15px; background: #f9f9f9; padding: 10px 15px; font-weight: bold; }
+        
+        /* 画像エリア */
+        .image-section { text-align: center; margin: 30px 0; }
+        .image-section img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin-bottom: 10px; }
+        
+        /* 画像下の補足説明エリア */
+        .image-caption { background: #f8f9fa; border: 1px solid #e2e8f0; padding: 25px; border-radius: 8px; margin-bottom: 40px; text-align: left; font-size: 0.95em; color: #4a5568; }
+        .caption-title { font-weight: bold; color: #c0392b; display: block; margin-bottom: 10px; border-bottom: 1px solid #feb2b2; padding-bottom: 5px; }
+        
         p { margin-bottom: 1.5em; text-align: justify; }
-        
-        .alert-box { background: #fff5f5; border: 1px solid #feb2b2; padding: 20px; border-radius: 8px; margin: 25px 0; color: #9b2c2c; }
-        .stats-table { width: 100%; border-collapse: collapse; margin: 25px 0; }
-        .stats-table th, .stats-table td { border: 1px solid #e2e8f0; padding: 15px; text-align: left; }
-        .stats-table th { background: #fff5f5; color: #c0392b; font-weight: bold; }
-        
         .footer { text-align: center; margin-top: 50px; border-top: 1px solid #eee; padding-top: 20px; color: #777; font-size: 0.9em; }
     </style>
 </head>
@@ -24,58 +26,26 @@
 <div class="content-card">
     <h1>中国経済に対するIMFの「異例の警告」：構造的停滞とデフレの足音</h1>
 
-    <h2>1. IMFが突きつけた異例の「4カ条」</h2>
-    <p>国際通貨基金（IMF）は、最新の中国経済審査報告書（対中4条協議）において、従来の慎重な言い回しを越え、極めて直接的な表現で中国の政策運営に修正を迫りました。特に「成長モデルの限界」と「不動産問題の深刻化」について、異例とも言える強いトーンでの警告が含まれています。</p>
-
-    <div class="alert-box">
-        <strong>【重要警告事項】</strong><br>
-        1. 不動産セクターの抜本的な整理（公的資金による未完成物件の救済）<br>
-        2. 国内消費の拡大に向けた「社会保障制度」の抜本的拡充<br>
-        3. 過剰生産能力の是正と補助金政策の見直し<br>
-        4. 地銀および地方政府の隠れ債務（融資平台）の透明化
+    <div class="image-section">
+        <img src="中国１.png" alt="中国経済資料 1">
+        <div class="image-caption">
+            <span class="caption-title">【画像1：補足説明】IMFが指摘する不動産市場の歪み</span>
+            <p>この資料が示すのは、中国経済の約25〜30%を占める不動産セクターが直面している「負の連鎖」です。IMFは、単なる資金供給ではなく、公的資金を投入して「未完成物件」を強制的に完成させ、家計の不安を払拭することを強く求めています。これは、市場原理に任せるのではなく、国家が直接的な債務整理に乗り出すべきだという、踏み込んだ要求です。</p>
+        </div>
     </div>
 
-    <h2>2. 不動産バブル崩壊の余波：時限爆弾化する未完成物件</h2>
-    <p>IMFは、中国政府の現在の対応では不十分であると断定。特に「建設が止まった未完成物件」が家計のセンチメントを冷やし、消費低迷の元凶になっていると指摘しています。解決には対GDP比で数％規模の公的資金投入が不可避であるとの見方を示しました。</p>
+    <div class="image-section">
+        <img src="中国２.png" alt="中国経済資料 2">
+        <div class="image-caption">
+            <span class="caption-title">【画像2：補足説明】構造的な「需要不足」と過剰生産のジレンマ</span>
+            <p>このデータは、中国の内需が極めて脆弱であることを裏付けています。家計消費が伸び悩む中、政府が供給側（製造業）への補助金を継続することで、行き場を失った製品が安値で海外へ流出しています。IMFは、これが世界規模でのデフレ輸出と通商摩擦を引き起こしていると分析。供給から「社会保障や家計支援」へ資源を再配分するよう促しています。</p>
+        </div>
+    </div>
 
-    <h2>3. データで見る中国経済の現状</h2>
-    <table class="stats-table">
-        <thead>
-            <tr>
-                <th>指標名</th>
-                <th>現状の傾向</th>
-                <th>IMFの予測・懸念</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>GDP成長率</td>
-                <td>目標5%前後を維持</td>
-                <td>2029年までに3.3%まで鈍化する可能性</td>
-            </tr>
-            <tr>
-                <td>消費者物価（CPI）</td>
-                <td>0%近辺で推移</td>
-                <td>長期的なデフレ圧力と「日本型」停滞の懸念</td>
-            </tr>
-            <tr>
-                <td>地方政府債務</td>
-                <td>融資平台を含め急増</td>
-                <td>持続不可能な水準に達しており、金融システムリスクへ</td>
-            </tr>
-            <tr>
-                <td>若年層失業率</td>
-                <td>高止まり（統計変更後も厳峻）</td>
-                <td>社会不安の増大と人的資本の毀損</td>
-            </tr>
-        </tbody>
-    </table>
+    <h2>分析：IMFの警告がなぜ「異例」なのか</h2>
+    <p>今回の対中勧告がこれまでと一線を画す理由は、IMFが「中国政府のこれまでの対策は限定的である」とはっきりと否定的な見解を示した点にあります。これまでは外交的な配慮から「さらなる努力が期待される」といった表現が使われてきましたが、今回は「中央政府による直接的な財政支出」を具体的な解決策として提示しました。</p>
 
-    <h2>4. 「産業政策」が招く国際的摩擦</h2>
-    <p>IMFが今回、異例の踏み込みを見せたのが「補助金」と「過剰生産」です。EV（電気自動車）や再生可能エネルギー分野への巨額の公的支援が、内需不足の結果として海外へ流出し、世界経済の歪みを生んでいると明記。これは単なる経済問題ではなく、通商摩擦を激化させる安全保障上のリスクであると警告しています。</p>
-
-    <h2>結論：中国に残された選択肢</h2>
-    <p>IMFの警告は、中国がもはや「投資と輸出」による成長モデルへ戻ることはできないと告げています。求められているのは、供給側への支援から「家計（需要側）」への大胆な資源配分の転換ですが、現在の中国指導部の政策方針とは大きな乖離があり、この「ギャップ」こそが今後の世界経済における最大のリスク要因となります。</p>
+    <p>これは、地方政府の債務問題（隠れ債務）がすでに地方レベルの対応能力を超えており、中央政府がその責任を負わなければ金融システム全体が崩壊しかねないという、強い危機感の表れと言えます。</p>
 
     <div class="footer">
         © 2026 Analysis Project: China's Economic Crisis & IMF Warning
