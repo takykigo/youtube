@@ -146,6 +146,27 @@ Vera Rubinの技術解剖からエージェントOSまで、GTC 2026の全容を
 ### 5. [GTC 2026 包括的レポート](https://takykigo.github.io/youtube/gtc2026/comprehensive-report-2026.html)
 ビジネスリーダー向けに再構成された、次世代インテリジェンス経済の設計図。
 
+# YouTube 解説資料アーカイブ
+
+## 🇨🇳 中国経済の構造的転換とグローバル・リスク（最新）
+2026年3月、IMFの警告と中国経済の転換点に関する一連の分析資料です。
+
+* [1. 図解：IMFの対中警告分析 - 中国経済の深層](https://takykigo.github.io/youtube/china-economy/structural-risk-report.html)
+* [2. 文章：中国経済の構造的転換と影響 - 包括的報告書](https://takykigo.github.io/youtube/china-economy/comprehensive-report.html)
+* [3. レポート：1兆ドルの黒字が隠す「末期症状」](https://takykigo.github.io/youtube/china-economy/imf-prescription.html)
+* [4. 戦略提言書：日本企業の生存戦略](https://takykigo.github.io/youtube/china-economy/strategic-survival-strategy.html)
+* [5. 徹底解説：中国経済を沈める「3つの重力」と歪みの正体](https://takykigo.github.io/youtube/china-economy/three-gravities.html)
+* [6. 学習ノート：IMFの処方箋から学ぶ構造改革](https://takykigo.github.io/youtube/china-economy/learning-note-imf.html)
+* [7. 戦略分析レポート：構造的転換とグローバル再編](https://takykigo.github.io/youtube/china-economy/strategic-analysis-2026.html)
+
 ---
-© 2026 GTC Analysis Project
-© 2026 takykigo. All rights reserved.
+
+## 🤖 NVIDIA GTC 2026 シリーズ
+次世代推論インフラ「Vera Rubin」とインテリジェンス経済に関するアーカイブです。
+
+* [AIファクトリーとトークン経済](https://takykigo.github.io/youtube/gtc2026/ai-factory-v2.html)
+* [GTC 2026 包括的ブリーフィング](https://takykigo.github.io/youtube/gtc2026/briefing-token-economy.html)
+* [知能経済への招待状](https://takykigo.github.io/youtube/gtc2026/intelligence-economy-invitation.html)
+
+---
+© 2026 Analysis Project
