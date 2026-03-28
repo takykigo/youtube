@@ -168,5 +168,34 @@ Vera Rubinの技術解剖からエージェントOSまで、GTC 2026の全容を
 * [GTC 2026 包括的ブリーフィング](https://takykigo.github.io/youtube/gtc2026/briefing-token-economy.html)
 * [知能経済への招待状](https://takykigo.github.io/youtube/gtc2026/intelligence-economy-invitation.html)
 
+# YouTube動画連動：解説資料リポジトリ
+
+このリポジトリは、YouTubeチャンネルで公開した解説動画の関連資料をまとめたものです。
+視聴者の皆様が、動画内の図解や詳細なテキストデータを手元でじっくり確認できるよう公開しています。
+
 ---
-© 2026 Analysis Project
+
+## 💎 レアアース（希少回土類）シリーズ：新着資料
+最新動画「スマホの中の星の欠片と日本の逆転劇」に関連する全10件の資料です。
+
+### 【図解・画像資料】
+* [世界のレアアース生産シェア（2023）](https://takykigo.github.io/youtube/rare-earths/identity-and-risk.html)
+* [レアアースが支える現代最先端産業](https://takykigo.github.io/youtube/rare-earths/deep-sea-resource.html)
+* [レアアース元素パーフェクトガイド](https://takykigo.github.io/youtube/rare-earths/element-guide.html)
+
+### 【詳細解説・文章資料（全7件）】
+1. [産業のビタミン「レアアース」完全攻略ガイド：現代社会を支える17の魔法](https://takykigo.github.io/youtube/rare-earths/complete-guide-17magics.html)
+2. [レアアース解説ガイド：なぜ「精製」が世界を動かす鍵なのか？](https://takykigo.github.io/youtube/rare-earths/refining-guide.html)
+3. [南鳥島沖レアアース泥の商業開発に向けた技術実現性白書](https://takykigo.github.io/youtube/rare-earths/technical-whitepaper.html)
+4. [レアアース供給網のリスク評価と多角化戦略：長期的ロードマップ](https://takykigo.github.io/youtube/rare-earths/supply-chain-strategy.html)
+5. [スマホの中の「星の欠片」が世界を動かす？知られざる正体と日本の逆転劇](https://takykigo.github.io/youtube/rare-earths/stardust-and-reversal.html)
+6. [レアアース資源の現状と日本の戦略的展望：包括的ブリーフィング](https://takykigo.github.io/youtube/rare-earths/comprehensive-briefing.html)
+7. [レアアースの包括的解明：科学的特性、産業的価値、地政学的動態](https://takykigo.github.io/youtube/rare-earths/scientific-analysis-report.html)
+
+---
+
+## 📉 中国経済・世界経済シリーズ
+* [中国の1兆ドル貿易黒字と国内経済の構造的矛盾](https://takykigo.github.io/youtube/china-economy/trade-surplus-friction.html)
+
+---
+© 2026 Analysis Project: Strategic Resource & Economy Insight
