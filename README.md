@@ -192,10 +192,4 @@ Vera Rubinの技術解剖からエージェントOSまで、GTC 2026の全容を
 6. [レアアース資源の現状と日本の戦略的展望：包括的ブリーフィング](https://takykigo.github.io/youtube/rare-earths/comprehensive-briefing.html)
 7. [レアアースの包括的解明：科学的特性、産業的価値、地政学的動態](https://takykigo.github.io/youtube/rare-earths/scientific-analysis-report.html)
 
----
 
-## 📉 中国経済・世界経済シリーズ
-* [中国の1兆ドル貿易黒字と国内経済の構造的矛盾](https://takykigo.github.io/youtube/china-economy/trade-surplus-friction.html)
-
----
-© 2026 Analysis Project: Strategic Resource & Economy Insight
