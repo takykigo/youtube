@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+
+<!--
+
+Palette Name: Vibrant Sengoku (Crimson, Gold, Deep Slate)
+
+Plan Summary:
+
+1. Intro/Hero: Establish the crisis of Kanegasaki.
+
+2. Context (Pre-War): Political climate and power balance (Bar Chart).
+
+3. The Trap: Visualizing the pincer attack (HTML/CSS Diagram).
+
+4. Timeline: Day-by-day breakdown of the desperate retreat (HTML Timeline).
+
+5. Routes & Bases: Advance and retreat paths (HTML/CSS Flow).
+
+6. Key Figures: Stakeholders and roles (Card Grid).
+
+7. Aftermath: Survival and reorganization (Doughnut Chart).
+
+Visual Choices:
+
+- Bar Chart (Goal: Compare) for pre-war troop estimates. Justification: Best for comparing discrete categories (armies).
+
+- Doughnut Chart (Goal: Composition) for rearguard survival breakdown. Justification: Shows proportions of the surviving forces clearly.
+
+- HTML/CSS diagrams (Goal: Organize/Relationships) for routes and pincer attack. Justification: Adheres strictly to the NO SVG rule while conveying spatial relationships.
+
+Confirmed: NEITHER Mermaid JS NOR SVG were used anywhere in this output.
+
+-->
+
+<html lang="ja">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>決死の撤退戦：金ヶ崎の退き口 - データ・インフォグラフィック</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+
+        body { font-family: 'Noto Sans JP', sans-serif; background-color: #f8fafc; }
+
+        .bg-sengoku-dark { background-color: #0f172a; }
+
+        .text-sengoku-dark { color: #0f172a; }
+
+        .bg-sengoku-red { background-color: #dc2626; }
+
+        .text-sengoku-red { color: #dc2626; }
+
+        .border-sengoku-red { border-color: #dc2626; }
+
+        .bg-sengoku-gold { background-color: #f59e0b; }
+
+        .text-sengoku-gold { color: #f59e0b; }
+
+       
+
+        .chart-container {
+
+            position: relative;
+
+            width: 100%;
+
+            max-width: 800px;
+
+            margin-left: auto;
+
+            margin-right: auto;
+
+            height: 40vh;
+
+            max-height: 400px;
+
+        }
+
+        @media (min-width: 768px) {
+
+            .chart-container { height: 400px; }
+
+        }
+
+       
+
+        .timeline-container { position: relative; padding-left: 2rem; margin-top: 2rem; }
+
+        .timeline-line {
+
+            position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+
+            background-color: #dc2626; border-radius: 2px;
+
+        }
+
+        .timeline-item { position: relative; margin-bottom: 2rem; }
+
+        .timeline-dot {
+
+            position: absolute; left: -2.45rem; top: 0.25rem; width: 20px; height: 20px;
+
+            background-color: #0f172a; border: 4px solid #f59e0b; border-radius: 50%;
+
+        }
+
+       
+
+        .pincer-arrow {
+
+            display: inline-block;
+
+            width: 0; height: 0;
+
+            border-top: 20px solid transparent;
+
+            border-bottom: 20px solid transparent;
+
+        }
+
+        .arrow-right { border-left: 30px solid #dc2626; }
+
+        .arrow-left { border-right: 30px solid #f59e0b; }
+
+    </style>
+
+</head>
+
+<body class="text-slate-800 antialiased">
+
+
+
+    <header class="bg-sengoku-dark text-white py-16 px-4 shadow-xl">
+
+        <div class="max-w-6xl mx-auto text-center">
+
+            <span class="text-sengoku-gold font-bold tracking-widest text-sm md:text-base uppercase mb-2 block">元亀元年（1570年）最大の危機</span>
+
+            <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">金ヶ崎の退き口<br><span class="text-2xl md:text-4xl font-bold text-gray-300">〜信長、絶体絶命の撤退戦〜</span></h1>
+
+            <p class="text-lg md:text-xl max-w-3xl mx-auto text-gray-300">
+
+                上洛を果たし天下布武へ邁進する織田信長。しかし、越前・朝倉氏討伐の最中、背後の盟友・浅井長政が突如裏切る。前門の虎、後門の狼。日本史に刻まれる壮絶な「退却戦」の全貌を紐解く。
+
+            </p>
+
+        </div>
+
+    </header>
+
+
+
+    <main class="max-w-6xl mx-auto px-4 py-12 space-y-20">
+
+
+
+        <section id="context" class="scroll-mt-12">
+
+            <h2 class="text-3xl font-black text-sengoku-dark mb-6 border-b-4 border-sengoku-red pb-2 inline-block">1. 開戦の背景と軍事状況</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+                <div class="bg-white p-6 rounded-2xl shadow-lg border-l-8 border-sengoku-red">
+
+                    <h3 class="text-xl font-bold mb-4">大義名分と将軍の権威</h3>
+
+                    <p class="mb-4">1568年、信長は足利義昭を奉じて上洛。義昭を室町幕府第15代将軍に就任させ、自らはその背後で実権を握った。信長は天皇と将軍の権威を利用し、諸大名に上洛を要請。</p>
+
+                    <p class="mb-4">しかし、越前の名門・<strong>朝倉義景</strong>はこれを黙殺。信長はこれを「将軍への反逆」とし、朝倉討伐の大義名分を得た。</p>
+
+                    <div class="bg-slate-100 p-4 rounded-lg mt-4 text-sm font-bold">
+
+                        📌 ポイント：表向きは将軍・足利義昭の命令（上意）、実質は織田信長の勢力拡大。
+
+                    </div>
+
+                </div>
+
+                <div class="bg-white p-6 rounded-2xl shadow-lg">
+
+                    <h3 class="text-xl font-bold mb-4 text-center">開戦時の推定動員兵力比較</h3>
+
+                    <div class="chart-container">
+
+                        <canvas id="forcesChart"></canvas>
+
+                    </div>
+
+                    <p class="text-sm text-center mt-4 text-gray-500">織田軍は徳川家康の援軍を含む圧倒的多数で越前へ侵攻した。</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section id="what-is-it">
+
+            <h2 class="text-3xl font-black text-sengoku-dark mb-6 border-b-4 border-sengoku-red pb-2 inline-block">2. 金ヶ崎の退き口とは何か？</h2>
+
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+
+                <p class="text-lg mb-8">
+
+                    「退き口（のきぐち）」とは、軍隊が撤退する際のルートや、撤退戦そのものを指す言葉である。圧倒的優位に進軍していた織田軍が、突如として全滅の危機に陥り、命からがら京都へ逃げ帰ったこの事件は、信長の生涯において最も危険な瞬間の一つであった。
+
+                </p>
+
+               
+
+                <h3 class="text-2xl font-bold mb-6 text-center">絶望の「挟み撃ち」陣形</h3>
+
+                <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 bg-slate-50 p-6 rounded-xl border border-slate-200">
+
+                    <div class="text-center w-full md:w-1/3">
+
+                        <div class="bg-sengoku-dark text-white p-4 rounded-lg shadow-md font-bold text-xl mb-2">越前：朝倉軍</div>
+
+                        <div class="text-sm">本拠地・一乗谷から迎撃態勢<br>（前方の敵）</div>
+
+                    </div>
+
+                    <div class="pincer-arrow arrow-left hidden md:block"></div>
+
+                    <div class="text-center w-full md:w-1/3 relative">
+
+                        <div class="bg-sengoku-red text-white p-6 rounded-lg shadow-xl font-bold text-2xl z-10 relative transform scale-110">織田・徳川軍</div>
+
+                        <div class="text-sm mt-2 font-bold text-sengoku-red">金ヶ崎城付近で孤立</div>
+
+                        <div class="absolute inset-0 border-4 border-red-500 rounded-lg animate-pulse opacity-50"></div>
+
+                    </div>
+
+                    <div class="pincer-arrow arrow-right hidden md:block"></div>
+
+                    <div class="text-center w-full md:w-1/3">
+
+                        <div class="bg-sengoku-gold text-sengoku-dark p-4 rounded-lg shadow-md font-bold text-xl mb-2">近江：浅井軍</div>
+
+                        <div class="text-sm font-bold text-red-600">突如の裏切り・背後を遮断<br>（後方の敵）</div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section id="timeline">
+
+            <h2 class="text-3xl font-black text-sengoku-dark mb-6 border-b-4 border-sengoku-red pb-2 inline-block">3. 緊迫のタイムライン (1570年4月)</h2>
+
+            <div class="bg-white rounded-2xl shadow-lg p-6 md:p-10">
+
+                <div class="timeline-container">
+
+                    <div class="timeline-line"></div>
+
+                   
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot"></div>
+
+                        <h4 class="text-xl font-bold text-sengoku-red">4月20日：京を出陣</h4>
+
+                        <p class="mt-2 text-slate-600">織田信長、徳川家康らと共に大軍を率いて京都を出発。琵琶湖西岸を北上し、若狭国（福井県南部）を経て越前（福井県北部）へ向かう。</p>
+
+                    </div>
+
+                   
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot"></div>
+
+                        <h4 class="text-xl font-bold text-sengoku-red">4月25日〜26日：快進撃と城の陥落</h4>
+
+                        <p class="mt-2 text-slate-600">越前への入り口である敦賀に侵攻。朝倉方の拠点である「手筒山城」を猛攻の末に陥落させ、続いて「金ヶ崎城」も開城させる。勝利は目前と思われた。</p>
+
+                    </div>
+
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot bg-sengoku-gold border-sengoku-red"></div>
+
+                        <h4 class="text-xl font-bold text-sengoku-dark bg-yellow-100 inline-block px-2 py-1 rounded">4月27日頃：凶報、浅井長政の裏切り</h4>
+
+                        <p class="mt-2 text-slate-600 font-bold">妹・お市の嫁ぎ先であり、強固な同盟を結んでいたはずの北近江の浅井長政が裏切り、朝倉方についたという報告が入る。進路も退路も絶たれる袋の鼠状態に。</p>
+
+                    </div>
+
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot"></div>
+
+                        <h4 class="text-xl font-bold text-sengoku-red">4月28日：信長、決死の逃亡</h4>
+
+                        <p class="mt-2 text-slate-600">事態の深刻さを悟った信長は、軍の指揮を捨て、僅かな供回りだけを連れて金ヶ崎から逃亡を開始。木下藤吉郎（秀吉）、明智光秀、徳川家康らが最も危険な殿（しんがり）を務める。</p>
+
+                    </div>
+
+
+
+                    <div class="timeline-item">
+
+                        <div class="timeline-dot"></div>
+
+                        <h4 class="text-xl font-bold text-sengoku-red">4月30日：京へ帰還</h4>
+
+                        <p class="mt-2 text-slate-600">朽木元綱の協力を得て険しい朽木谷を越え、信長は命からがら京都へ逃げ延びる。その後、殿軍も多大な犠牲を払いながら生還を果たす。</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section id="routes">
+
+            <h2 class="text-3xl font-black text-sengoku-dark mb-6 border-b-4 border-sengoku-red pb-2 inline-block">4. 進行・退却ルートと軍事拠点</h2>
+
+            <div class="bg-sengoku-dark rounded-2xl shadow-lg p-8 text-white">
+
+                <p class="mb-8 text-gray-300">当時の移動ルートは地形に大きく依存していた。浅井氏の裏切りにより、琵琶湖東岸を通る安全な帰路は完全に遮断されていた。</p>
+
+               
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+                    <div>
+
+                        <h3 class="text-xl font-bold text-sengoku-gold mb-4 text-center">進軍ルート（意気揚々）</h3>
+
+                        <div class="flex flex-col items-center space-y-2">
+
+                            <div class="bg-slate-700 w-full p-3 text-center rounded">📍 <b>京都</b> (出発)</div>
+
+                            <div class="text-2xl">⬇️</div>
+
+                            <div class="bg-slate-700 w-full p-3 text-center rounded">🏞️ <b>琵琶湖西岸・高島</b></div>
+
+                            <div class="text-2xl">⬇️</div>
+
+                            <div class="bg-slate-700 w-full p-3 text-center rounded">⛰️ <b>若狭国</b> (味方の武田氏領)</div>
+
+                            <div class="text-2xl">⬇️</div>
+
+                            <div class="bg-sengoku-red w-full p-3 text-center rounded font-bold shadow-[0_0_15px_rgba(220,38,38,0.5)]">🏯 <b>越前・敦賀（手筒山城・金ヶ崎城）</b><br><span class="text-sm">最前線・ここで孤立！</span></div>
+
+                        </div>
+
+                    </div>
+
+                   
+
+                    <div>
+
+                        <h3 class="text-xl font-bold text-red-400 mb-4 text-center">決死の退却ルート</h3>
+
+                        <div class="flex flex-col items-center space-y-2">
+
+                            <div class="bg-sengoku-red w-full p-3 text-center rounded font-bold">🏯 <b>金ヶ崎城</b> (逃亡開始)</div>
+
+                            <div class="text-2xl">⬇️</div>
+
+                            <div class="bg-slate-700 w-full p-3 text-center rounded border border-red-500">🏃 <b>若狭国</b> (大急ぎで南下)</div>
+
+                            <div class="text-2xl">⬇️</div>
+
+                            <div class="bg-yellow-600 text-white w-full p-3 text-center rounded font-bold shadow-lg">⛰️ <b>朽木谷 (くつきだに)</b><br><span class="text-sm">松永久秀の説得により朽木元綱が道案内</span></div>
+
+                            <div class="text-2xl">⬇️</div>
+
+                            <div class="bg-slate-700 w-full p-3 text-center rounded">📍 <b>京都</b> (九死に一生を得る)</div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section id="figures">
+
+            <h2 class="text-3xl font-black text-sengoku-dark mb-6 border-b-4 border-sengoku-red pb-2 inline-block">5. 関連人物と陣営の動き</h2>
+
+           
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+
+                <div class="bg-white p-6 rounded-xl shadow border-t-4 border-sengoku-red">
+
+                    <h3 class="font-bold text-xl mb-3 flex items-center">👑 権威</h3>
+
+                    <ul class="space-y-3">
+
+                        <li class="bg-slate-50 p-3 rounded"><strong>正親町天皇</strong><br><span class="text-sm text-gray-600">信長に朝倉討伐の勅命を出したとされる（諸説あり）。</span></li>
+
+                        <li class="bg-slate-50 p-3 rounded"><strong>足利義昭</strong> (将軍)<br><span class="text-sm text-gray-600">信長の上洛により将軍となるが、この頃から信長との間に溝ができ始めていた。</span></li>
+
+                    </ul>
+
+                </div>
+
+               
+
+                <div class="bg-white p-6 rounded-xl shadow border-t-4 border-sengoku-dark">
+
+                    <h3 class="font-bold text-xl mb-3 flex items-center">⚔️ 迎撃・離反陣営</h3>
+
+                    <ul class="space-y-3">
+
+                        <li class="bg-slate-50 p-3 rounded"><strong>朝倉義景</strong> (越前大名)<br><span class="text-sm text-gray-600">上洛命令を無視。信長軍の侵攻に対し一乗谷で防衛態勢を敷く。</span></li>
+
+                        <li class="bg-slate-50 p-3 rounded border border-sengoku-gold"><strong>浅井長政</strong> (北近江大名)<br><span class="text-sm text-gray-600">信長の義弟。長年の盟友である朝倉氏との関係を重んじ、信長を背後から強襲。</span></li>
+
+                    </ul>
+
+                </div>
+
+
+
+                <div class="bg-white p-6 rounded-xl shadow border-t-4 border-blue-600">
+
+                    <h3 class="font-bold text-xl mb-3 flex items-center">🛡️ 織田軍・協力者</h3>
+
+                    <ul class="space-y-3">
+
+                        <li class="bg-slate-50 p-3 rounded"><strong>織田信長</strong><br><span class="text-sm text-gray-600">本隊を見捨て、僅か10名程度でいち早く京へ逃亡。</span></li>
+
+                        <li class="bg-slate-50 p-3 rounded"><strong>松永久秀</strong><br><span class="text-sm text-gray-600">信長に同行。逃走ルート上の領主・朽木元綱を説得し味方につける大功。</span></li>
+
+                        <li class="bg-slate-50 p-3 rounded"><strong>朽木元綱</strong><br><span class="text-sm text-gray-600">近江朽木谷の領主。当初は敵対の可能性もあったが、説得に応じ信長を無事通過させた。</span></li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="bg-white p-6 rounded-2xl shadow-lg border-l-8 border-sengoku-gold mt-8">
+
+                <h3 class="text-2xl font-bold mb-4 text-center">命がけの「殿（しんがり）」</h3>
+
+                <p class="text-center mb-6 max-w-2xl mx-auto">
+
+                    撤退戦において最後尾で敵の追撃を防ぐ「殿」は、全滅の可能性が最も高い過酷な任務である。この金ヶ崎では、後の天下人たちがこの重責を担った。
+
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+                    <div>
+
+                        <ul class="space-y-4">
+
+                            <li class="flex items-center p-3 bg-red-50 rounded-lg">
+
+                                <span class="text-2xl mr-4">🐒</span>
+
+                                <div><strong>木下藤吉郎 (豊臣秀吉)</strong><br><span class="text-sm">自ら殿を志願したとされる。この功績で信長の信頼を確固たるものにする。</span></div>
+
+                            </li>
+
+                            <li class="flex items-center p-3 bg-slate-50 rounded-lg">
+
+                                <span class="text-2xl mr-4">桔</span>
+
+                                <div><strong>明智光秀</strong><br><span class="text-sm">秀吉と共に殿軍を指揮。的確な采配で軍の崩壊を防ぐ。</span></div>
+
+                            </li>
+
+                            <li class="flex items-center p-3 bg-blue-50 rounded-lg">
+
+                                <span class="text-2xl mr-4">🍃</span>
+
+                                <div><strong>徳川家康</strong><br><span class="text-sm">同盟国として参戦。秀吉らと共に殿を務めた（諸説あり）とも言われ、多大な被害を出した。</span></div>
+
+                            </li>
+
+                        </ul>
+
+                    </div>
+
+                    <div class="chart-container">
+
+                        <canvas id="shingariChart"></canvas>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section id="aftermath">
+
+            <h2 class="text-3xl font-black text-sengoku-dark mb-6 border-b-4 border-sengoku-red pb-2 inline-block">6. 帰還後の状況と反撃の狼煙</h2>
+
+            <div class="bg-white rounded-2xl shadow-lg p-8">
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+
+                    <div>
+
+                        <h3 class="text-xl font-bold mb-4">怒れる信長と姉川の戦いへの布石</h3>
+
+                        <p class="mb-4">1570年4月30日、京都に逃げ帰った信長の姿は、疲労困憊し無惨なものであったという。しかし、信長は休む間もなく軍勢を再編成し、5月には本拠地・岐阜へ帰還する。</p>
+
+                        <p class="mb-4">浅井長政の裏切りは、信長の戦略を根本から覆した。信長は浅井・朝倉への深い怒りとともに、直ちに報復のための準備を開始。</p>
+
+                        <p class="font-bold text-sengoku-red p-4 bg-red-50 rounded-lg">
+
+                            金ヶ崎の退却から僅か2ヶ月後の1570年6月、織田・徳川連合軍は近江へ進軍。<br>日本史に残る激戦「姉川の戦い」へと突入していくのである。
+
+                        </p>
+
+                    </div>
+
+                    <div class="flex justify-center items-center p-6 border-4 border-sengoku-dark rounded-xl bg-slate-100">
+
+                        <div class="text-center">
+
+                            <div class="text-5xl mb-4 font-black text-sengoku-red">僅か2ヶ月</div>
+
+                            <div class="text-lg font-bold">壊滅的危機からの部隊再建・報復戦開始</div>
+
+                            <div class="mt-4 text-sm text-gray-600">信長の異常なまでの回復力と執念が、<br>その後の天下布武を可能にした。</div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+    </main>
+
+
+
+    <footer class="bg-sengoku-dark text-gray-400 py-8 text-center mt-12">
+
+        <p>© Canvas Infographics - 金ヶ崎の退き口 SPA</p>
+
+    </footer>
+
+
+
+    <script>
+
+        const processLabels = (labels) => {
+
+            return labels.map(label => {
+
+                if (typeof label === 'string' && label.length > 16) {
+
+                    const chunked = [];
+
+                    for (let i = 0; i < label.length; i += 15) {
+
+                        chunked.push(label.substring(i, i + 15));
+
+                    }
+
+                    return chunked;
+
+                }
+
+                return label;
+
+            });
+
+        };
+
+
+
+        const tooltipConfig = {
+
+            plugins: {
+
+                tooltip: {
+
+                    callbacks: {
+
+                        title: function(tooltipItems) {
+
+                            const item = tooltipItems[0];
+
+                            let label = item.chart.data.labels[item.dataIndex];
+
+                            if (Array.isArray(label)) {
+
+                                return label.join(' ');
+
+                            } else {
+
+                                return label;
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            }
+
+        };
+
+
+
+        const ctxForces = document.getElementById('forcesChart').getContext('2d');
+
+        const labelsForces = processLabels([
+
+            ['織田・徳川連合軍', '(約30,000兵)'],
+
+            ['朝倉軍', '(約15,000兵)'],
+
+            ['浅井軍', '(約10,000兵)']
+
+        ]);
+
+       
+
+        new Chart(ctxForces, {
+
+            type: 'bar',
+
+            data: {
+
+                labels: labelsForces,
+
+                datasets: [{
+
+                    label: '推定兵力 (人)',
+
+                    data: [30000, 15000, 10000],
+
+                    backgroundColor: ['#dc2626', '#0f172a', '#f59e0b'],
+
+                    borderRadius: 4
+
+                }]
+
+            },
+
+            options: Object.assign({
+
+                responsive: true,
+
+                maintainAspectRatio: false,
+
+                scales: {
+
+                    y: { beginAtZero: true }
+
+                },
+
+                plugins: {
+
+                    legend: { display: false }
+
+                }
+
+            }, tooltipConfig)
+
+        });
+
+
+
+        const ctxShingari = document.getElementById('shingariChart').getContext('2d');
+
+        const labelsShingari = processLabels(['木下藤吉郎 (秀吉)', '明智光秀', '徳川家康 (援軍)']);
+
+       
+
+        new Chart(ctxShingari, {
+
+            type: 'doughnut',
+
+            data: {
+
+                labels: labelsShingari,
+
+                datasets: [{
+
+                    data: [3000, 2000, 1500],
+
+                    backgroundColor: ['#dc2626', '#475569', '#3b82f6'],
+
+                    borderWidth: 2,
+
+                    borderColor: '#ffffff'
+
+                }]
+
+            },
+
+            options: Object.assign({
+
+                responsive: true,
+
+                maintainAspectRatio: false,
+
+                cutout: '70%',
+
+                plugins: {
+
+                    legend: { position: 'bottom' }
+
+                }
+
+            }, tooltipConfig)
+
+        });
+
+    </script>
+
+</body>
+
+</html>
