@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>インフォグラフィック：ガソリン価格の仕組み</title>
+
+    <style>
+
+        :root {
+
+            --primary: #e63946;
+
+            --secondary: #457b9d;
+
+            --accent: #f1faee;
+
+            --dark: #1d3557;
+
+            --gray: #f8f9fa;
+
+        }
+
+        body {
+
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+
+            line-height: 1.6;
+
+            color: var(--dark);
+
+            background-color: #f0f2f5;
+
+            margin: 0;
+
+            padding: 20px;
+
+        }
+
+        .container {
+
+            max-width: 900px;
+
+            margin: 0 auto;
+
+            background: white;
+
+            padding: 40px;
+
+            border-radius: 15px;
+
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+
+        }
+
+        header {
+
+            text-align: center;
+
+            border-bottom: 4px solid var(--primary);
+
+            margin-bottom: 40px;
+
+            padding-bottom: 20px;
+
+        }
+
+        h1 { margin: 0; color: var(--primary); font-size: 2rem; }
+
+        h2 { border-left: 5px solid var(--secondary); padding-left: 15px; margin-top: 40px; color: var(--secondary); }
+
+        
+
+        /* Section 1: Price Timeline */
+
+        .timeline {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            margin: 20px 0;
+
+            background: var(--gray);
+
+            padding: 20px;
+
+            border-radius: 10px;
+
+            overflow-x: auto;
+
+        }
+
+        .time-point {
+
+            text-align: center;
+
+            flex: 1;
+
+            min-width: 150px;
+
+            padding: 10px;
+
+        }
+
+        .time-point .date { font-weight: bold; font-size: 0.9rem; color: #666; }
+
+        .time-point .price { display: block; font-size: 1.5rem; font-weight: bold; color: var(--primary); margin: 5px 0; }
+
+        .time-point .desc { font-size: 0.8rem; }
+
+
+
+        /* Section 2: Misconception */
+
+        .vs-container {
+
+            display: flex;
+
+            gap: 20px;
+
+            margin: 20px 0;
+
+        }
+
+        .card {
+
+            flex: 1;
+
+            padding: 20px;
+
+            border-radius: 10px;
+
+            text-align: center;
+
+        }
+
+        .card.wrong { background-color: #ffe5e5; border: 2px solid #ffb3b3; }
+
+        .card.right { background-color: #e5f5ff; border: 2px solid #b3d9ff; }
+
+        .card h3 { margin-top: 0; }
+
+
+
+        /* Section 3: Flow */
+
+        .flow {
+
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 15px;
+
+            margin-top: 20px;
+
+        }
+
+        .step {
+
+            display: flex;
+
+            align-items: center;
+
+            background: var(--accent);
+
+            padding: 15px;
+
+            border-radius: 8px;
+
+            position: relative;
+
+        }
+
+        .step-num {
+
+            background: var(--secondary);
+
+            color: white;
+
+            width: 30px;
+
+            height: 30px;
+
+            border-radius: 50%;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            margin-right: 15px;
+
+            flex-shrink: 0;
+
+        }
+
+
+
+        /* Summary */
+
+        .summary-box {
+
+            background: var(--dark);
+
+            color: white;
+
+            padding: 30px;
+
+            border-radius: 10px;
+
+            text-align: center;
+
+            margin-top: 40px;
+
+        }
+
+        .highlight { color: #f1c40f; font-weight: bold; font-size: 1.2rem; }
+
+
+
+        @media (max-width: 600px) {
+
+            .vs-container { flex-direction: column; }
+
+            .timeline { flex-direction: column; }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+
+<div class="container">
+
+    <header>
+
+        <h1>なぜガソリン価格は「翌日」上がるのか？</h1>
+
+        <p>〜国際情勢と店頭価格のカラクリを解く〜</p>
+
+    </header>
+
+
+
+    <section>
+
+        <h2>1. 激動の3月：価格推移</h2>
+
+        <div class="timeline">
+
+            <div class="time-point">
+
+                <span class="date">2月下旬（安定）</span>
+
+                <span class="price">158〜161円</span>
+
+                <span class="desc">原油 65ドル前後</span>
+
+            </div>
+
+            <div class="time-point">
+
+                <span class="date">3月16日週（ピーク）</span>
+
+                <span class="price">193.3円</span>
+
+                <span class="desc">補助金なし・原油高直撃</span>
+
+            </div>
+
+            <div class="time-point">
+
+                <span class="date">3月30日週（下落）</span>
+
+                <span class="price">170.3円</span>
+
+                <span class="desc">補助金再開＋原油反落</span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section>
+
+        <h2>2. 長期契約の「量」と「価格」</h2>
+
+        <div class="vs-container">
+
+            <div class="card wrong">
+
+                <h3>誤解 ❌</h3>
+
+                <p>長期契約だから<br><strong>安値で価格固定</strong>されている</p>
+
+            </div>
+
+            <div class="card right">
+
+                <h3>現実 ⭕️</h3>
+
+                <p>約束しているのは<strong>「量」</strong><br>価格は指標に合わせ<strong>毎月変動</strong></p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section>
+
+        <h2>3. 価格決定のフロー</h2>
+
+        <div class="flow">
+
+            <div class="step">
+
+                <div class="step-num">1</div>
+
+                <div><strong>国際市場の変動：</strong> 戦争などでWTI原油価格が急騰</div>
+
+            </div>
+
+            <div class="step">
+
+                <div class="step-num">2</div>
+
+                <div><strong>元売りの判断：</strong> 未来の仕入れコスト増を予測し、即座に「卸価格」を改定</div>
+
+            </div>
+
+            <div class="step">
+
+                <div class="step-num">3</div>
+
+                <div><strong>店頭への反映：</strong> スタンドは新しい卸価格に基づき、1〜2日で看板を書き換え</div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <div class="summary-box">
+
+        <p>店頭価格は、タンクの中身（過去）ではなく、<br>
+
+        <span class="highlight">「これから仕入れるコスト（未来）」</span>で決まっています。</p>
+
+        <p style="font-size: 0.9rem; opacity: 0.8;">※だからこそ、原油が安くなれば同じスピードで下がる可能性も持っています。</p>
+
+    </div>
+
+</div>
+
+
+
+</body>
+
+</html>
