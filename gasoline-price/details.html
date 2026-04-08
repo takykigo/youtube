@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>日本のガソリン価格：時差のパラドックスを解明</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+body {
+    background-color: #F3F4F6;
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+    color: #1E3A8A;
+}
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 350px;
+    max-height: 400px;
+}
+@media (max-width: 768px) {
+    .chart-container {
+        height: 280px;
+    }
+}
+.glass-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 12px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-top: 4px solid #EA580C;
+}
+.glass-card-teal {
+    border-top-color: #0D9488;
+}
+.glass-card-blue {
+    border-top-color: #1E3A8A;
+}
+.process-box {
+    background: white;
+    border: 2px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    position: relative;
+    flex: 1;
+    min-width: 150px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+.process-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #9CA3AF;
+    padding: 0 0.5rem;
+}
+.stat-value {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #EA580C;
+    line-height: 1.2;
+}
+</style>
+</head>
+<body class="antialiased">
+
+<header class="bg-[#1E3A8A] text-white py-12 px-4 shadow-lg relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-full h-full opacity-10" style="background-image: repeating-linear-gradient(45deg, #000 25%, transparent 25%, transparent 75%, #000 75%, #000), repeating-linear-gradient(45deg, #000 25%, #1E3A8A 25%, #1E3A8A 75%, #000 75%, #000); background-position: 0 0, 10px 10px; background-size: 20px 20px;"></div>
+    <div class="container mx-auto max-w-5xl relative z-10">
+        <h1 class="text-3xl md:text-5xl font-extrabold mb-4 tracking-tight leading-tight">ガソリン価格「即時高騰」のカラクリ</h1>
+        <p class="text-lg md:text-xl font-light text-blue-100 max-w-3xl">
+            「中東での戦争直後にWTI原油が急騰すると、日本の店頭価格もすぐ上がる。しかし、今売られているガソリンは数ヶ月前の安い原油から作られているはずでは？」<br>
+            この鋭い疑問への答えを、サプライチェーンの実態と経済学の「再調達原価」の視点から紐解きます。
+        </p>
+    </div>
+</header>
+
+<main class="container mx-auto max-w-5xl p-4 md:p-8 -mt-8 relative z-20">
+
+    <section class="glass-card mb-12">
+        <h2 class="text-2xl font-bold text-[#1E3A8A] mb-6 border-b-2 border-gray-100 pb-2">1. 物理的な流れ：原油がガソリンになるまでのタイムラグ</h2>
+        <p class="text-gray-700 mb-6">
+            ユーザーの直感は物理的には完全に正しいです。中東で採掘された原油が日本のガソリンスタンドに並ぶまでには、通常<strong>約45日〜60日</strong>のタイムラグが存在します。
+        </p>
+        
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4 bg-gray-50 p-6 rounded-lg">
+            <div class="process-box border-l-4 border-l-[#1E3A8A]">
+                <div class="text-3xl mb-2">🛢️</div>
+                <div class="font-bold text-gray-800">中東での積地</div>
+                <div class="text-sm text-gray-500 mt-1">原油の購入・積込</div>
+                <div class="mt-2 text-xs font-semibold text-[#1E3A8A] bg-blue-100 py-1 rounded">Day 1</div>
+            </div>
+            
+            <div class="process-arrow rotate-90 md:rotate-0">➡️</div>
+            
+            <div class="process-box border-l-4 border-l-[#0D9488]">
+                <div class="text-3xl mb-2">🚢</div>
+                <div class="font-bold text-gray-800">海上輸送</div>
+                <div class="text-sm text-gray-500 mt-1">タンカーで日本へ</div>
+                <div class="mt-2 text-xs font-semibold text-[#0D9488] bg-teal-100 py-1 rounded">約20〜30日間</div>
+            </div>
+            
+            <div class="process-arrow rotate-90 md:rotate-0">➡️</div>
+            
+            <div class="process-box border-l-4 border-l-[#D97706]">
+                <div class="text-3xl mb-2">🏭</div>
+                <div class="font-bold text-gray-800">国内精製・備蓄</div>
+                <div class="text-sm text-gray-500 mt-1">製油所でガソリンへ</div>
+                <div class="mt-2 text-xs font-semibold text-[#D97706] bg-yellow-100 py-1 rounded">約10〜20日間</div>
+            </div>
+            
+            <div class="process-arrow rotate-90 md:rotate-0">➡️</div>
+            
+            <div class="process-box border-l-4 border-l-[#EA580C]">
+                <div class="text-3xl mb-2">⛽</div>
+                <div class="font-bold text-gray-800">SS店頭販売</div>
+                <div class="text-sm text-gray-500 mt-1">消費者へ給油</div>
+                <div class="mt-2 text-xs font-semibold text-[#EA580C] bg-orange-100 py-1 rounded">Day 45〜60</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <section class="glass-card glass-card-teal md:col-span-1 flex flex-col justify-center items-center text-center">
+            <h2 class="text-xl font-bold text-[#1E3A8A] mb-4">矛盾の核心：なぜ待たないのか？</h2>
+            <div class="text-6xl mb-4">💡</div>
+            <p class="text-gray-700 text-left">
+                物理的な在庫は「過去の安い原油」ですが、元売り会社やガソリンスタンドは<strong>「再調達原価（Replacement Cost）」</strong>を基準に価格を決定します。
+            </p>
+        </section>
+
+        <section class="glass-card md:col-span-1">
+            <h2 class="text-xl font-bold text-[#1E3A8A] mb-4">再調達原価とは？</h2>
+            <div class="bg-orange-50 p-4 rounded-lg border border-orange-200">
+                <p class="text-sm text-gray-800 mb-3">
+                    もし「過去の安い仕入れ値」に合わせて安く売り続けた場合、タンクが空になった時に「現在高騰している原油」を高い値段で買い直さなければなりません。
+                </p>
+                <div class="flex items-center gap-4 text-sm font-bold text-[#EA580C]">
+                    <div>販売益 ＜ 次の仕入コスト</div>
+                    <div>➡️</div>
+                    <div>事業の赤字・倒産</div>
+                </div>
+                <p class="text-sm text-gray-800 mt-3">
+                    事業を継続するためには、常に<strong>「次に仕入れる時のコスト」</strong>で現在の販売価格を設定する必要があるのです。
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <section class="glass-card mb-12">
+        <h2 class="text-2xl font-bold text-[#1E3A8A] mb-2 border-b-2 border-gray-100 pb-2">2. 価格決定の推移：スポット価格との連動性</h2>
+        <p class="text-gray-700 mb-6">
+            以下のグラフは、中東危機などの有事が発生した際の「原油先物価格（WTI等）」「実際の在庫原価」「店頭販売価格」のシミュレーションです。店頭価格が物理的な在庫コストではなく、先物市場に即座に連動することが分かります。
+        </p>
+        
+        <div class="chart-container">
+            <canvas id="correlationChart"></canvas>
+        </div>
+        
+        <p class="text-sm text-gray-500 mt-4 text-center">
+            ※データはメカニズムを説明するための概念的なシミュレーション値です。
+        </p>
+    </section>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <section class="glass-card glass-card-blue md:col-span-1">
+            <h2 class="text-xl font-bold text-[#1E3A8A] mb-4">3. ガソリン価格の内訳構成</h2>
+            <p class="text-gray-700 text-sm mb-4">
+                原油価格が2倍になっても、ガソリン価格が2倍にならない理由は税金にあります。価格の約半分は固定の税金が占めています。
+            </p>
+            <div class="chart-container" style="height: 280px;">
+                <canvas id="breakdownChart"></canvas>
+            </div>
+        </section>
+
+        <section class="glass-card glass-card-teal md:col-span-1">
+            <h2 class="text-xl font-bold text-[#1E3A8A] mb-4">4. 激変緩和措置（補助金）の役割</h2>
+            <p class="text-gray-700 text-sm mb-4">
+                日本政府は原油高騰時、元売り会社に対して補助金を支給し、卸価格を抑制します。これにより、完全な市場価格への連動を防いでいます。
+            </p>
+            <div class="chart-container" style="height: 280px;">
+                <canvas id="subsidyChart"></canvas>
+            </div>
+        </section>
+    </div>
+
+    <section class="bg-[#1E3A8A] text-white p-8 rounded-xl shadow-lg mb-8">
+        <h2 class="text-2xl font-bold mb-4 text-orange-400">結論まとめ</h2>
+        <ul class="space-y-3 text-lg font-light text-blue-50">
+            <li class="flex items-start">
+                <span class="mr-3 text-orange-400">✓</span>
+                <span>ガソリンが物理的に日本に届くには約2ヶ月のタイムラグがある。</span>
+            </li>
+            <li class="flex items-start">
+                <span class="mr-3 text-orange-400">✓</span>
+                <span>しかし価格は<strong>「再調達原価（次に仕入れるコスト）」</strong>主義により、世界の先物相場に即座に連動する。</span>
+            </li>
+            <li class="flex items-start">
+                <span class="mr-3 text-orange-400">✓</span>
+                <span>安値で売り続けると、高騰した次の原油を買い戻せなくなり倒産リスクが生じるため、これは正常な経済行動である。</span>
+            </li>
+            <li class="flex items-start">
+                <span class="mr-3 text-orange-400">✓</span>
+                <span>国内では、半額を占める「税金」と政府の「補助金」システムが、急激なショックに対するクッションとなっている。</span>
+            </li>
+        </ul>
+    </section>
+
+</main>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    
+    function wrapLabel(text, maxLength) {
+        if (text.length <= maxLength) return text;
+        const words = text.split(/(?<=[、・])/);
+        let lines = [];
+        let currentLine = '';
+        
+        words.forEach(word => {
+            if ((currentLine + word).length > maxLength && currentLine !== '') {
+                lines.push(currentLine);
+                currentLine = word;
+            } else {
+                currentLine += word;
+            }
+        });
+        if (currentLine) {
+            lines.push(currentLine);
+        }
+        return lines.length > 1 ? lines : lines[0];
+    }
+
+    const commonTooltipConfig = {
+        title: function(tooltipItems) {
+            const item = tooltipItems[0];
+            let label = item.chart.data.labels[item.dataIndex];
+            if (Array.isArray(label)) {
+                return label.join(' ');
+            } else {
+                return label;
+            }
+        }
+    };
+
+    Chart.defaults.font.family = "'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif";
+    Chart.defaults.color = '#4B5563';
+
+    const lineCtx = document.getElementById('correlationChart').getContext('2d');
+    
+    const weeks = ['Week 1', 'Week 2', '有事発生(Week3)', 'Week 4', 'Week 5', 'Week 6', 'Week 7(到着)'];
+    const wrappedWeeks = weeks.map(w => wrapLabel(w, 16));
+
+    new Chart(lineCtx, {
+        type: 'line',
+        data: {
+            labels: wrappedWeeks,
+            datasets: [
+                {
+                    label: wrapLabel('原油先物価格インデックス', 16),
+                    data: [100, 102, 140, 135, 138, 130, 125],
+                    borderColor: '#EA580C',
+                    backgroundColor: 'rgba(234, 88, 12, 0.1)',
+                    borderWidth: 3,
+                    tension: 0.3,
+                    fill: false,
+                    pointRadius: 5
+                },
+                {
+                    label: wrapLabel('国内店頭価格インデックス', 16),
+                    data: [100, 101, 125, 122, 124, 120, 118],
+                    borderColor: '#0D9488',
+                    backgroundColor: 'rgba(13, 148, 136, 0.1)',
+                    borderWidth: 3,
+                    tension: 0.3,
+                    fill: false,
+                    pointRadius: 5
+                },
+                {
+                    label: wrapLabel('物理的な在庫の原価インデックス', 16),
+                    data: [98, 99, 100, 102, 101, 103, 135],
+                    borderColor: '#9CA3AF',
+                    borderDash: [5, 5],
+                    borderWidth: 2,
+                    tension: 0.3,
+                    fill: false,
+                    pointStyle: 'rect',
+                    pointRadius: 4
+                }
+            ]
+        },
+        options: {
+            maintainAspectRatio: false,
+            responsive: true,
+            plugins: {
+                tooltip: {
+                    callbacks: commonTooltipConfig
+                },
+                legend: {
+                    position: 'top',
+                    labels: {
+                        usePointStyle: true,
+                        padding: 20
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: false,
+                    title: {
+                        display: true,
+                        text: '価格水準 (基準=100)'
+                    }
+                }
+            }
+        }
+    });
+
+    const breakdownCtx = document.getElementById('breakdownChart').getContext('2d');
+    
+    const breakdownLabels = [
+        '原油調達・精製・流通費等',
+        '揮発油税・地方揮発油税',
+        '石油石炭税・温暖化対策税',
+        '消費税 (10%)'
+    ];
+    const wrappedBreakdownLabels = breakdownLabels.map(l => wrapLabel(l, 16));
+
+    new Chart(breakdownCtx, {
+        type: 'doughnut',
+        data: {
+            labels: wrappedBreakdownLabels,
+            datasets: [{
+                data: [80.0, 53.8, 2.8, 16.0], 
+                backgroundColor: [
+                    '#1E3A8A', 
+                    '#EA580C', 
+                    '#F59E0B', 
+                    '#0D9488'  
+                ],
+                borderWidth: 2,
+                borderColor: '#ffffff'
+            }]
+        },
+        options: {
+            maintainAspectRatio: false,
+            responsive: true,
+            cutout: '60%',
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        ...commonTooltipConfig,
+                        label: function(context) {
+                            return ' 約 ' + context.parsed + ' 円 / リットル';
+                        }
+                    }
+                },
+                legend: {
+                    position: 'right',
+                    labels: {
+                        boxWidth: 15
+                    }
+                }
+            }
+        }
+    });
+
+    const subsidyCtx = document.getElementById('subsidyChart').getContext('2d');
+    const subsidyLabels = ['Week 1', '有事発生(Week2)', 'Week 3', 'Week 4'];
+    const wrappedSubsidyLabels = subsidyLabels.map(l => wrapLabel(l, 16));
+
+    new Chart(subsidyCtx, {
+        type: 'bar',
+        data: {
+            labels: wrappedSubsidyLabels,
+            datasets: [
+                {
+                    label: wrapLabel('実際の店頭販売価格', 16),
+                    data: [175, 185, 178, 175],
+                    backgroundColor: '#0D9488',
+                },
+                {
+                    label: wrapLabel('政府補助金による抑制分', 16),
+                    data: [15, 15, 30, 35],
+                    backgroundColor: 'rgba(234, 88, 12, 0.6)',
+                }
+            ]
+        },
+        options: {
+            maintainAspectRatio: false,
+            responsive: true,
+            scales: {
+                x: {
+                    stacked: true,
+                },
+                y: {
+                    stacked: true,
+                    min: 100,
+                    title: {
+                        display: true,
+                        text: '価格 (円/L)'
+                    }
+                }
+            },
+            plugins: {
+                tooltip: {
+                    callbacks: commonTooltipConfig
+                },
+                legend: {
+                    position: 'bottom'
+                }
+            }
+        }
+    });
+});
+</script>
+</body>
+</html>
