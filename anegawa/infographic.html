@@ -1,0 +1,789 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>姉川の戦い：激動の戦国パラダイムシフト</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<style>
+
+body {
+
+    font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+
+    background-color: #F8FAFC;
+
+    color: #1E293B;
+
+}
+
+.chart-container {
+
+    position: relative;
+
+    width: 100%;
+
+    max-width: 700px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+    height: 350px;
+
+    max-height: 400px;
+
+}
+
+.timeline-container {
+
+    position: relative;
+
+    padding-left: 2rem;
+
+    border-left: 4px solid #E63946;
+
+}
+
+.timeline-item::before {
+
+    content: '●';
+
+    position: absolute;
+
+    left: -2.4rem;
+
+    color: #E63946;
+
+    font-size: 1.5rem;
+
+    line-height: 1;
+
+}
+
+.card-shadow {
+
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+}
+
+@media (max-width: 640px) {
+
+    .chart-container {
+
+        height: 250px;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+<body class="antialiased">
+
+
+
+<!-- Palette: Sengoku Vibrant (Crimson #E63946, Navy #1D3557, Gold #F4A261, Teal #2A9D8F, Light Cream #F8FAFC) -->
+
+<!-- NO SVG and NO MERMAID JS were used in this output. -->
+
+<!-- Narrative Plan: 1. Introduction (Context of Oda's march to Kyoto), 2. Factions & Leaders (Grid layout), 3. Troop Comparisons (Bar Chart), 4. Timeline (Vertical CSS Timeline), 5. Key Locations (Cards), 6. Casualties (Doughnut Chart), 7. Aftermath & Political Impact (Text & List). -->
+
+
+
+<header class="bg-[#1D3557] text-white py-16 px-6 text-center border-b-8 border-[#E63946]">
+
+    <div class="max-w-4xl mx-auto">
+
+        <p class="text-[#F4A261] font-bold tracking-widest mb-2">元亀元年（1570年）6月28日</p>
+
+        <h1 class="text-4xl md:text-6xl font-extrabold mb-6 leading-tight">姉川の戦い</h1>
+
+        <p class="text-lg md:text-xl text-gray-200 leading-relaxed">
+
+            織田信長・徳川家康の覇権と、浅井長政・朝倉義景の意地が激突した近江国の決戦。<br>
+
+            戦国時代の勢力図を塗り替え、「信長包囲網」へと繋がる歴史の転換点をデータと図解で紐解く。
+
+        </p>
+
+    </div>
+
+</header>
+
+
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-16">
+
+
+
+    <section class="bg-white rounded-2xl card-shadow p-8 border-t-4 border-[#2A9D8F]">
+
+        <h2 class="text-3xl font-bold text-[#1D3557] mb-6 flex items-center">
+
+            <span class="text-4xl mr-3">📜</span> 戦争の背景と政治状況
+
+        </h2>
+
+        <p class="text-gray-700 text-lg leading-relaxed mb-6">
+
+            1568年、織田信長は足利義昭を奉じて上洛を果たし、事実上の天下人としての地位を固めつつありました（背後には正親町天皇の権威が存在）。しかし、越前の名門・朝倉義景は信長の上洛命令を黙殺。信長は徳川家康と共に越前討伐へと動きます。
+
+            ここで予期せぬ事態が発生します。信長の妹・お市の方を娶り、同盟関係にあった北近江の浅井長政が、古くからの盟友である朝倉氏との関係を重んじ、織田軍の背後を突いたのです（金ヶ崎の退き口）。命からがら京都へ逃げ帰った信長は、体制を立て直し、浅井・朝倉連合軍への報復と近江平定のために再び出陣します。
+
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 bg-[#F8FAFC] p-6 rounded-xl">
+
+            <div>
+
+                <h3 class="font-bold text-[#E63946] text-xl mb-3">織田・足利の連携（破綻前夜）</h3>
+
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+
+                    <li>足利義昭（第15代将軍）：信長の武力を背景に将軍就任</li>
+
+                    <li>正親町天皇：信長に皇室領の回復を期待</li>
+
+                    <li>徳川家康：東の憂い（武田等）に備えつつ信長を強力に支援</li>
+
+                </ul>
+
+            </div>
+
+            <div>
+
+                <h3 class="font-bold text-[#1D3557] text-xl mb-3">浅井・朝倉の思惑</h3>
+
+                <ul class="list-disc list-inside text-gray-700 space-y-2">
+
+                    <li>朝倉義景：名門の誇りから新興の信長に従属することを拒否</li>
+
+                    <li>浅井長政：織田との婚姻同盟より、朝倉への長年の恩義と地政学的安全を優先</li>
+
+                    <li>反信長勢力（比叡山など）：旧体制を脅かす信長への警戒感</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+        <div class="bg-white rounded-2xl card-shadow p-8 border-t-4 border-[#E63946]">
+
+            <h2 class="text-2xl font-bold text-[#1D3557] mb-6 flex items-center">
+
+                <span class="text-3xl mr-3">⚔️</span> 参戦兵力比較
+
+            </h2>
+
+            <p class="text-gray-600 mb-6">
+
+                織田・徳川連合軍は圧倒的な兵力で近江へ侵攻。対する浅井・朝倉軍は、地の利と結束力でこれを迎え撃ちました。徳川軍は少数ながら精鋭として知られ、戦局を大きく左右することになります。
+
+            </p>
+
+            <div class="chart-container">
+
+                <canvas id="forcesChart"></canvas>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="bg-white rounded-2xl card-shadow p-8 border-t-4 border-[#F4A261]">
+
+            <h2 class="text-2xl font-bold text-[#1D3557] mb-6 flex items-center">
+
+                <span class="text-3xl mr-3">👑</span> 主要な武将と布陣
+
+            </h2>
+
+            <div class="space-y-6">
+
+                <div class="bg-red-50 p-4 rounded-lg border-l-4 border-[#E63946]">
+
+                    <h3 class="font-bold text-lg text-red-800 mb-2">織田・徳川連合軍 (姉川南岸)</h3>
+
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+
+                        <div>
+
+                            <span class="font-bold">総大将：</span> 織田信長<br>
+
+                            <span class="text-gray-600">本陣：竜ヶ鼻</span>
+
+                        </div>
+
+                        <div>
+
+                            <span class="font-bold">同盟軍：</span> 徳川家康<br>
+
+                            <span class="text-gray-600">配置：右翼（対朝倉）</span>
+
+                        </div>
+
+                        <div class="col-span-2">
+
+                            <span class="font-bold">主力部隊：</span> 柴田勝家、羽柴秀吉、明智光秀、酒井忠次、本多忠勝
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-[#1D3557]">
+
+                    <h3 class="font-bold text-lg text-blue-800 mb-2">浅井・朝倉連合軍 (姉川北岸)</h3>
+
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+
+                        <div>
+
+                            <span class="font-bold">浅井軍：</span> 浅井長政<br>
+
+                            <span class="text-gray-600">本陣：野村 / 配置：右翼（対織田）</span>
+
+                        </div>
+
+                        <div>
+
+                            <span class="font-bold">朝倉軍：</span> 朝倉景健（名代）<br>
+
+                            <span class="text-gray-600">本陣：三田村 / 配置：左翼（対徳川）</span>
+
+                        </div>
+
+                        <div class="col-span-2">
+
+                            <span class="font-bold">主力部隊：</span> 磯野員昌、真柄直隆（豪傑として知られる）
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="bg-white rounded-2xl card-shadow p-8">
+
+        <h2 class="text-3xl font-bold text-[#1D3557] mb-8 text-center">
+
+            <span class="text-4xl mr-3">⏳</span> 戦いへのタイムライン
+
+        </h2>
+
+        <div class="max-w-3xl mx-auto timeline-container space-y-8">
+
+            <div class="timeline-item relative">
+
+                <h3 class="font-bold text-xl text-[#E63946]">1570年 4月</h3>
+
+                <p class="font-semibold text-gray-800 text-lg mt-1">越前侵攻と金ヶ崎の退き口</p>
+
+                <p class="text-gray-600 mt-2">信長が朝倉討伐のため越前へ出兵。進軍中、浅井長政離反の報を受け、信長は殿（しんがり）を木下藤吉郎（秀吉）らに任せ、京都へ命からがら撤退する。</p>
+
+            </div>
+
+            <div class="timeline-item relative">
+
+                <h3 class="font-bold text-xl text-[#E63946]">6月19日</h3>
+
+                <p class="font-semibold text-gray-800 text-lg mt-1">織田軍、近江へ再出兵</p>
+
+                <p class="text-gray-600 mt-2">体制を立て直した信長は、岐阜城から再び出陣。浅井氏の居城・小谷城の城下町を焼き討ちする。</p>
+
+            </div>
+
+            <div class="timeline-item relative">
+
+                <h3 class="font-bold text-xl text-[#E63946]">6月21日</h3>
+
+                <p class="font-semibold text-gray-800 text-lg mt-1">横山城包囲</p>
+
+                <p class="text-gray-600 mt-2">織田軍は、浅井氏の重要拠点である横山城（小谷城と美濃を結ぶ連絡線）を包囲。浅井軍を平地に誘い出す作戦をとる。</p>
+
+            </div>
+
+            <div class="timeline-item relative">
+
+                <h3 class="font-bold text-xl text-[#E63946]">6月27日</h3>
+
+                <p class="font-semibold text-gray-800 text-lg mt-1">連合軍の対陣</p>
+
+                <p class="text-gray-600 mt-2">横山城救援のため、浅井長政と朝倉軍（景健）が姉川北岸に進出。織田・徳川軍も包囲の兵を残し、姉川南岸へ布陣。</p>
+
+            </div>
+
+            <div class="timeline-item relative">
+
+                <h3 class="font-bold text-xl text-[#E63946]">6月28日 早朝</h3>
+
+                <p class="font-semibold text-gray-800 text-lg mt-1">姉川の戦い 開戦</p>
+
+                <p class="text-gray-600 mt-2">浅井軍先鋒・磯野員昌が織田軍に猛攻をかけ、織田軍の陣立てが次々と破られる（員昌の十一段崩し）。一方、徳川軍は朝倉軍と激突。徳川軍の榊原康政が側面から朝倉軍を奇襲し、朝倉軍が崩れ始める。朝倉軍の敗走を機に、織田軍も反撃に転じ、浅井軍も総崩れとなって決着。</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <div class="bg-white rounded-2xl card-shadow p-8 border-t-4 border-[#2A9D8F]">
+
+            <h2 class="text-2xl font-bold text-[#1D3557] mb-6 flex items-center">
+
+                <span class="text-3xl mr-3">🏰</span> 関連する軍事拠点・城
+
+            </h2>
+
+            <div class="grid grid-cols-1 gap-4">
+
+                <div class="border border-gray-200 p-4 rounded-lg bg-gray-50">
+
+                    <h4 class="font-bold text-[#1D3557] text-lg">小谷城 (浅井氏の本城)</h4>
+
+                    <p class="text-sm text-gray-600 mt-1">標高約490mの小谷山に築かれた難攻不落の山城。信長はこの城を直接攻めるのを避け、周辺を制圧する戦術をとった。</p>
+
+                </div>
+
+                <div class="border border-gray-200 p-4 rounded-lg bg-gray-50">
+
+                    <h4 class="font-bold text-[#1D3557] text-lg">横山城 (戦端を開いた砦)</h4>
+
+                    <p class="text-sm text-gray-600 mt-1">小谷城の南方に位置する重要な拠点。信長がここを包囲したことで、浅井軍は城を見捨てるか、野戦に応じるかの選択を迫られた。</p>
+
+                </div>
+
+                <div class="border border-gray-200 p-4 rounded-lg bg-gray-50">
+
+                    <h4 class="font-bold text-[#1D3557] text-lg">姉川 (激戦の舞台)</h4>
+
+                    <p class="text-sm text-gray-600 mt-1">伊吹山地から琵琶湖へ注ぐ河川。この川を挟んで両軍が対峙し、血で川が赤く染まったという伝承が残る。</p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="bg-white rounded-2xl card-shadow p-8 border-t-4 border-[#1D3557]">
+
+            <h2 class="text-2xl font-bold text-[#1D3557] mb-6 flex items-center">
+
+                <span class="text-3xl mr-3">🛡️</span> 両軍の損害状況推計
+
+            </h2>
+
+            <p class="text-gray-600 mb-4">
+
+                激しい白兵戦が繰り広げられ、特に敗れた浅井・朝倉軍は真柄直隆ら多くの有力な武将を失いました。この損害により、両氏の軍事力は大きく削がれました。
+
+            </p>
+
+            <div class="chart-container" style="height: 250px;">
+
+                <canvas id="casualtiesChart"></canvas>
+
+            </div>
+
+            <p class="text-xs text-gray-500 text-center mt-2">※死傷者数は諸説あり、推計値を示しています。</p>
+
+        </div>
+
+    </section>
+
+
+
+    <section class="bg-[#1D3557] text-white rounded-2xl card-shadow p-8 md:p-12">
+
+        <h2 class="text-3xl font-bold mb-6 flex items-center text-[#F4A261]">
+
+            <span class="text-4xl mr-3">🌐</span> 戦後の政治・軍事態勢の変容
+
+        </h2>
+
+        <p class="text-gray-300 text-lg mb-8 leading-relaxed">
+
+            姉川の戦いは織田・徳川方の勝利に終わりましたが、浅井・朝倉氏を完全に滅ぼすには至りませんでした。むしろ、この敗戦が反信長勢力の危機感を煽り、壮大な「信長包囲網」が形成される契機となります。
+
+        </p>
+
+       
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+            <div class="bg-white/10 p-6 rounded-xl border border-white/20">
+
+                <div class="text-3xl mb-3">🔥</div>
+
+                <h3 class="font-bold text-xl mb-2 text-white">浅井・朝倉の抵抗継続</h3>
+
+                <p class="text-sm text-gray-300">
+
+                    小谷城は陥落せず、両氏は比叡山延暦寺と結んでゲリラ的な抵抗（志賀の陣）を展開。信長を数年にわたり近江に釘付けにしました。
+
+                </p>
+
+            </div>
+
+            <div class="bg-white/10 p-6 rounded-xl border border-white/20">
+
+                <div class="text-3xl mb-3">🕸️</div>
+
+                <h3 class="font-bold text-xl mb-2 text-white">第一次信長包囲網の形成</h3>
+
+                <p class="text-sm text-gray-300">
+
+                    足利義昭の暗躍もあり、石山本願寺（一向一揆）、武田信玄、毛利氏などが次々と反信長の兵を挙げ、信長は絶体絶命の危機に陥ります。
+
+                </p>
+
+            </div>
+
+            <div class="bg-white/10 p-6 rounded-xl border border-white/20">
+
+                <div class="text-3xl mb-3">🏯</div>
+
+                <h3 class="font-bold text-xl mb-2 text-white">横山城の確保と秀吉の台頭</h3>
+
+                <p class="text-sm text-gray-300">
+
+                    信長は奪取した横山城に木下藤吉郎（豊臣秀吉）を配置。秀吉は最前線で浅井氏への調略を行い、出世の足がかりを築きました。
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+</main>
+
+
+
+<footer class="bg-gray-800 text-gray-400 py-8 text-center mt-12">
+
+    <p>&copy; 2026 Historical Infographics SPA - Sengoku Period Data Visualization</p>
+
+</footer>
+
+
+
+<script>
+
+    function wrapLabels(labels, maxChars = 16) {
+
+        return labels.map(label => {
+
+            if (label.length <= maxChars) return label;
+
+            const words = label.split(' ');
+
+            if (words.length === 1) {
+
+                let chunks = [];
+
+                for (let i = 0; i < label.length; i += maxChars) {
+
+                    chunks.push(label.substring(i, i + maxChars));
+
+                }
+
+                return chunks;
+
+            }
+
+           
+
+            let lines = [];
+
+            let currentLine = '';
+
+            words.forEach(word => {
+
+                if ((currentLine + word).length > maxChars) {
+
+                    if (currentLine) lines.push(currentLine.trim());
+
+                    currentLine = word + ' ';
+
+                } else {
+
+                    currentLine += word + ' ';
+
+                }
+
+            });
+
+            if (currentLine) lines.push(currentLine.trim());
+
+            return lines;
+
+        });
+
+    }
+
+
+
+    const rawForcesLabels = ["織田軍 (Oda)", "徳川軍 (Tokugawa)", "浅井軍 (Azai)", "朝倉軍 (Asakura)"];
+
+    const wrappedForcesLabels = wrapLabels(rawForcesLabels);
+
+
+
+    const ctxForces = document.getElementById('forcesChart').getContext('2d');
+
+    new Chart(ctxForces, {
+
+        type: 'bar',
+
+        data: {
+
+            labels: wrappedForcesLabels,
+
+            datasets: [{
+
+                label: '兵力推計 (人)',
+
+                data: [23000, 5000, 8000, 10000],
+
+                backgroundColor: [
+
+                    '#E63946',
+
+                    '#F4A261',
+
+                    '#1D3557',
+
+                    '#2A9D8F'
+
+                ],
+
+                borderWidth: 0,
+
+                borderRadius: 4
+
+            }]
+
+        },
+
+        options: {
+
+            responsive: true,
+
+            maintainAspectRatio: false,
+
+            plugins: {
+
+                legend: {
+
+                    display: false
+
+                },
+
+                tooltip: {
+
+                    callbacks: {
+
+                        title: function(tooltipItems) {
+
+                            const item = tooltipItems[0];
+
+                            let label = item.chart.data.labels[item.dataIndex];
+
+                            if (Array.isArray(label)) {
+
+                              return label.join(' ');
+
+                            } else {
+
+                              return label;
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            },
+
+            scales: {
+
+                y: {
+
+                    beginAtZero: true,
+
+                    grid: {
+
+                        color: '#E2E8F0'
+
+                    },
+
+                    ticks: {
+
+                        stepSize: 5000
+
+                    }
+
+                },
+
+                x: {
+
+                    grid: {
+
+                        display: false
+
+                    }
+
+                }
+
+            }
+
+        }
+
+    });
+
+
+
+    const rawCasualtiesLabels = ["浅井・朝倉軍 (討死・負傷)", "織田・徳川軍 (討死・負傷)"];
+
+    const wrappedCasualtiesLabels = wrapLabels(rawCasualtiesLabels);
+
+
+
+    const ctxCasualties = document.getElementById('casualtiesChart').getContext('2d');
+
+    new Chart(ctxCasualties, {
+
+        type: 'doughnut',
+
+        data: {
+
+            labels: wrappedCasualtiesLabels,
+
+            datasets: [{
+
+                data: [1700, 800],
+
+                backgroundColor: [
+
+                    '#1D3557',
+
+                    '#E63946'
+
+                ],
+
+                borderWidth: 2,
+
+                borderColor: '#ffffff',
+
+                hoverOffset: 4
+
+            }]
+
+        },
+
+        options: {
+
+            responsive: true,
+
+            maintainAspectRatio: false,
+
+            plugins: {
+
+                legend: {
+
+                    position: 'right',
+
+                    labels: {
+
+                        font: {
+
+                            size: 12
+
+                        }
+
+                    }
+
+                },
+
+                tooltip: {
+
+                    callbacks: {
+
+                        title: function(tooltipItems) {
+
+                            const item = tooltipItems[0];
+
+                            let label = item.chart.data.labels[item.dataIndex];
+
+                            if (Array.isArray(label)) {
+
+                              return label.join(' ');
+
+                            } else {
+
+                              return label;
+
+                            }
+
+                        }
+
+                    }
+
+                }
+
+            },
+
+            cutout: '60%'
+
+        }
+
+    });
+
+</script>
+
+</body>
+
+</html>
