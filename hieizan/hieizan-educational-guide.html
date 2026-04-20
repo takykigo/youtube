@@ -12,156 +12,169 @@
             font-family: 'Noto Sans JP', sans-serif;
             background-color: #fcfaf2;
             color: #262626;
-            line-height: 2.0;
+            line-height: 2.1;
             margin: 0;
             padding: 0;
         }
 
-        /* 記事全体の中央配置設定 */
-        .container-wrapper {
+        .outer-wrapper {
             display: flex;
             justify-content: center;
             width: 100%;
-            padding: 40px 0;
+            padding: 60px 0; /* 上下の余白を確保 */
         }
 
-        .content-main {
-            width: 95%;
-            max-width: 860px;
+        .main-container {
+            width: 92%;
+            max-width: 840px;
             background-color: #ffffff;
-            padding: 40px 30px;
-            box-shadow: 0 4px 25px rgba(0,0,0,0.06);
-            border-radius: 2px;
+            padding: 40px 25px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.08);
+            border-radius: 4px;
         }
 
         @media (min-width: 768px) {
-            .content-main { padding: 60px 80px; }
+            .main-container { padding: 70px 90px; }
         }
 
         h1, h2, h3, h4, h5 {
             font-family: 'Shippori Mincho', serif;
             color: #991b1b;
             text-align: center;
-            margin-top: 0;
         }
 
-        .section-h {
+        .section-title {
             text-align: left;
-            border-left: 5px solid #991b1b;
-            padding-left: 15px;
-            margin-top: 50px;
-            margin-bottom: 25px;
-            font-size: 1.5rem;
+            border-left: 6px solid #991b1b;
+            padding-left: 18px;
+            margin: 50px 0 25px 0;
+            font-size: 1.6rem;
+            font-weight: bold;
         }
 
-        .step-label {
+        .step-badge {
             display: inline-block;
             background-color: #991b1b;
             color: white;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
             font-weight: bold;
-            padding: 2px 12px;
+            padding: 3px 14px;
             margin-bottom: 10px;
         }
 
-        .info-table {
+        .data-table {
             width: 100%;
             border-collapse: collapse;
-            margin: 30px 0;
-            font-size: 0.9rem;
+            margin: 35px 0;
+            background-color: #ffffff;
         }
 
-        .info-table th {
-            background-color: #f9fafb;
-            border: 1px solid #d1d5db;
-            padding: 12px;
+        .data-table th {
+            background-color: #f3f4f6;
+            border: 2px solid #d1d5db;
+            padding: 14px;
             color: #991b1b;
+            font-weight: bold;
         }
 
-        .info-table td {
-            border: 1px solid #d1d5db;
-            padding: 12px;
+        .data-table td {
+            border: 2px solid #d1d5db;
+            padding: 14px;
             vertical-align: top;
         }
 
-        .timeline-wrap {
+        .timeline-container {
             background-color: #fef2f2;
-            padding: 25px;
-            margin: 30px 0;
-            border-radius: 4px;
+            padding: 30px;
+            margin: 35px 0;
+            border-radius: 6px;
+            border: 1px solid #fee2e2;
         }
 
-        .timeline-entry {
+        .timeline-row {
             display: flex;
             border-bottom: 1px solid #fca5a5;
-            padding: 10px 0;
+            padding: 12px 0;
         }
 
-        .timeline-entry:last-child { border-bottom: none; }
+        .timeline-row:last-child { border-bottom: none; }
 
-        .time-label {
+        .time-mark {
             font-weight: bold;
             color: #991b1b;
-            min-width: 110px;
+            min-width: 120px;
         }
 
-        .footer-text {
+        .emphasis {
+            color: #991b1b;
+            font-weight: 800;
+        }
+
+        .conclusion-section {
+            background-color: #1e293b;
+            color: #f8fafc;
+            padding: 40px;
             margin-top: 60px;
+            border-radius: 6px;
+        }
+
+        .footer-note {
+            margin-top: 80px;
             text-align: center;
-            font-size: 0.8rem;
-            color: #6b7280;
+            font-size: 0.85rem;
+            color: #9ca3af;
             border-top: 1px solid #e5e7eb;
-            padding-top: 20px;
+            padding-top: 30px;
         }
     </style>
 </head>
 <body>
 
-<div class="container-wrapper">
-    <article class="content-main">
+<div class="outer-wrapper">
+    <article class="main-container">
         
-        <header style="margin-bottom: 60px;">
-            <h1 style="font-size: 2rem; line-height: 1.4; margin-bottom: 20px;">
+        <header style="margin-bottom: 70px;">
+            <h1 style="font-size: 2.2rem; line-height: 1.3; margin-bottom: 25px;">
                 比叡山焼き討ちの真実：<br>
                 信長が挑んだ「中世の巨大システム」との決別
             </h1>
-            <div style="width: 60px; h-0.5; background-color: #991b1b; margin: 0 auto;"></div>
+            <div style="width: 80px; height: 3px; background-color: #991b1b; margin: 0 auto;"></div>
         </header>
 
         <section>
-            <div class="step-label">1. はじめに</div>
-            <h2 class="section-h" style="border-left: none; padding-left: 0; text-align: center; font-size: 1.4rem;">なぜ「お寺」が戦国最強の敵だったのか？</h2>
+            <div class="step-badge">1. はじめに</div>
+            <h2 class="section-title" style="border-left: none; padding-left: 0; text-align: center; font-size: 1.5rem;">なぜ「お寺」が戦国最強の敵だったのか？</h2>
             <p>歴史の深淵へようこそ。学びを始める前に、まずはあなたの現代的な感覚を一度「リセット」してください。現代の私たちにとって「お寺」は平穏と祈りの場ですが、戦国時代においてその認識は通用しません。ここであなたに問いかけます。<strong>「なぜ織田信長は、神仏の加護を恐れずに、日本仏教の母山である比叡山を焼かねばならなかったのか？」</strong></p>
-            <p style="margin-top: 20px;">比叡山延暦寺は、単なる宗教施設ではありませんでした。独自の軍隊を持ち、巨大な経済圏を支配し、国家中枢に根を張る権威を備えた、いわば<strong>「国家の中の国家」</strong>でした。信長にとってこの戦いは、信仰との対立ではなく、全く異なる「社会のOS（オペレーティング・システム）」同士の激突だったのです。信長が挑んだのは、一山のお寺ではなく、数百年続いてきた「中世」という巨大なシステムそのものでした。これから、延暦寺が持っていた「3つの恐るべき顔」を解剖し、歴史が塗り替えられた瞬間の真実を紐解いていきましょう。</p>
+            <p style="margin-top: 25px;">比叡山延暦寺は、単なる宗教施設ではありませんでした。独自の軍隊を持ち、巨大な経済圏を支配し、国家中枢に根を張る権威を備えた、いわば<strong>「国家の中の国家」</strong>でした。信長にとってこの戦いは、信仰との対立ではなく、全く異なる「社会のOS（オペレーティング・システム）」同士の激突だったのです。信長が挑んだのは、一山のお寺ではなく、数百年続いてきた「中世」という巨大なシステムそのものでした。これから、延暦寺が持っていた「3つの恐るべき顔」を解剖し、歴史が塗り替えられた瞬間の真実を紐解いていきましょう。</p>
         </section>
 
         <section>
-            <div class="step-label">2. 正体解剖</div>
-            <h2 class="section-h">比叡山延暦寺の正体：巨大な「軍事・経済帝国」の解剖</h2>
+            <div class="step-badge">2. 正体解剖</div>
+            <h2 class="section-title">比叡山延暦寺の正体：巨大な「軍事・経済帝国」の解剖</h2>
             <p>当時の比叡山は、現代で例えるなら「巨大財閥」と「軍事組織」が一体化した怪物でした。その支配力は、現代人の想像を絶する3つの側面で構成されていました。</p>
-            <ul style="list-style-type: disc; padding-left: 20px; margin-top: 20px;">
-                <li style="margin-bottom: 15px;"><strong>宗教的権威：</strong> 天台座主（トップ）に天皇の弟である<strong>覚恕法親王</strong>が座るなど、皇室・朝廷と血縁・政治の両面で密接に結びついていました。</li>
-                <li style="margin-bottom: 15px;"><strong>軍事力（僧兵）：</strong> 戦国大名に匹敵する<strong>約4,000人</strong>の武装集団を擁し、地形を活かした防御力と「神仏の罰」という心理的障壁を武器に、時の権力者を幾度も屈服させてきました。</li>
-                <li style="margin-bottom: 15px;"><strong>経済 Lionel：</strong> 近江の関所を支配して通行料を奪い、<strong>「土倉（どそう）」</strong>と呼ばれる金融業を展開。武装した取立人による強制的な債権回収（借金漬け）を行い、さらには「座」による流通独占権を握る経済帝国でした。</li>
+            <ul style="list-style-type: none; padding-left: 0; margin-top: 25px;">
+                <li style="margin-bottom: 18px; padding-left: 25px; text-indent: -25px;">● <span class="emphasis">宗教的権威:</span> 天台座主（トップ）に天皇の弟である 覚恕法親王 が座るなど、皇室・朝廷と血縁・政治の両面で密接に結びついていました。</li>
+                <li style="margin-bottom: 18px; padding-left: 25px; text-indent: -25px;">● <span class="emphasis">軍事力（僧兵）:</span> 戦国大名に匹敵する 約4,000人 の武装集団を擁し、地形を活かした防御力と「神仏の罰」という心理 kneeling 障壁を武器に、時の権力者を幾度も屈服させてきました。</li>
+                <li style="margin-bottom: 18px; padding-left: 25px; text-indent: -25px;">● <span class="emphasis">経済的独占:</span> 近江の関所を支配して通行料を奪い、<strong>「土倉（どそう）」</strong>と呼ばれる金融業を展開。武装した取立人による強制的な債権回収（借金漬け）を行い、さらには「座」による流通独占権を握る経済帝国でした。</li>
             </ul>
 
-            <table class="info-table">
+            <table class="data-table">
                 <thead>
                     <tr>
-                        <th>対立軸</th>
-                        <th>延暦寺が守る「中世のシステム」</th>
-                        <th>信長が目指す「新秩序」</th>
+                        <th style="width: 20%;">対立軸</th>
+                        <th style="width: 40%;">延暦寺が守る「中世のシステム」</th>
+                        <th style="width: 40%;">信長が目指す「新秩序」</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr>
                         <td style="font-weight: bold; text-align: center;">経済政策</td>
                         <td>関所による通行料、特定商人の独占（座）</td>
-                        <td><strong>楽市楽座</strong>による自由貿易と物流の公有化</td>
+                        <td>楽市楽座 による自由貿易と物流の公有化</td>
                     </tr>
                     <tr>
                         <td style="font-weight: bold; text-align: center;">金融・貨幣</td>
-                        <td><strong>土倉</strong>による暴利と独自の債権回収</td>
+                        <td>土倉 による暴利と独自の債権回収</td>
                         <td><strong>撰銭令（えりぜにれい）</strong>による統一通貨管理</td>
                     </tr>
                     <tr>
@@ -176,70 +189,70 @@
                     </tr>
                 </tbody>
             </table>
+            <p style="text-align: center; font-weight: bold;">この巨大な既得権益の塊こそが、日本を一つの国家として統合しようとする信長にとって、避けては通れない最大の壁だったのです。</p>
         </section>
 
         <section>
-            <div class="step-label">3. 背景分析</div>
-            <h2 class="section-h">衝突へのカウントダウン：信長を「決断」させた戦略的理由</h2>
+            <div class="step-badge">3. 背景分析</div>
+            <h2 class="section-title">衝突へのカウントダウン：信長を「決断」させた戦略的理由</h2>
             <p>信長を焼き討ちという極端な手段に駆り立てたのは、冷徹な戦略的合理性でした。</p>
-            <ol style="padding-left: 20px; margin-top: 20px;">
-                <li style="margin-bottom: 20px;"><strong>志賀の陣の悲劇：</strong> 元亀元年（1570年）、信長の右腕であった森可成が、浅井・朝倉軍との戦いで討死します。敗走する敵軍を比叡山が匿い、信長の引き渡し要求を拒絶したことで、比叡山は「軍事拠点」としての正体を露呈しました。</li>
-                <li style="margin-bottom: 20px;"><strong>地政学的リスク：</strong> 標高848メートルの「天然の要塞」である比叡山は、京都の喉元に位置します。ここを敵対勢力の拠点にされることは、信長にとって背中から常に刃を突きつけられているのと同義でした。</li>
-                <li style="margin-bottom: 20px;"><strong>信長の「最後通牒」：</strong> 攻撃の直前、信長は延暦寺に以下の3つの選択肢を提示しました。
-                    <ul style="list-style-type: circle; padding-left: 20px; margin-top: 10px;">
-                        <li>信長に味方する：奪った寺領を返し、さらなる恩賞を与える。</li>
-                        <li>中立を守る：敵（浅井・朝倉）を山から追い出す。</li>
-                        <li>抵抗する：拒否するならば、根も葉も残さず焼き払う。</li>
+            <ul style="list-style-type: none; padding-left: 0; margin-top: 25px;">
+                <li style="margin-bottom: 25px;"><strong>志賀の陣の悲劇:</strong> 元亀元年（1570年）、信長の右腕であった森可成が、浅井・朝倉軍との戦いで討死します。敗走する敵軍を比叡山が匿い、信長の引き渡し要求を拒絶したことで、比叡山は「軍事拠点」としての正体を露呈しました。</li>
+                <li style="margin-bottom: 25px;"><strong>地政学的リスク:</strong> 標高848メートルの「天然の要塞」である比叡山は、京都の喉元に位置します。ここを敵対勢力の拠点にされることは、信長にとって背中から常に刃を突きつけられているのと同義でした。</li>
+                <li style="margin-bottom: 25px;"><strong>信長の「最後通牒」:</strong> 攻撃の直前、信長は延暦寺に以下の3つの選択肢を提示しました。
+                    <ul style="list-style-type: circle; padding-left: 30px; margin-top: 15px;">
+                        <li>信長に味方する: 奪った寺領を返し、さらなる恩賞を与える。</li>
+                        <li>中立を守る: 敵（浅井・朝倉）を山から追い出す。</li>
+                        <li>抵抗する: 拒否するならば、根も葉も残さず焼き払う。</li>
                     </ul>
                 </li>
-            </ol>
-            <p style="background-color: #fff7ed; padding: 15px; border-radius: 4px; border: 1px solid #fed7aa;">しかし、延暦寺側はこれを拒絶しました。「王城鎮護の比叡山を焼く者など、歴史上存在するはずがない」という、権威への過信が彼らの目を曇らせたのです。交渉は決裂し、ついに対決の朝が来ました。</p>
+            </ul>
+            <p style="background-color: #fffbeb; padding: 20px; border-radius: 4px; border: 1px solid #fde68a; margin-top: 15px;">しかし、延暦寺側はこれを拒絶しました。「王城鎮護の比叡山を焼く者など、歴史上存在するはずがない」という、権威への過信が彼らの目を曇らせたのです。交渉は決裂し、ついに対決の朝が来ました。</p>
         </section>
 
         <section>
-            <div class="step-label">4. 実体調査</div>
-            <h2 class="section-h">元亀2年9月12日：焼き討ちの実行と「明智光秀」の実像</h2>
+            <div class="step-badge">4. 実体調査</div>
+            <h2 class="section-title">元亀2年9月12日：焼き討ちの実行と「明智光秀」の実像</h2>
             <p>元亀2年9月12日、信長は約3万の軍勢で比叡山を完全包囲しました。</p>
-            <div class="timeline-wrap">
-                <div style="font-weight: bold; margin-bottom: 15px; color: #991b1b; border-bottom: 1px solid #991b1b; padding-bottom: 5px;">■ 殲滅戦のタイムライン</div>
-                <div class="timeline-entry"><div class="time-label">9月11日 夜</div><div>明智光秀、丹羽長秀、柴田勝家、木下秀吉らが各登り口を完全に封鎖。</div></div>
-                <div class="timeline-entry"><div class="time-label">9月12日 早朝</div><div>麓の坂本から放火。煙と火によって山頂へ敵を追い込む。</div></div>
-                <div class="timeline-entry"><div class="time-label">9月12日 日中</div><div>根本中堂や山王二十一社を焼き、逃げ惑う人々を逃がさず掃討。</div></div>
-                <div class="timeline-entry"><div class="time-label">9月12日 夕刻</div><div>八王子山で追い詰められた僧侶や住民への大規模な処刑。</div></div>
-                <div class="timeline-entry"><div class="time-label">9月13日以降</div><div>山内では黒煙が4日間立ち上り、徹底した残敵掃討が続けられた。</div></div>
+            <div class="timeline-container">
+                <div style="font-weight: bold; margin-bottom: 15px; color: #991b1b; border-bottom: 2px solid #991b1b; padding-bottom: 5px; display: inline-block;">■ 殲滅戦のタイムライン</div>
+                <div class="timeline-row"><div class="time-mark">9月11日 夜</div><div>明智光秀、丹羽長秀、柴田勝家、木下秀吉らが各登り口を完全に封鎖。</div></div>
+                <div class="timeline-row"><div class="time-mark">9月12日 早朝</div><div>麓の坂本から放火。煙と火によって山頂へ敵を追い込む。</div></div>
+                <div class="timeline-row"><div class="time-mark">9月12日 日中</div><div>根本中堂や山王二十一社を焼き、逃げ惑う人々を逃がさず掃討。</div></div>
+                <div class="timeline-row"><div class="time-mark">9月12日 夕刻</div><div>八王子山で追い詰められた僧侶や住民への大規模な処刑。</div></div>
+                <div class="timeline-row"><div class="time-mark">9月13日以降</div><div>山内では黒煙が4日間立ち上り、徹底した残敵掃討が続けられた。</div></div>
             </div>
-            <p>ここで注目すべきは、<strong>明智光秀</strong>の実像です。「光秀は反対した」という後世の俗説を一次史料が覆しています。焼き討ちの10日前（9月2日付）の和田秀純への書状の中で、光秀は敵対勢力を「なでぎり（皆殺し）」にすべきだと記述しており、冷徹な執行者として機能していました。</p>
-            <p style="margin-top: 15px;">また、考古学的調査（ダンダ坊遺跡）は、この破壊の徹底ぶりを証明しています。出土した大量の鉄砲玉や溶けた瓦だけでなく、<strong>石垣が意図的に崩され、礎石や柱が抜き取られていた</strong>ことが判明しました。これは単なる火災ではなく、再建を物理的に不可能にするための「土木作業としての破壊」だったのです。</p>
-            <p style="margin-top: 15px;">一方で、信長は森可成への恩義から、その墓所がある<strong>聖衆来迎寺</strong>だけは焼き討ちから外すという、合理的な「選別」も行っています。さらに、兵士には略奪を禁じ「ただ打ち捨てにせよ」と命じました。これは富が目的ではなく、<strong>「権威の抹殺」</strong>こそが戦略的目的であったことを裏付けています。</p>
+            <p>ここで注目すべきは、<strong>明智光秀</strong> の実像です。「光秀は反対した」という後世の俗説を一次史料が覆しています。焼き討ちの10日前（9月2日付）の和田秀純への書状の中で、光秀は敵対勢力を「なでぎり（皆殺し）」にすべきだと記述しており、冷徹な執行者として機能していました。また、考古学的調査（ダンダ坊遺跡）は、この破壊の徹底ぶりを証明しています。出土した大量の鉄砲玉や溶けた瓦だけでなく、 石垣が意図的に崩され、礎石や柱が抜き取られていた ことが判明しました。これは単なる火災ではなく、再建を物理的に不可能にするための「土木作業としての破壊」だったのです。</p>
+            <p style="margin-top: 20px;">一方で、信長は森可成への恩義から、その墓所がある 聖衆来迎寺 だけは焼き討ちから外すという、合理的な「選別」も行っています。さらに、兵士には略奪を禁じ「ただ打ち捨てにせよ」と命じました。これは富が目的ではなく、<strong>「権威の抹殺」</strong>こそが戦略的目的であったことを裏付けています。物理的な炎以上の衝撃が、当時の日本全体に走りました。</p>
         </section>
 
         <section>
-            <div class="step-label">5. 影響評価</div>
-            <h2 class="section-h">焼き討ちが変えた日本：中世の終焉と近世への架け橋</h2>
+            <div class="step-badge">5. 影響評価</div>
+            <h2 class="section-title">焼き討ちが変えた日本：中世の終焉と近世への架け橋</h2>
             <p>この事件は、日本社会の構造を根底から作り替える「システム・リブート」となりました。</p>
-            <ul style="list-style-type: none; padding-left: 0; margin-top: 20px;">
-                <li style="margin-bottom: 20px; border-bottom: 1px dashed #d1d5db; padding-bottom: 15px;">
-                    <span style="font-weight: bold; color: #991b1b; display: block; margin-bottom: 5px;">● パワーバランスの劇的変化</span>
-                    朝廷：比叡山という軍事的な盾を失い、信長を唯一のパトロンとする経済的依存関係へ移行。<br>
-                    足利義昭：最大の支持基盤を破壊され、1573年の幕府滅亡へのカウントダウンが開始。<br>
-                    武田信玄：比叡山の天台座主を保護し、信長を「仏敵」として激しく批判。これに対し信長は<strong>「第六天魔王」</strong>を自称し、価値観の戦争へと発展しました。
+            <ul style="list-style-type: none; padding-left: 0; margin-top: 25px;">
+                <li style="margin-bottom: 25px; border-bottom: 1px dashed #cbd5e1; padding-bottom: 20px;">
+                    <span class="emphasis" style="display: block; margin-bottom: 10px;">● パワーバランスの劇的変化</span>
+                    <strong>朝廷:</strong> 比叡山という軍事的な盾を失い、信長を唯一のパトロンとする経済的依存関係へ移行。<br>
+                    <strong>足利義昭:</strong> 最大の支持基盤を破壊され、1573年の幕府滅亡へのカウントダウンが開始。<br>
+                    <strong>武田信玄:</strong> 比叡山の天台座主を保護し、信長を「仏敵」として激しく批判。これに対し信長は<strong>「第六天魔王」</strong>を自称し、価値観の戦争へと発展しました。
                 </li>
                 <li>
-                    <span style="font-weight: bold; color: #991b1b; display: block; margin-bottom: 5px;">● リップル・エフェクト（波及効果）</span>
-                    この事件の凄惨さを目の当たりにした<strong>石山本願寺</strong>は、凄まじい危機感を抱き、その後10年に及ぶ「石山合戦」の激化へと繋がりました。一方で、比叡山の敗北は「神仏の加護よりも現実の武力と法が上位にある」という認識を定着させ、後の秀吉による「刀狩」や徳川幕府による「寺院諸法度」の先駆けとなったのです。
+                    <span class="emphasis" style="display: block; margin-bottom: 10px;">● リップル・エフェクト（波及効果）</span>
+                    この事件の凄惨さを目の当たりにした <strong>石山本願寺</strong> は、凄まじい危機感を抱き、その後10年に及ぶ「石山合戦」の激化へと繋がりました。一方で、比叡山の敗北は「神仏の加護よりも現実の武力と法が上位にある」という認識を定着させ、後の秀吉による「刀狩」や徳川幕府による「寺院諸法度」の先駆けとなったのです。
                 </li>
             </ul>
         </section>
 
-        <section style="background-color: #1e293b; color: white; padding: 30px; margin-top: 50px; border-radius: 4px;">
-            <div class="step-label" style="background-color: white; color: #1e293b;">6. おわりに</div>
-            <h2 style="color: white; text-align: left; font-size: 1.4rem; margin-top: 10px;">おわりに：歴史から何を学ぶか</h2>
+        <section class="conclusion-section">
+            <div class="step-badge" style="background-color: white; color: #1e293b;">6. おわりに</div>
+            <h2 style="color: white; text-align: left; margin-top: 15px; font-size: 1.5rem;">おわりに：歴史から何を学ぶか</h2>
             <p>比叡山焼き討ちという衝撃的な事件。これを単なる「信長の残虐性」として片付けるのは、歴史の表面しか見ていない証拠です。これは、何百年も続いてきた古い社会システム（中世）を強制終了させ、新しい秩序（近世）を創り出すための、極めて高コストな<strong>「構造的進化」</strong>でした。</p>
-            <p style="margin-top: 15px;">信長が打ち砕いたのは信仰心そのものではなく、神仏の影に隠れて利権を貪り、武装して政治に介入する「権力としての宗教」だったのです。歴史を戦略と経済の視点から読み解いたとき、過去の出来事は現代にも通じる「組織の変革」や「既得権益との戦い」という生々しい教訓として立ち上がってきます。学びは、破壊と創造の繰り返しです。この事件の炎を、あなたの知性を磨く灯火にしてください。</p>
+            <p style="margin-top: 20px;">信長が打ち砕いたのは信仰心そのものではなく、神仏の影に隠れて利権を貪り、武装して政治に介入する「権力としての宗教」だったのです。歴史を戦略と経済の視点から読み解いたとき、過去の出来事は現代にも通じる「組織の変革」や「既得権益との戦い」という生々しい教訓として立ち上がってきます。学びは、破壊と創造の繰り返しです。この事件の炎を、あなたの知性を磨く灯火にしてください。</p>
         </section>
 
-        <footer class="footer-text">
-            © 2026 Historical Insight Archives | 制作支援：比叡山焼き討ち総合資料
+        <footer class="footer-note">
+            © 2026 Historical Insight Series | 比叡山焼き討ち総合資料
         </footer>
     </article>
 </div>
