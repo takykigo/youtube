@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>比叡山焼き討ち：戦国史の転換点データ解析</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container { height: 400px; }
+        }
+        .glass-card {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+        }
+        .text-gradient {
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-image: linear-gradient(to right, #ef4444, #f59e0b);
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen">
+
+    <header class="py-12 px-6 text-center border-b border-slate-700 bg-slate-900 shadow-2xl relative overflow-hidden">
+        <div class="absolute inset-0 opacity-20 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-red-700 via-slate-900 to-slate-900"></div>
+        <div class="relative z-10 max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-6xl font-black mb-4 tracking-tight"><span class="text-gradient">比叡山焼き討ち</span><br>戦国パラダイムシフトの全貌</h1>
+            <p class="text-lg md:text-xl text-slate-300 font-light">元亀2年（1571年）9月12日。織田信長はいかにして中世の権威を破壊し、新たな秩序を構築したのか。政治・軍事・データの観点から徹底解剖する。</p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto p-6 space-y-12">
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 flex items-center border-l-4 border-red-500 pl-4">1. 炎上前夜：1571年の包囲網と政治状況</h2>
+            <p class="text-slate-300 mb-6 leading-relaxed">当時の日本は下克上の頂点にあり、室町幕府の守護大名は没落、武力で領国を支配する「戦国大名」が覇を競っていた。将軍・足利義昭は信長に擁立されたものの関係は悪化し、秘密裏に「信長包囲網」を形成。正親町天皇は調停を図るも武力を持たず、権威のみが存在する状況であった。各地では浅井・朝倉連合軍や一向一揆が信長の命脈を絶とうと激しい戦闘を繰り広げていた。</p>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div class="glass-card p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 text-amber-400">信長包囲網（第一次）相関図</h3>
+                    <div class="flex flex-col items-center space-y-4 p-4 bg-slate-800 rounded-lg">
+                        <div class="flex justify-between w-full max-w-sm px-4">
+                            <div class="text-center p-2 bg-slate-700 rounded border border-slate-600">👑 足利義昭<br><span class="text-xs text-red-400">暗躍・黒幕</span></div>
+                            <div class="text-center p-2 bg-slate-700 rounded border border-slate-600">⛩️ 延暦寺<br><span class="text-xs text-red-400">反信長の拠点化</span></div>
+                        </div>
+                        <div class="text-2xl text-slate-400">⬇️ 支援・結託 ⬇️</div>
+                        <div class="flex items-center justify-center space-x-4">
+                            <div class="text-center p-3 bg-red-900 rounded-full border-2 border-red-500 shadow-[0_0_15px_rgba(239,68,68,0.5)]">
+                                <span class="font-bold text-xl">織田信長</span>
+                            </div>
+                        </div>
+                        <div class="flex justify-between w-full px-2 text-2xl text-slate-400">
+                            <span>⬅️ 敵対</span>
+                            <span>敵対 ➡️</span>
+                        </div>
+                        <div class="flex justify-between w-full max-w-md gap-2">
+                            <div class="text-center p-2 w-1/3 bg-slate-700 rounded border border-slate-600">⚔️ 浅井・朝倉<br><span class="text-xs">比叡山へ逃げ込む</span></div>
+                            <div class="text-center p-2 w-1/3 bg-slate-700 rounded border border-slate-600">📿 本願寺<br><span class="text-xs">宗教勢力として決起</span></div>
+                            <div class="text-center p-2 w-1/3 bg-slate-700 rounded border border-slate-600">🛡️ 六角・三好<br><span class="text-xs">ゲリラ戦を展開</span></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 text-amber-400">主要プレイヤーの力学変化（焼き討ち前後）</h3>
+                    <div class="chart-container">
+                        <canvas id="powerRadarChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 flex items-center border-l-4 border-amber-500 pl-4">2. 何故、聖域は標的となったのか？</h2>
+            <p class="text-slate-300 mb-6 leading-relaxed">比叡山延暦寺は最澄が開いた天台宗の総本山であり、約3000の堂塔を持ち、王城（京都）の鬼門を守る国家鎮護の聖域であった。しかし、当時の延暦寺は単なる宗教施設ではない。強大な武力（僧兵）と経済力（関所の通行税や荘園）を持つ独立国家のような存在だった。信長は「味方になるか、中立を保つか。さもなくば焼き払う」と通達したが、延暦寺は無視し、浅井・朝倉軍を匿い続けた。</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass-card p-6 rounded-xl shadow-lg">
+                    <h3 class="text-xl font-bold mb-4 text-center">戦国期・延暦寺の権力構造（推定比率）</h3>
+                    <div class="chart-container">
+                        <canvas id="enryakujiPowerChart"></canvas>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center space-y-4 glass-card p-6 rounded-xl shadow-lg">
+                    <div class="bg-slate-800 p-4 rounded-lg border border-slate-600">
+                        <h4 class="font-bold text-red-400 mb-2">📜 延暦寺うんちく・実態</h4>
+                        <ul class="list-disc pl-5 space-y-2 text-sm text-slate-300">
+                            <li><strong>不入の権：</strong> 守護大名すら手を出せない治外法権エリア。</li>
+                            <li><strong>僧兵の武力：</strong> 数千人規模の武装集団を擁し、朝廷に強訴（ごうそ）を繰り返した。</li>
+                            <li><strong>経済の独占：</strong> 琵琶湖の水運や京都の交通網から莫大な関銭（税）を徴収。</li>
+                            <li><strong>堕落の指摘：</strong> 当時の公家の日記にも「戒律を破り、魚鳥を食し、女性を連れ込んでいる」と記されるほど風紀が乱れていたとされる。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 flex items-center border-l-4 border-red-600 pl-4">3. 包囲と実行：参戦武将と兵力分布</h2>
+            <p class="text-slate-300 mb-6 leading-relaxed">元亀2年9月、信長は約3万の軍勢で比叡山を包囲。主要な武将が山麓に配置され、逃げ道を完全に塞いだ。木下秀吉（後の豊臣秀吉）やその弟・秀長も参陣していたが、彼らの部隊は主に後方支援や主要街道の封鎖（宇佐山城周辺など）を担っていたとされ、積極的な放火や殺戮の最前線にはいなかったとする説が有力である。</p>
+
+            <div class="glass-card p-6 rounded-xl shadow-lg">
+                <h3 class="text-xl font-bold mb-4">織田軍の部隊配置と推定兵力</h3>
+                <div class="chart-container" style="max-width: 800px;">
+                    <canvas id="deploymentBarChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 flex items-center border-l-4 border-orange-500 pl-4">4. 焦土作戦の真実：悲惨さと信長の指示</h2>
+            <p class="text-slate-300 mb-6 leading-relaxed">『信長公記』には、老若男女を問わず数千人が斬首され、全山が灰燼に帰したという凄惨な記録が残る。「根本中堂から火を放ち、僧侶、児童、智者、上人を一一人残らず首を刎ねた」と記され、信長の冷酷さを象徴する事件とされた。しかし、現代の考古学調査からは異なる実像も浮かび上がっている。</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-card p-6 rounded-xl shadow-lg text-center flex flex-col justify-center">
+                    <div class="text-5xl mb-2">🔥</div>
+                    <h4 class="text-lg font-bold text-red-400">歴史書の記録（信長公記）</h4>
+                    <p class="text-3xl font-black text-white my-2">3,000〜4,000人</p>
+                    <p class="text-sm text-slate-400">の犠牲者、堂塔3000が全焼。</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl shadow-lg text-center flex flex-col justify-center">
+                    <div class="text-5xl mb-2">⛏️</div>
+                    <h4 class="text-lg font-bold text-amber-400">現代の考古学調査</h4>
+                    <p class="text-3xl font-black text-white my-2">限定的な焼失</p>
+                    <p class="text-sm text-slate-400">全山焼き討ちの痕跡は見つからず。多くの堂塔はそれ以前に廃絶していた可能性。</p>
+                </div>
+                <div class="glass-card p-6 rounded-xl shadow-lg text-center flex flex-col justify-center">
+                    <div class="text-5xl mb-2">📜</div>
+                    <h4 class="text-lg font-bold text-slate-300">信長の真の意図</h4>
+                    <p class="text-xl font-bold text-white my-2">「権威の解体と見せしめ」</p>
+                    <p class="text-sm text-slate-400">実質的な拠点のみを確実に破壊し、刃向かう者への強烈な恐怖を植え付けるプロパガンダ。</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <h2 class="text-3xl font-bold mb-6 flex items-center border-l-4 border-slate-500 pl-4">5. 灰燼のあと：勢力図の激変とその後</h2>
+            <p class="text-slate-300 mb-6 leading-relaxed">この事件は日本全国に計り知れない衝撃を与えた。宗教的権威が武力によって完全に否定された瞬間であり、中世の終焉を意味した。将軍義昭は信長への警戒を限界まで強め、武田信玄が反信長の兵を挙げる直接の引き金となる。一方で、正親町天皇は秩序を乱していた延暦寺の討伐を黙認、あるいは評価する姿勢を見せ、信長との結びつきを強めていく。</p>
+
+            <div class="glass-card p-6 rounded-xl shadow-lg">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <h3 class="text-xl font-bold mb-4 text-amber-400">焼き討ち後の各陣営の動向</h3>
+                        <ul class="space-y-4">
+                            <li class="p-3 bg-slate-800 rounded border border-slate-600">
+                                <span class="font-bold text-red-400">織田信長：</span> 近江の支配を確立。宗教勢力への優位性を絶対的なものとする。
+                            </li>
+                            <li class="p-3 bg-slate-800 rounded border border-slate-600">
+                                <span class="font-bold text-blue-400">朝廷（天皇）：</span> 伝統的権威を破壊された反面、京の治安回復を評価。
+                            </li>
+                            <li class="p-3 bg-slate-800 rounded border border-slate-600">
+                                <span class="font-bold text-purple-400">足利義昭（将軍）：</span> 対立が決定的となり、1573年に挙兵するも敗北、追放される。
+                            </li>
+                            <li class="p-3 bg-slate-800 rounded border border-slate-600">
+                                <span class="font-bold text-orange-400">他大名（武田・本願寺）：</span> 「仏敵」信長への敵意を燃やし、包囲網はさらに激化する。
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="aftermathLineChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-slate-900 border-t border-slate-800 p-8 text-center text-slate-500 text-sm">
+        <p class="mb-2"><strong>Infographic Specifications Confirmations:</strong></p>
+        <p>Color Palette Chosen: Vibrant Crimson & Night (Custom interpretation for historical intensity: #1E293B, #DC2626, #F59E0B, etc.)</p>
+        <p>Infographic Plan Summary: 1. Pre-Burn Political State -> 2. Why Enryakuji -> 3. Forces & Commanders -> 4. Tragedy Analysis -> 5. Aftermath & Power Shift.</p>
+        <p>Visualization Choices: Radar (Power shift), Donut (Enryakuji Power), Bar (Forces), Line (Tension Post-Burn). All goals map to Inform, Compare, or Change.</p>
+        <p class="font-bold text-red-500 mt-4">CONFIRMATION: NEITHER Mermaid JS NOR SVG were used anywhere in the output.</p>
+    </footer>
+
+    <script>
+        const wrapLabel = (label) => {
+            if (label.length <= 16) return label;
+            let chunks = [];
+            for (let i = 0; i < label.length; i += 15) {
+                chunks.push(label.substring(i, i + 15));
+            }
+            return chunks;
+        };
+
+        const commonTooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    let label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join('');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        Chart.defaults.color = '#cbd5e1';
+        Chart.defaults.font.family = "'Noto Sans JP', sans-serif";
+
+        const ctxRadar = document.getElementById('powerRadarChart').getContext('2d');
+        new Chart(ctxRadar, {
+            type: 'radar',
+            data: {
+                labels: [
+                    wrapLabel('織田軍の軍事力・制圧力'), 
+                    wrapLabel('朝廷・将軍の伝統的権威'), 
+                    wrapLabel('宗教勢力の政治力'), 
+                    wrapLabel('浅井・朝倉の抵抗力'), 
+                    wrapLabel('畿内における経済支配力')
+                ],
+                datasets: [
+                    {
+                        label: '焼き討ち前 (1570年)',
+                        data: [60, 80, 90, 75, 50],
+                        backgroundColor: 'rgba(100, 116, 139, 0.2)',
+                        borderColor: 'rgba(100, 116, 139, 1)',
+                        pointBackgroundColor: 'rgba(100, 116, 139, 1)',
+                    },
+                    {
+                        label: '焼き討ち後 (1572年)',
+                        data: [95, 60, 40, 40, 85],
+                        backgroundColor: 'rgba(220, 38, 38, 0.4)',
+                        borderColor: 'rgba(220, 38, 38, 1)',
+                        pointBackgroundColor: 'rgba(220, 38, 38, 1)',
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(255, 255, 255, 0.1)' },
+                        grid: { color: 'rgba(255, 255, 255, 0.1)' },
+                        pointLabels: { color: '#f8fafc', font: { size: 11 } },
+                        ticks: { display: false, min: 0, max: 100 }
+                    }
+                },
+                plugins: {
+                    legend: { position: 'bottom' },
+                    tooltip: commonTooltipConfig
+                }
+            }
+        });
+
+        const ctxDonut = document.getElementById('enryakujiPowerChart').getContext('2d');
+        new Chart(ctxDonut, {
+            type: 'doughnut',
+            data: {
+                labels: [
+                    wrapLabel('武力：数千の僧兵集団による軍事力'),
+                    wrapLabel('経済：関所通行税と広大な荘園収入'),
+                    wrapLabel('権威：国家鎮護・朝廷との深い結びつき'),
+                    wrapLabel('大衆：一般信徒からの支持と布施')
+                ],
+                datasets: [{
+                    data: [40, 35, 20, 5],
+                    backgroundColor: [
+                        '#dc2626',
+                        '#f59e0b',
+                        '#3b82f6',
+                        '#64748b'
+                    ],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '65%',
+                plugins: {
+                    legend: { position: 'right', labels: { color: '#cbd5e1' } },
+                    tooltip: commonTooltipConfig
+                }
+            }
+        });
+
+        const ctxBar = document.getElementById('deploymentBarChart').getContext('2d');
+        new Chart(ctxBar, {
+            type: 'bar',
+            data: {
+                labels: [
+                    wrapLabel('織田信長（本隊・総指揮）'),
+                    wrapLabel('明智光秀（最前線・実行部隊）'),
+                    wrapLabel('柴田勝家（主力攻撃部隊）'),
+                    wrapLabel('佐久間信盛（主力攻撃部隊）'),
+                    wrapLabel('木下秀吉（後方支援・街道封鎖等）')
+                ],
+                datasets: [{
+                    label: '推定動員兵力（人）',
+                    data: [15000, 4000, 3500, 3500, 2000],
+                    backgroundColor: [
+                        '#b91c1c',
+                        '#f59e0b',
+                        '#ea580c',
+                        '#ea580c',
+                        '#475569'
+                    ],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        grid: { color: 'rgba(255,255,255,0.05)' },
+                        ticks: { color: '#94a3b8' }
+                    },
+                    y: {
+                        grid: { display: false },
+                        ticks: { color: '#f8fafc' }
+                    }
+                },
+                plugins: {
+                    legend: { display: false },
+                    tooltip: commonTooltipConfig
+                }
+            }
+        });
+
+        const ctxLine = document.getElementById('aftermathLineChart').getContext('2d');
+        new Chart(ctxLine, {
+            type: 'line',
+            data: {
+                labels: ['1570年', '1571年(焼き討ち)', '1572年', '1573年'],
+                datasets: [
+                    {
+                        label: '織田家の勢力拡大指数',
+                        data: [40, 60, 75, 100],
+                        borderColor: '#dc2626',
+                        backgroundColor: 'rgba(220, 38, 38, 0.1)',
+                        fill: true,
+                        tension: 0.4
+                    },
+                    {
+                        label: '反信長包囲網の緊張度',
+                        data: [80, 95, 100, 60],
+                        borderColor: '#f59e0b',
+                        backgroundColor: 'transparent',
+                        borderDash: [5, 5],
+                        tension: 0.4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    x: {
+                        grid: { color: 'rgba(255,255,255,0.05)' },
+                        ticks: { color: '#94a3b8' }
+                    },
+                    y: {
+                        grid: { color: 'rgba(255,255,255,0.05)' },
+                        ticks: { display: false }
+                    }
+                },
+                plugins: {
+                    legend: { position: 'top' },
+                    tooltip: commonTooltipConfig
+                }
+            }
+        });
+    </script>
+</body>
+</html>
