@@ -6,18 +6,18 @@
     <title>比叡山焼き討ち：歴史タイムライン</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Shippori+Mincho:wght@400;700&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Shippori+Mincho:wght@700&display=swap');
         
         body {
             font-family: 'Noto Sans JP', sans-serif;
-            background-color: #0f172a;
+            background-color: #020617;
             color: #f1f5f9;
             line-height: 1.8;
             margin: 0;
             padding: 0;
         }
 
-        .container-center {
+        .outer-wrap {
             display: flex;
             justify-content: center;
             width: 100%;
@@ -26,184 +26,205 @@
 
         .content-card {
             width: 95%;
-            max-width: 800px;
-            background-color: #1e293b;
-            padding: 40px 20px;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-            border: 1px solid #334155;
-            border-radius: 8px;
+            max-width: 860px;
+            background-color: #0f172a;
+            padding: 50px 30px;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+            border: 1px solid #1e293b;
+            border-radius: 4px;
         }
 
         @media (min-width: 768px) {
-            .content-card { padding: 60px 80px; }
+            .content-card { padding: 70px 100px; }
         }
 
-        h1 {
+        /* メインタイトルの改善 */
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        header h1 {
             font-family: 'Shippori Mincho', serif;
             color: #f87171;
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 50px;
+            font-size: 2.4rem;
+            line-height: 1.3;
+            margin: 0;
         }
 
-        .timeline-item {
-            position: relative;
-            padding-left: 30px;
-            padding-bottom: 40px;
-            border-left: 2px solid #f87171;
-        }
-
-        .timeline-item:last-child {
-            border-left: 2px solid transparent;
-            padding-bottom: 0;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -9px;
-            top: 5px;
-            width: 16px;
-            height: 16px;
-            border-radius: 50%;
-            background-color: #f87171;
-            box-shadow: 0 0 10px #f87171;
-        }
-
-        .year-label {
-            font-family: 'Shippori Mincho', serif;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #fca5a5;
-            margin-bottom: 5px;
-            display: block;
-        }
-
-        .event-title {
-            font-size: 1.25rem;
-            font-weight: bold;
-            color: #ffffff;
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .description {
-            font-size: 1rem;
-            color: #cbd5e1;
-        }
-
-        .divider {
-            width: 60px;
+        .title-line {
+            width: 80px;
             height: 3px;
             background-color: #f87171;
-            margin: 0 auto 50px auto;
+            margin: 30px auto;
+        }
+
+        /* タイムライン構造 */
+        .timeline-container {
+            border-left: 3px solid #f87171;
+            margin-left: 10px;
+            padding-left: 35px;
+            position: relative;
+        }
+
+        .timeline-node {
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        .timeline-node::before {
+            content: '';
+            position: absolute;
+            left: -46px; /* 線の太さに合わせて調整 */
+            top: 8px;
+            width: 20px;
+            height: 20px;
+            background-color: #f87171;
+            border-radius: 50%;
+            box-shadow: 0 0 15px #ef4444;
+        }
+
+        .year-text {
+            font-family: 'Shippori Mincho', serif;
+            font-size: 1.8rem;
+            color: #fca5a5;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .event-text {
+            font-size: 1.4rem;
+            font-weight: 900;
+            color: #ffffff;
+            display: block;
+            margin-bottom: 15px;
+            letter-spacing: 0.05em;
+        }
+
+        .desc-text {
+            font-size: 1.05rem;
+            color: #cbd5e1;
+            margin: 0;
+        }
+
+        footer {
+            margin-top: 80px;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #475569;
+            border-top: 1px solid #1e293b;
+            padding-top: 30px;
         }
     </style>
 </head>
 <body>
 
-<div class="container-center">
+<div class="outer-wrap">
     <article class="content-card">
         
         <header>
             <h1>比叡山焼き討ち：時系列タイムライン</h1>
-            <div class="divider"></div>
+            <div class="title-line"></div>
         </header>
 
-        <!-- 1570年 -->
-        <div class="timeline-item">
-            <span class="year-label">▶ 1570年</span>
-            <span class="event-title">志賀の陣</span>
-            <p class="description">浅井・朝倉軍が敗走し比叡山へ逃げ込む。延暦寺が匿い、信長との対立が決定的に。[cite: 7]</p>
+        <div class="timeline-container">
+
+            <!-- 1570年 -->
+            <div class="timeline-node">
+                <span class="year-text">▶ 1570年</span>
+                <span class="event-text">志賀の陣</span>
+                <p class="desc-text">浅井・朝倉軍が敗走し比叡山へ逃げ込む。延暦寺が匿い、信長との対立が決定的に。</p>
+            </div>
+
+            <!-- 1571年9月11日（夜） -->
+            <div class="timeline-node">
+                <span class="year-text">▶ 1571年9月11日（夜）</span>
+                <span class="event-text">包囲完成</span>
+                <p class="desc-text">織田軍3万が比叡山の登り口を封鎖。湖側・陸側の脱出路が完全に遮断される。</p>
+            </div>
+
+            <!-- 1571年9月12日（早朝） -->
+            <div class="timeline-node">
+                <span class="year-text">▶ 1571年9月12日（早朝）</span>
+                <span class="event-text">総攻撃開始</span>
+                <p class="desc-text">坂本・堅田に火が放たれ、炎が山へ向かう。</p>
+                <p class="desc-text" style="margin-top: 10px; font-weight: bold; color: #f87171;">信長の命令「一人も残さず焼き払え」。</p>
+            </div>
+
+            <!-- 1571年9月12日（日中） -->
+            <div class="timeline-node">
+                <span class="year-text">▶ 1571年9月12日（日中）</span>
+                <span class="event-text">堂塔炎上</span>
+                <p class="desc-text">根本中堂・山王二十一社など主要伽藍が次々に炎上。</p>
+            </div>
+
+            <!-- 1571年9月12日（夕刻） -->
+            <div class="timeline-node">
+                <span class="year-text">▶ 1571年9月12日（夕刻）</span>
+                <span class="event-text">八王子山の惨劇</span>
+                <p class="desc-text">逃げ場を失った僧侶・避難民が追い詰められ、多くが殺害される。</p>
+            </div>
+
+            <!-- 1571年9月13〜15日 -->
+            <div class="timeline-node">
+                <span class="year-text">▶ 1571年9月13〜15日</span>
+                <span class="event-text">残敵掃討</span>
+                <p class="desc-text">黒煙が4日間立ち上り、徹底的な殲滅戦が続く。</p>
+            </div>
+
+            <!-- 1571年9月20日 -->
+            <div class="timeline-node">
+                <span class="year-text">▶ 1571年9月20日</span>
+                <span class="event-text">戦後処理</span>
+                <p class="desc-text">信長が志賀郡の掟を発布。領地再配分により旧勢力が完全に解体。</p>
+            </div>
+
+            <!-- 1573年 -->
+            <div class="timeline-node">
+                <span class="year-text">▶ 1573年</span>
+                <span class="event-text">浅井・朝倉滅亡／室町幕府崩壊</span>
+                <p class="desc-text">比叡山を失った浅井・朝倉が滅亡。義昭追放で中世政治が終焉。</p>
+            </div>
+
+            <!-- 1582年 -->
+            <div class="timeline-node">
+                <span class="year-text">▶ 1582年</span>
+                <span class="event-text">本能寺の変</span>
+                <p class="desc-text">信長が討たれ、比叡山再建は一時停止。</p>
+            </div>
+
+            <!-- 1590年代（豊臣政権） -->
+            <div class="timeline-node">
+                <span class="year-text">▶ 1590年代（豊臣政権）</span>
+                <span class="event-text">再建許可</span>
+                <p class="desc-text">秀吉が融和政策をとり、比叡山再建を認める。</p>
+            </div>
+
+            <!-- 1600〜1642年（徳川家康〜家光） -->
+            <div class="timeline-node">
+                <span class="year-text">▶ 1600〜1642年（徳川家康〜家光）</span>
+                <span class="event-text">比叡山再興</span>
+                <p class="desc-text">天海僧正が中心となり、幕府の守護の象徴として再建が進む。</p>
+            </div>
+
+            <!-- 1642年 -->
+            <div class="timeline-node">
+                <span class="year-text">▶ 1642年</span>
+                <span class="event-text">現在の根本中堂が完成</span>
+                <p class="desc-text">比叡山復興の象徴となる伽藍が完成。</p>
+            </div>
+
+            <!-- 1994年 -->
+            <div class="timeline-node">
+                <span class="year-text">▶ 1994年</span>
+                <span class="event-text">世界文化遺産登録</span>
+                <p class="desc-text">比叡山延暦寺がユネスコ世界文化遺産に登録。</p>
+            </div>
+
         </div>
 
-        <!-- 1571年9月11日（夜） -->
-        <div class="timeline-item">
-            <span class="year-label">▶ 1571年9月11日（夜）</span>
-            <span class="event-title">包囲完成</span>
-            <p class="description">織田軍3万が比叡山の登り口を封鎖。湖側・陸側の脱出路が完全に遮断される。[cite: 7]</p>
-        </div>
-
-        <!-- 1571年9月12日（早朝） -->
-        <div class="timeline-item">
-            <span class="year-label">▶ 1571年9月12日（早朝）</span>
-            <span class="event-title">総攻撃開始</span>
-            <p class="description">坂本・堅田に火が放たれ、炎が山へ向かう。[cite: 7]</p>
-            <p class="description">信長の命令「一人も残さず焼き払え」。[cite: 7]</p>
-        </div>
-
-        <!-- 1571年9月12日（日中） -->
-        <div class="timeline-item">
-            <span class="year-label">▶ 1571年9月12日（日中）</span>
-            <span class="event-title">堂塔炎上</span>
-            <p class="description">根本中堂・山王二十一社など主要伽藍が次々に炎上。[cite: 7]</p>
-        </div>
-
-        <!-- 1571年9月12日（夕刻） -->
-        <div class="timeline-item">
-            <span class="year-label">▶ 1571年9月12日（夕刻）</span>
-            <span class="event-title">八王子山の惨劇</span>
-            <p class="description">逃げ場を失った僧侶・避難民が追い詰められ、多くが殺害される。[cite: 7]</p>
-        </div>
-
-        <!-- 1571年9月13〜15日 -->
-        <div class="timeline-item">
-            <span class="year-label">▶ 1571年9月13〜15日</span>
-            <span class="event-title">残敵掃討</span>
-            <p class="description">黒煙が4日間立ち上り、徹底的な殲滅戦が続く。[cite: 7]</p>
-        </div>
-
-        <!-- 1571年9月20日 -->
-        <div class="timeline-item">
-            <span class="year-label">▶ 1571年9月20日</span>
-            <span class="event-title">戦後処理</span>
-            <p class="description">信長が志賀郡の掟を発布。領地再配分により旧勢力が完全に解体。[cite: 7]</p>
-        </div>
-
-        <!-- 1573年 -->
-        <div class="timeline-item">
-            <span class="year-label">▶ 1573年</span>
-            <span class="event-title">浅井・朝倉滅亡／室町幕府崩壊</span>
-            <p class="description">比叡山を失った浅井・朝倉が滅亡。義昭追放で中世政治が終焉。[cite: 7]</p>
-        </div>
-
-        <!-- 1582年 -->
-        <div class="timeline-item">
-            <span class="year-label">▶ 1582年</span>
-            <span class="event-title">本能寺の変</span>
-            <p class="description">信長が討たれ、比叡山再建は一時停止。[cite: 7]</p>
-        </div>
-
-        <!-- 1590年代（豊臣政権） -->
-        <div class="timeline-item">
-            <span class="year-label">▶ 1590年代（豊臣政権）</span>
-            <span class="event-title">再建許可</span>
-            <p class="description">秀吉が融和政策をとり、比叡山再建を認める。[cite: 7]</p>
-        </div>
-
-        <!-- 1600〜1642年（徳川家康〜家光） -->
-        <div class="timeline-item">
-            <span class="year-label">▶ 1600〜1642年（徳川家康〜家光）</span>
-            <span class="event-title">比叡山再興</span>
-            <p class="description">天海僧正が中心となり、幕府の守護の象徴として再建が進む。[cite: 7]</p>
-        </div>
-
-        <!-- 1642年 -->
-        <div class="timeline-item">
-            <span class="year-label">▶ 1642年</span>
-            <span class="event-title">現在の根本中堂が完成</span>
-            <p class="description">比叡山復興の象徴となる伽藍が完成。[cite: 7]</p>
-        </div>
-
-        <!-- 1994年 -->
-        <div class="timeline-item">
-            <span class="year-label">▶ 1994年</span>
-            <span class="event-title">世界文化遺産登録</span>
-            <p class="description">比叡山延暦寺がユネスコ世界文化遺産に登録。[cite: 7]</p>
-        </div>
-
-        <footer style="margin-top: 60px; text-align: center; font-size: 0.8rem; color: #475569; border-top: 1px solid #334155; padding-top: 20px;">
-            © 2026 Historical Timeline Project | 資料出典：動画ナレーションタイムライン
+        <footer>
+            © 2026 Historical Insight Archives | 制作支援：比叡山焼き討ち総合資料アーカイブ
         </footer>
     </article>
 </div>
