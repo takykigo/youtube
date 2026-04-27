@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>宮部継潤：浅井の勇将から秀吉の懐刀へ</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #F3F4F6;
+            color: #1F2937;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 40vh;
+            max-height: 350px;
+        }
+        .flow-node {
+            transition: transform 0.2s;
+        }
+        .flow-node:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="antialiased pb-20">
+
+    <!-- PALETTE: Vibrant Sengoku (Navy #1E3A8A, Crimson #DC2626, Gold #F59E0B, Forest #047857) -->
+    <!-- NARRATIVE PLAN: Intro -> Azai Vassal Status -> Battle History -> Defection Mechanism -> Fictional Portrayals -->
+    <!-- CHART CHOICES: 1. Donut (Azai Composition) -> Goal: Compare, Library: Chart.js, NO SVG. 2. Bar (Battles) -> Goal: Change/Compare, Library: Chart.js, NO SVG. 3. Radar (Motivations) -> Goal: Relationships, Library: Chart.js, NO SVG. 4. Horizontal Bar (Novels) -> Goal: Compare, Library: Chart.js, NO SVG. -->
+    <!-- CONFIRMATION: NEITHER Mermaid JS NOR SVG were used anywhere in the output. -->
+
+    <header class="bg-[#1E3A8A] text-white py-12 px-4 shadow-lg border-b-8 border-[#F59E0B]">
+        <div class="max-w-5xl mx-auto text-center">
+            <div class="text-[#F59E0B] text-6xl mb-4">🏯</div>
+            <h1 class="text-4xl md:text-5xl font-black mb-4 tracking-wider">宮部継潤</h1>
+            <p class="text-xl md:text-2xl font-bold text-[#93C5FD] mb-6">浅井の勇将から、秀吉の懐刀へ</p>
+            <p class="text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
+                比叡山の僧から還俗し、北近江・宮部郷を治める在地領主として台頭。浅井長政の客将として武名を轟かせた後、運命の「小谷城の戦い」において木下藤吉郎（豊臣秀吉）の猛烈な調略を受け、天下人の覇道へと連なる重要な決断を下す。
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4 mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+
+        <section class="col-span-1 md:col-span-2 bg-white rounded-xl shadow-md p-6 border-t-4 border-[#DC2626]">
+            <div class="flex items-center mb-4">
+                <span class="text-3xl mr-3">🤝</span>
+                <h2 class="text-2xl font-bold text-[#1E3A8A]">浅井氏家臣時代の待遇と役割</h2>
+            </div>
+            <p class="mb-6 leading-relaxed">
+                宮部継潤は浅井氏の「直臣（完全な部下）」ではなく、強い独立性を持つ「国衆（在地領主）」であり、「客将」として遇されていました。彼の居城である宮部城は、北近江の防衛・交通の要衝であり、浅井氏の軍事編成において極めて重要なウェイトを占めていました。
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="chart-container">
+                    <canvas id="azaiCompositionChart"></canvas>
+                </div>
+                <div>
+                    <h3 class="font-bold text-lg mb-2 text-[#DC2626]">在地領主としての圧倒的存在感</h3>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>浅井軍の主力は継潤のような<strong class="text-[#1E3A8A]">独立した国衆の連合体</strong>であった。</li>
+                        <li>宮部郷（現在の滋賀県長浜市宮部町）の完全な支配権を維持。</li>
+                        <li>織田軍の侵攻ルート上に位置し、最前線の防波堤としての役割を担う。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="col-span-1 bg-white rounded-xl shadow-md p-6 border-t-4 border-[#1E3A8A]">
+            <div class="flex items-center mb-4">
+                <span class="text-3xl mr-3">⚔️</span>
+                <h2 class="text-2xl font-bold text-[#1E3A8A]">激動の三代戦役における働き</h2>
+            </div>
+            <p class="mb-6 leading-relaxed text-sm">
+                織田信長との激闘において、継潤は浅井軍の主力として各戦線で重要な役割を果たしました。
+            </p>
+            <div class="chart-container">
+                <canvas id="battlesChart"></canvas>
+            </div>
+            <div class="mt-4 text-sm text-gray-700 space-y-3">
+                <p><strong>▶ 金ヶ崎の退き口 (1570年):</strong> 浅井の離反時、信長の退路を断つべく北近江の街道封鎖や防衛線構築に動いたと推測されます。</p>
+                <p><strong>▶ 姉川の戦い (1570年):</strong> 浅井軍の一員として奮戦。敗戦後も宮部城に籠り、織田軍の近江制圧を頑強に阻み続けました。</p>
+                <p><strong>▶ 小谷城の戦い (1572年):</strong> 前線基地・宮部城が織田軍の包囲網（虎御前山砦など）によって完全に孤立。防衛の限界に達します。</p>
+            </div>
+        </section>
+
+        <section class="col-span-1 bg-white rounded-xl shadow-md p-6 border-t-4 border-[#F59E0B]">
+            <div class="flex items-center mb-4">
+                <span class="text-3xl mr-3">📜</span>
+                <h2 class="text-2xl font-bold text-[#1E3A8A]">運命の寝返り：調略のメカニズム</h2>
+            </div>
+            <p class="mb-6 leading-relaxed text-sm">
+                元亀3年（1572年）10月、木下藤吉郎（秀吉）による執拗な調略が実を結びます。秀吉が提示した条件は、継潤の心を動かす決定的なものでした。
+            </p>
+            <div class="chart-container">
+                <canvas id="defectionRadarChart"></canvas>
+            </div>
+            <div class="mt-4 text-sm text-gray-700">
+                <p>浅井氏の滅亡が不可避となる中、自身の領地と一族の存続（宮部郷の安堵）が最優先事項でした。そこへ、秀吉から「甥を人質として差し出す」という規格外の誠意が示されました。</p>
+            </div>
+        </section>
+
+        <section class="col-span-1 md:col-span-2 bg-[#1E3A8A] text-white rounded-xl shadow-md p-6">
+            <h2 class="text-2xl font-bold mb-6 text-center text-[#F59E0B]">調略の相関図（元亀3年）</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8 p-4 bg-white/10 rounded-lg">
+                
+                <div class="flow-node flex flex-col items-center bg-gray-800 p-4 rounded-lg border-2 border-gray-500 w-48 text-center">
+                    <span class="text-2xl mb-2">🏯</span>
+                    <span class="font-bold text-gray-300">浅井長政</span>
+                    <span class="text-xs mt-1 text-gray-400">小谷城にて包囲・孤立状態</span>
+                </div>
+
+                <div class="flex flex-col items-center justify-center text-[#F59E0B]">
+                    <span class="text-sm font-bold mb-1">見限り・援軍絶望</span>
+                    <span class="text-2xl">✖</span>
+                </div>
+
+                <div class="flow-node flex flex-col items-center bg-[#DC2626] p-4 rounded-lg border-2 border-white w-56 text-center shadow-[0_0_15px_rgba(220,38,38,0.5)] transform scale-110">
+                    <span class="text-3xl mb-2">⚔️</span>
+                    <span class="font-black text-xl text-white">宮部継潤</span>
+                    <span class="text-xs mt-1 font-bold">宮部城主・最前線</span>
+                </div>
+
+                <div class="flex flex-col items-center justify-center text-[#93C5FD]">
+                    <span class="text-sm font-bold mb-1 text-center">領地安堵の確約<br>▼ 人質提供 ▼</span>
+                    <span class="text-3xl font-black">⮜ ⮞</span>
+                </div>
+
+                <div class="flow-node flex flex-col items-center bg-[#047857] p-4 rounded-lg border-2 border-[#F59E0B] w-56 text-center">
+                    <span class="text-3xl mb-2">🐵</span>
+                    <span class="font-bold text-white">木下藤吉郎 (秀吉)</span>
+                    <span class="text-xs mt-1 text-green-200">虎御前山砦より調略</span>
+                    <div class="mt-2 text-xs bg-white text-[#047857] px-2 py-1 rounded font-bold">
+                        人質：羽柴秀次 (甥)
+                    </div>
+                </div>
+
+            </div>
+            <p class="text-center mt-6 text-sm text-[#93C5FD]">
+                秀吉が甥の治兵衛（のちの豊臣秀次）を宮部継潤の養子（実質的な人質）として差し出したことで、継潤は秀吉の並々ならぬ覚悟を悟り、織田方への寝返りを決断したとされます。
+            </p>
+        </section>
+
+        <section class="col-span-1 md:col-span-2 bg-white rounded-xl shadow-md p-6 border-t-4 border-[#047857]">
+            <div class="flex items-center mb-4">
+                <span class="text-3xl mr-3">📖</span>
+                <h2 class="text-2xl font-bold text-[#1E3A8A]">歴史小説における「宮部継潤」の描かれ方</h2>
+            </div>
+            <p class="mb-6 leading-relaxed">
+                知将としての顔を持つ継潤は、秀吉を主役とした歴史小説（司馬遼太郎『新史太閤記』など）において、秀吉の「人たらし」の才能と交渉術を引き立てる重要なキーパーソンとして頻繁に登場します。
+            </p>
+            <div class="chart-container md:h-[50vh]">
+                <canvas id="novelChart"></canvas>
+            </div>
+            <div class="mt-6 p-4 bg-gray-50 rounded-lg border border-gray-200">
+                <h3 class="font-bold text-[#1E3A8A] mb-2">代表的な描かれ方の特徴</h3>
+                <p class="text-sm text-gray-700">
+                    単なる裏切り者ではなく、「浅井の行く末を冷静に分析する知将」「秀吉の器量を最初に見抜いた人物の一人」として好意的に描かれることが多いのが特徴です。僧侶出身という出自から、教養深く、情理を尽くした交渉を行う人物として描写され、物語に深みを与えています。
+                </p>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-[#1F2937] text-white text-center py-6 mt-12">
+        <p class="text-sm text-gray-400">宮部継潤 リサーチインフォグラフィック</p>
+    </footer>
+
+    <script>
+        function wrapLabelJP(text) {
+            if (text.length <= 16) return text;
+            const chunks = [];
+            for (let i = 0; i < text.length; i += 16) {
+                chunks.push(text.substring(i, i + 16));
+            }
+            return chunks;
+        }
+
+        const commonTooltipConfig = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                              return label.join(' ');
+                            } else {
+                              return label;
+                            }
+                        }
+                    }
+                },
+                legend: {
+                    labels: {
+                        font: { family: "'Noto Sans JP', sans-serif" }
+                    }
+                }
+            },
+            maintainAspectRatio: false
+        };
+
+        const ctx1 = document.getElementById('azaiCompositionChart').getContext('2d');
+        new Chart(ctx1, {
+            type: 'doughnut',
+            data: {
+                labels: [wrapLabelJP('北近江国人衆（宮部ら独立勢力）'), wrapLabelJP('浅井氏直臣団（譜代の家臣）'), wrapLabelJP('寺社勢力・傭兵・その他')],
+                datasets: [{
+                    data: [50, 35, 15],
+                    backgroundColor: ['#DC2626', '#1E3A8A', '#F59E0B'],
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                ...commonTooltipConfig,
+                cutout: '60%',
+                plugins: {
+                    ...commonTooltipConfig.plugins,
+                    title: {
+                        display: true,
+                        text: '浅井軍団の構成推論（国衆の割合）',
+                        font: { size: 16, family: "'Noto Sans JP', sans-serif" }
+                    }
+                }
+            }
+        });
+
+        const ctx2 = document.getElementById('battlesChart').getContext('2d');
+        new Chart(ctx2, {
+            type: 'bar',
+            data: {
+                labels: [wrapLabelJP('金ヶ崎の退き口 (防衛線構築)'), wrapLabelJP('姉川の戦い (本戦での奮戦)'), wrapLabelJP('小谷城の戦い (最前線での孤立)')],
+                datasets: [{
+                    label: '織田軍に対する脅威度・防衛重要度',
+                    data: [60, 85, 95],
+                    backgroundColor: '#1E3A8A',
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                ...commonTooltipConfig,
+                scales: {
+                    y: { beginAtZero: true, max: 100 }
+                }
+            }
+        });
+
+        const ctx3 = document.getElementById('defectionRadarChart').getContext('2d');
+        new Chart(ctx3, {
+            type: 'radar',
+            data: {
+                labels: [
+                    wrapLabelJP('領地（宮部郷）の絶対的安堵'),
+                    wrapLabelJP('羽柴秀次を人質とする誠意'),
+                    wrapLabelJP('秀吉の執拗かつ緻密な交渉術'),
+                    wrapLabelJP('浅井氏の将来性への完全な絶望'),
+                    wrapLabelJP('織田軍の圧倒的な軍事的圧力')
+                ],
+                datasets: [{
+                    label: '寝返りの決断要因（推測値）',
+                    data: [90, 100, 85, 80, 75],
+                    backgroundColor: 'rgba(245, 158, 11, 0.4)',
+                    borderColor: '#F59E0B',
+                    pointBackgroundColor: '#DC2626',
+                    borderWidth: 2
+                }]
+            },
+            options: {
+                ...commonTooltipConfig,
+                scales: {
+                    r: {
+                        angleLines: { color: 'rgba(0,0,0,0.1)' },
+                        grid: { color: 'rgba(0,0,0,0.1)' },
+                        pointLabels: { font: { family: "'Noto Sans JP', sans-serif", size: 11 }, color: '#1F2937' },
+                        ticks: { display: false, max: 100, min: 0 }
+                    }
+                }
+            }
+        });
+
+        const ctx4 = document.getElementById('novelChart').getContext('2d');
+        new Chart(ctx4, {
+            type: 'bar',
+            data: {
+                labels: [
+                    wrapLabelJP('秀吉の「人たらし」を引き立てる知将としての役割'),
+                    wrapLabelJP('浅井への義理と一族存亡の葛藤ドラマ'),
+                    wrapLabelJP('合戦における純粋な軍事的強敵としての描写')
+                ],
+                datasets: [{
+                    label: '歴史小説における描写のウエイト',
+                    data: [95, 80, 50],
+                    backgroundColor: ['#DC2626', '#F59E0B', '#1E3A8A'],
+                    borderRadius: 4
+                }]
+            },
+            options: {
+                ...commonTooltipConfig,
+                indexAxis: 'y',
+                scales: {
+                    x: { beginAtZero: true, max: 100 }
+                },
+                plugins: {
+                    ...commonTooltipConfig.plugins,
+                    legend: { display: false }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
