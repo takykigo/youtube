@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YCC（イールドカーブ・コントロール）の仕組みと影響</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (max-width: 640px) {
+            .chart-container {
+                height: 280px;
+            }
+        }
+        .flow-arrow-down {
+            text-align: center;
+            font-size: 2rem;
+            color: #94a3b8;
+            margin: 0.5rem 0;
+        }
+        @media (min-width: 768px) {
+            .flow-container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+            }
+            .flow-arrow-down {
+                transform: rotate(-90deg);
+                margin: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans leading-relaxed">
+
+    <header class="bg-sky-900 text-white py-16 px-6 text-center shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">イールドカーブ・コントロール（YCC）</h1>
+            <p class="text-xl md:text-2xl font-light text-sky-200">日本銀行の非伝統的な金融政策を視覚的に理解する</p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto p-4 sm:p-8">
+
+        <section class="mb-12">
+            <div class="bg-white rounded-2xl shadow-md p-8 md:p-10 border-l-8 border-sky-500">
+                <h2 class="text-3xl font-bold mb-6 text-sky-900 border-b-2 border-slate-100 pb-2">1. イールドカーブ（利回り曲線）とは？</h2>
+                <p class="text-lg mb-8">
+                    イールドカーブとは、債券の「満期までの期間（横軸）」と「利回り（縦軸）」の関係を線で結んだグラフです。通常、期間が長いほどリスクが高まるため、利回りも高くなります（右肩上がり＝順イールド）。YCCを理解するには、まずこの基本の形を知る必要があります。
+                </p>
+                <div class="chart-container">
+                    <canvas id="yieldCurveBaseChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="bg-white rounded-2xl shadow-md p-8 md:p-10 border-l-8 border-rose-500">
+                <h2 class="text-2xl font-bold mb-4 text-sky-900">2. YCC（長短金利操作）の目的</h2>
+                <p class="text-base mb-4">
+                    日本銀行が導入したYCCは、このイールドカーブ全体の形を人工的にコントロールする政策です。強力な金融緩和を続けるため、以下の2つの目標を掲げています。
+                </p>
+                <ul class="space-y-4 mt-6">
+                    <li class="flex items-start bg-rose-50 p-4 rounded-lg">
+                        <span class="text-2xl mr-3">🏦</span>
+                        <div>
+                            <strong class="block text-rose-700">短期金利のマイナス化</strong>
+                            金融機関が日銀に預ける当座預金の一部に「-0.1%」のマイナス金利を適用し、企業への貸出を促します。
+                        </div>
+                    </li>
+                    <li class="flex items-start bg-sky-50 p-4 rounded-lg">
+                        <span class="text-2xl mr-3">📈</span>
+                        <div>
+                            <strong class="block text-sky-700">長期金利のゼロ％誘導</strong>
+                            10年物国債の金利が「0%程度」で推移するように操作し、企業や個人の長期的な借入コストを低く抑えます。
+                        </div>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-md p-8 md:p-10">
+                <h3 class="text-xl font-bold mb-6 text-center text-slate-700">YCC導入後のイールドカーブの歪み</h3>
+                <div class="chart-container">
+                    <canvas id="yccImpactChart"></canvas>
+                </div>
+                <p class="text-sm text-slate-500 mt-4 text-center">
+                    自然な市場では上昇するはずの10年金利が、YCCによって特定の水準（上限）に抑え込まれ、曲線がいびつな形になることがあります。
+                </p>
+            </div>
+        </section>
+
+        <section class="mb-12">
+            <div class="bg-white rounded-2xl shadow-md p-8 md:p-10 border-l-8 border-amber-500">
+                <h2 class="text-3xl font-bold mb-6 text-sky-900 border-b-2 border-slate-100 pb-2">3. どうやって金利を操作するのか？（指値オペ）</h2>
+                <p class="text-lg mb-8">
+                    市場の圧力で長期金利が目標上限を超えそうになった場合、日銀は「指値オペ（連続指定オペ）」という強力な手段を使います。これは特定の利回りで、市場から国債を無制限に買い入れる措置です。
+                </p>
+                
+                <div class="bg-slate-50 p-6 rounded-xl border border-slate-200">
+                    <div class="flow-container">
+                        <div class="bg-white p-6 rounded-lg shadow text-center flex-1 border-t-4 border-rose-400">
+                            <div class="text-3xl mb-2">🔥</div>
+                            <h4 class="font-bold text-slate-800">金利上昇の圧力</h4>
+                            <p class="text-sm text-slate-600 mt-2">海外の金利上昇などの影響で、日本の10年国債が売られ、利回りが上限を超えそうになる。</p>
+                        </div>
+                        
+                        <div class="flow-arrow-down">➔</div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow text-center flex-1 border-t-4 border-amber-400">
+                            <div class="text-3xl mb-2">💰</div>
+                            <h4 class="font-bold text-slate-800">日銀の「指値オペ」</h4>
+                            <p class="text-sm text-slate-600 mt-2">日銀が「指定した利回りで国債を無制限に買う」と宣言し、市場から国債を大量に買い上げる。</p>
+                        </div>
+
+                        <div class="flow-arrow-down">➔</div>
+                        
+                        <div class="bg-white p-6 rounded-lg shadow text-center flex-1 border-t-4 border-sky-400">
+                            <div class="text-3xl mb-2">⬇️</div>
+                            <h4 class="font-bold text-slate-800">金利の低下・維持</h4>
+                            <p class="text-sm text-slate-600 mt-2">日銀の強力な買い支えにより国債価格が上昇し、利回りは強制的に上限以下に抑え込まれる。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="mb-12 grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div class="bg-white rounded-2xl shadow-md p-8 md:p-10 lg:col-span-1 border-l-8 border-emerald-500">
+                <h2 class="text-2xl font-bold mb-4 text-sky-900">4. YCCの限界と副作用</h2>
+                <p class="text-base mb-4">
+                    金利を低く抑えることで景気を下支えするメリットがある一方、長期間のYCC継続は市場に大きな副作用をもたらしています。
+                </p>
+                <div class="space-y-3 mt-6">
+                    <div class="p-3 bg-emerald-50 rounded border border-emerald-100">
+                        <strong class="text-emerald-800">⚠️ 市場機能の低下</strong><br>
+                        <span class="text-sm">日銀が国債を買い占めるため、市場での取引が減少し、適切な価格形成が難しくなります。</span>
+                    </div>
+                    <div class="p-3 bg-emerald-50 rounded border border-emerald-100">
+                        <strong class="text-emerald-800">⚠️ 急激な円安の要因</strong><br>
+                        <span class="text-sm">海外（特に米国）が金利を上げる中、日本だけが金利をゼロに抑え込むと、金利の高い通貨が買われ、円が売られます。</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-md p-8 md:p-10 lg:col-span-2">
+                <h3 class="text-xl font-bold mb-2 text-center text-slate-700">日本国債（国庫短期証券を除く）の保有者内訳</h3>
+                <p class="text-center text-sm text-slate-500 mb-6">YCCを維持するための大量買い入れにより、日銀の保有割合が異常な水準に達しています。</p>
+                <div class="chart-container">
+                    <canvas id="bojOwnershipChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <footer class="mt-16 pt-8 border-t border-slate-200 text-center text-sm text-slate-500 pb-8">
+            <p>※本インフォグラフィックはYCCの基本的なメカニズムを解説するものであり、実際の金融政策の詳細は時期により変動します。</p>
+            <p class="mt-2 text-xs">Note: Mermaid JS and SVG were deliberately NOT used in the creation of this output.</p>
+        </footer>
+
+    </main>
+
+    <script>
+        function processLabel(labelStr) {
+            if (labelStr.length <= 16) return labelStr;
+            const result = [];
+            let currentStr = "";
+            for (let i = 0; i < labelStr.length; i++) {
+                currentStr += labelStr[i];
+                if (currentStr.length >= 16) {
+                    result.push(currentStr);
+                    currentStr = "";
+                }
+            }
+            if (currentStr.length > 0) result.push(currentStr);
+            return result;
+        }
+
+        const commonTooltipConfig = {
+            callbacks: {
+                title: function(tooltipItems) {
+                    const item = tooltipItems[0];
+                    const label = item.chart.data.labels[item.dataIndex];
+                    if (Array.isArray(label)) {
+                        return label.join(' ');
+                    } else {
+                        return label;
+                    }
+                }
+            }
+        };
+
+        const yieldCurveLabels = ['1年', '3年', '5年', '7年', '10年', '20年', '30年'].map(processLabel);
+        
+        const ctxBase = document.getElementById('yieldCurveBaseChart').getContext('2d');
+        new Chart(ctxBase, {
+            type: 'line',
+            data: {
+                labels: yieldCurveLabels,
+                datasets: [
+                    {
+                        label: '正常なイールドカーブ（順イールド）',
+                        data: [0.1, 0.5, 1.2, 1.8, 2.5, 3.5, 4.0],
+                        borderColor: '#0ea5e9',
+                        backgroundColor: 'rgba(14, 165, 233, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.4,
+                        fill: true
+                    },
+                    {
+                        label: '景気後退懸念時（逆イールド）',
+                        data: [3.0, 2.8, 2.5, 2.2, 2.0, 1.8, 1.5],
+                        borderColor: '#f43f5e',
+                        borderWidth: 2,
+                        borderDash: [5, 5],
+                        tension: 0.4,
+                        fill: false
+                    }
+                ]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: {
+                    tooltip: commonTooltipConfig,
+                    legend: { position: 'bottom' }
+                },
+                scales: {
+                    y: {
+                        title: { display: true, text: '利回り (%)' },
+                        min: 0,
+                        max: 5
+                    },
+                    x: {
+                        title: { display: true, text: '満期までの期間' }
+                    }
+                }
+            }
+        });
+
+        const ctxYcc = document.getElementById('yccImpactChart').getContext('2d');
+        new Chart(ctxYcc, {
+            type: 'line',
+            data: {
+                labels: yieldCurveLabels,
+                datasets: [
+                    {
+                        label: 'YCCによる実際の利回り',
+                        data: [-0.05, 0.02, 0.1, 0.25, 0.5, 1.2, 1.6],
+                        borderColor: '#0ea5e9',
+                        backgroundColor: '#0ea5e9',
+                        borderWidth: 4,
+                        pointRadius: 6,
+                        tension: 0.3
+                    },
+                    {
+                        label: '市場圧力による理論上の利回り',
+                        data: [0.1, 0.4, 0.8, 1.2, 1.8, 2.2, 2.5],
+                        borderColor: '#94a3b8',
+                        borderWidth: 2,
+                        borderDash: [5, 5],
+                        tension: 0.3,
+                        fill: false
+                    }
+                ]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                plugins: {
+                    tooltip: commonTooltipConfig,
+                    legend: { position: 'bottom' },
+                    annotation: {
+                        annotations: {
+                            line1: {
+                                type: 'line',
+                                yMin: 0.5,
+                                yMax: 0.5,
+                                borderColor: '#f43f5e',
+                                borderWidth: 2,
+                                borderDash: [2, 2],
+                                label: {
+                                    content: '10年金利の上限目標',
+                                    enabled: true,
+                                    position: 'end'
+                                }
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        title: { display: true, text: '利回り (%)' },
+                        min: -0.5,
+                        max: 3.0
+                    }
+                }
+            }
+        });
+
+        const ownershipLabelsRaw = ['日本銀行 (強烈な買い入れによる増加)', '国内銀行・信金など', '生保・損保', '海外投資家', 'その他（公的年金等）'];
+        const ownershipLabels = ownershipLabelsRaw.map(processLabel);
+        
+        const ctxOwnership = document.getElementById('bojOwnershipChart').getContext('2d');
+        new Chart(ctxOwnership, {
+            type: 'doughnut',
+            data: {
+                labels: ownershipLabels,
+                datasets: [{
+                    data: [53.3, 13.5, 18.2, 8.3, 6.7],
+                    backgroundColor: [
+                        '#f43f5e',
+                        '#0ea5e9',
+                        '#38bdf8',
+                        '#7dd3fc',
+                        '#e2e8f0'
+                    ],
+                    borderWidth: 2,
+                    borderColor: '#ffffff'
+                }]
+            },
+            options: {
+                maintainAspectRatio: false,
+                responsive: true,
+                cutout: '60%',
+                plugins: {
+                    tooltip: commonTooltipConfig,
+                    legend: {
+                        position: 'right',
+                        labels: { boxWidth: 15 }
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
