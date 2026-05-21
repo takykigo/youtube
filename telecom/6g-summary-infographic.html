@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>560GHz | 100Gbps 超高速無線通信実証</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+        
+        body { 
+            font-family: 'Noto Sans JP', sans-serif; 
+            background-color: #f0f4f8; 
+            color: #1e293b; 
+            line-height: 1.9; 
+        }
+        .main-container { 
+            max-width: 950px; 
+            margin: 50px auto; 
+            background: #ffffff; 
+            border-radius: 16px; 
+            overflow: hidden; 
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+        }
+        .content-inner { padding: 40px; }
+        
+        h2 { 
+            font-size: 22px; 
+            font-weight: 900; 
+            color: #0f172a; 
+            border-left: 6px solid #2563eb;
+            padding-left: 15px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        p { margin-bottom: 1.5rem; text-align: justify; }
+        
+        .grid-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 25px;
+        }
+        
+        .card-detail {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 24px;
+        }
+        
+        .card-title {
+            font-weight: 900;
+            color: #1e3a8a;
+            font-size: 17px;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .grid-box { grid-template-columns: 1fr; }
+            .content-inner { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <img src="6GWireless.jpg" alt="560GHz 100Gbps 超高速無線通信実証" class="w-full h-auto">
+
+        <div class="content-inner">
+            <h2>インフォグラフィックス解説</h2>
+            <p>
+                本図解は、徳島大学と岐阜大学の研究グループが達成した次世代無線通信の実証実験における核心的なメカニズムと、その社会的役割を1枚に凝縮したものです。従来の通信の限界を打ち破る革新性が、視覚的に整理されています。
+            </p>
+
+            <div class="grid-box">
+                <div class="card-detail">
+                    <div class="card-title">■ 560GHz帯を用いた112Gbps通信の実証</div>
+                    <p class="text-sm text-slate-600 mb-0">
+                        テラヘルツ波領域に達する超高周波（560GHz）を制御することで、無線環境でありながら実測値約112Gbpsという驚異的な高速通信を記録しました。これは一般的な固定光回線の100倍以上の速度を空中経由で実現したことを意味します。
+                    </p>
+                </div>
+
+                <div class="card-detail">
+                    <div class="card-title">■ 「マイクロ光コム」による物理限界の突破</div>
+                    <p class="text-sm text-slate-600 mb-0">
+                        従来の電子回路による高周波生成方式では、ノイズや熱の制約により350GHz付近が物理的な限界点とされていました。本技術では、レーザーを精密制御する光技術「マイクロ光コム」を基準に用いることで、極めて安定した超高周波信号の生成に成功しました。
+                    </p>
+                </div>
+
+                <div class="card-detail">
+                    <div class="card-title">■ 6G時代のワイヤレスバックホール</div>
+                    <p class="text-sm text-slate-600 mb-0">
+                        直進性が強く飛ばない超高周波を扱う6Gでは、街中に小型基地局を激増させる必要があります。すべての設置点に光ファイバーを引く土木工事コスト（バックホール問題）を、この100Gbps級の超高速無線リンクによって代替・解消する道を開きます。
+                    </p>
+                </div>
+
+                <div class="card-detail">
+                    <div class="card-title">■ 有線と無線のハイブリッド構造へ</div>
+                    <p class="text-sm text-slate-600 mb-0">
+                        光ファイバーの持つ絶対的な「安定性」と、無線が持つ「柔軟性・機動性」を高度に融合。基幹ネットワークは有線で守り、アクセスの高密度な末端区間（ラストワンマイル）をこのテラヘルツ無線で繋ぐ、次世代の通信インフラの屋台骨となります。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
