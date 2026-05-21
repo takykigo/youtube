@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>560GHz帯・100Gbps級無線通信の実証とその社会的意義に関するブリーフィング</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+        body { 
+            font-family: 'Noto Sans JP', sans-serif; 
+            background-color: #ffffff; 
+            color: #333333; 
+            line-height: 1.8; 
+        }
+        .document-wrapper { 
+            max-width: 900px; 
+            margin: 0 auto; 
+            padding: 60px 40px; 
+        }
+        .title-large { 
+            font-size: 26px; 
+            font-weight: 900; 
+            color: #0f172a; 
+            text-align: center; 
+            margin-bottom: 30px;
+            line-height: 1.4;
+        }
+        .title-medium { 
+            font-size: 20px; 
+            font-weight: 700; 
+            color: #1e3a8a; 
+            margin-top: 40px;
+            margin-bottom: 20px;
+            border-left: 6px solid #1e3a8a;
+            padding-left: 12px;
+        }
+        .title-small { 
+            font-size: 17px; 
+            font-weight: 700; 
+            color: #2563eb; 
+            margin-top: 25px;
+            margin-bottom: 12px;
+        }
+        .text-body { 
+            font-size: 16px; 
+            margin-bottom: 1.5rem; 
+            text-align: justify;
+        }
+        .data-table { 
+            width: 100%; 
+            border-collapse: collapse; 
+            margin: 25px 0; 
+            font-size: 15px;
+        }
+        .data-table th, .data-table td { 
+            border: 1px solid #cbd5e1; 
+            padding: 12px 16px; 
+            text-align: left; 
+        }
+        .data-table th { 
+            background-color: #f8fafc; 
+            font-weight: 700; 
+        }
+        ul {
+            list-style-type: disc;
+            padding-left: 24px;
+            margin-bottom: 24px;
+        }
+        li {
+            margin-bottom: 8px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="document-wrapper">
+        
+        <h1 class="title-large">560GHz帯・100Gbps級無線通信の実証とその社会的意義に関するブリーフィング</h1>
+
+        <h2 class="title-medium">エグゼクティブ・サマリー</h2>
+        <p class="text-body">
+            徳島大学と岐阜大学の研究グループが、560GHz帯を用いた100Gbps級（実測値約112Gbps）の無線通信実験に成功した。この成果は、2030年前後の実用化が期待される次世代通信規格「6G」を支える基盤技術として極めて重要な意味を持つ。本技術の核心は、従来の電子回路による高周波生成の限界（約350GHz）を、レーザー光を精密制御する「マイクロ光コム」技術によって打破した点にある。これにより、光ファイバー並みの巨大な通信量を無線で実現する道が開かれた。主な用途としては、6Gで激増する基地局同士を結ぶ「ワイヤレスバックホール」が想定されており、光ファイバー敷設が困難な地域や災害時、都市部での工事コスト削減に大きく寄与すると期待される。
+        </p>
+
+        <h2 class="title-medium">1. 実証実験の概要と通信性能</h2>
+        <p class="text-body">
+            今回の実験で達成された通信性能は、現在の通信インフラと比較して圧倒的な高速性を有している。
+        </p>
+        <ul>
+            <li><strong>周波数帯:</strong> 560GHz（テラヘルツ波に近い超高周波）</li>
+            <li><strong>通信速度:</strong> 約112Gbps</li>
+            <li><strong>性能比較:</strong>
+                <ul class="list-circle" style="list-style-type: circle; margin-top: 8px; margin-bottom: 0;">
+                    <li>一般的な家庭用光回線（1Gbps）の100倍以上の速度。</li>
+                    <li>5Gの理論値をも上回る超高速通信。</li>
+                </ul>
+            </li>
+        </ul>
+
+        <h3 class="title-small">周波数（GHz）と通信速度（Gbps）の定義</h3>
+        <p class="text-body">
+            混同されやすい両単位の役割は以下の通り整理される。
+        </p>
+
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>単位</th>
+                    <th>意味</th>
+                    <th>たとえ（道路）</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>GHz (ギガヘルツ)</strong></td>
+                    <td>周波数（電波の1秒間の振動数）</td>
+                    <td>道路の幅・性能</td>
+                </tr>
+                <tr>
+                    <td><strong>Gbps (ギガビット毎秒)</strong></td>
+                    <td>通信速度（1秒間に送れる情報量）</td>
+                    <td>実際に流れる交通量</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <p class="text-body">
+            <strong>結論:</strong> 周波数が高い（電波の振動が細かい）ほど、一度に大量の情報を詰め込むことが可能になり、結果として通信速度が向上する。
+        </p>
+
+        <h2 class="title-medium">2. 560GHz帯採用の背景と技術的ブレイクスルー</h2>
+        <h3 class="title-small">従来の限界</h3>
+        <p class="text-body">
+            高周波は情報を大量に送れる反面、減衰しやすく、障害物に弱いという「非常に神経質」な特性を持つ。従来の電子回路による生成手法では、350GHzを超えたあたりで技術的な限界に直面していた。
+        </p>
+        <h3 class="title-small">光技術の転用</h3>
+        <p class="text-body">
+            研究チームは、電子回路ではなく<strong>「光」の技術</strong>を用いることでこの壁を突破した。
+        </p>
+        <ul>
+            <li><strong>マイクロ光コム:</strong> 櫛（Comb）の歯のように等間隔で並んだ超精密な光を生成。</li>
+            <li><strong>信号生成:</strong> レーザー光を超精密制御し、560GHzの信号を生成。</li>
+            <li><strong>無線変換:</strong> 生成した信号を無線へと変換して飛ばす。この手法により、ノイズが少なく極めて安定した超高周波の生成が可能となった。</li>
+        </ul>
+
+        <h2 class="title-medium">3. 有線（光ファイバー）と無線の役割分担</h2>
+        <p class="text-body">
+            本技術は光ファイバー並みの速度を実現するが、有線を完全に代替するものではなく、高度な役割分担が想定されている。
+        </p>
+
+        <h3 class="title-small">有線と無線の特性比較</h3>
+        <table class="data-table">
+            <thead>
+                <tr>
+                    <th>項目</th>
+                    <th>有線（光ファイバー）</th>
+                    <th>無線（テラヘルツ波等）</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>安定性・信頼性</strong></td>
+                    <td>極めて高い（外乱や雨の影響なし）</td>
+                    <td>低い（空気で減衰、遮蔽物に弱い）</td>
+                </tr>
+                <tr>
+                    <td><strong>セキュリティ</strong></td>
+                    <td>高い（物理的切断が可能）</td>
+                    <td>原理的に混信や傍受の懸念あり</td>
+                </tr>
+                <tr>
+                    <td><strong>柔軟性</strong></td>
+                    <td>低い（配線工事が必要）</td>
+                    <td>高い（移動可能、レイアウト容易）</td>
+                </tr>
+                <tr>
+                    <td><strong>電力供給</strong></td>
+                    <td>可能（PoE等）</td>
+                    <td>困難（無線給電は効率・距離に制約）</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h3 class="title-small">未来のハイブリッド構造</h3>
+        <p class="text-body">
+            基幹部分は安定した光ファイバーを使用し、最後の数十メートルから数百メートルの区間や、物理的な配線が困難な箇所を今回の超高速無線で補完する構造が現実的である。
+        </p>
+
+        <h2 class="title-medium">4. 6G社会における戦略的重要性：バックホール問題の解決</h2>
+        <p class="text-body">
+            6Gは、単なる「人間のスマホの高速化」ではなく、AI、自動運転、XR、デジタルツインなどが複雑に絡み合う<strong>「社会全体のリアルタイム神経網」</strong>としての役割を担う。
+        </p>
+
+        <h3 class="title-small">ワイヤレスバックホールとしての活用</h3>
+        <p class="text-body">
+            6Gでは、超高周波（100GHz〜1THz）を利用するため、電波が遠くまで飛ばない。そのため、小型基地局を街灯やビル壁面などに高密度に配置する必要がある。ここで、各基地局をインターネット網に繋ぐ「裏側回線（バックホール）」が課題となる。
+        </p>
+        <ul>
+            <li><strong>課題:</strong> 全ての基地局に光ファイバーを引くには、巨額の工事費、道路掘削、膨大な工期が必要。</li>
+            <li><strong>解決策:</strong> 560GHz無線を<strong>「ワイヤレスバックホール」</strong>として活用し、基地局間を無線で繋ぐことで、光ファイバーの敷設を大幅に削減できる。</li>
+        </ul>
+
+        <h3 class="title-small">その他の想定用途</h3>
+        <ul>
+            <li><strong>データセンター:</strong> サーバー間の超高速通信。</li>
+            <li><strong>スマート工場:</strong> 多数のAIロボット群のリアルタイム制御。</li>
+            <li><strong>災害・イベント:</strong> 物理回線が断線した際の代替や、仮設基地局の迅速な運用。</li>
+        </ul>
+
+        <h2 class="title-medium">5. 結論と展望</h2>
+        <p class="text-body">
+            今回の560GHz・100Gbps通信の実証は、単なる通信速度の記録更新ではない。それは、光ファイバーの安定性と無線の柔軟性を高次元で融合させ、爆発的に増加する未来の通信需要を支えるインフラの実現可能性を示したものである。2030年に向けた6Gインフラの構築において、この技術は「基地局の激増」という物理的・経済的障壁を乗り越えるための有力な鍵となると結論付けられる。
+        </p>
+
+    </div>
+
+</body>
+</html>
