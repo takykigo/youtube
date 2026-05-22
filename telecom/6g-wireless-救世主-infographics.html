@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6G技術分析：560GHzの衝撃 — なぜ112Gbps無線が救世主となるのか</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #030712;
+            color: #f3f4f6;
+        }
+        .font-tech {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .neon-blue {
+            text-shadow: 0 0 20px rgba(6, 182, 212, 0.5);
+        }
+        .neon-card {
+            box-shadow: 0 0 40px rgba(6, 182, 212, 0.03);
+            border: 1px solid rgba(6, 182, 212, 0.15);
+        }
+        .neon-card-amber {
+            box-shadow: 0 0 40px rgba(245, 158, 11, 0.03);
+            border: 1px solid rgba(245, 158, 11, 0.15);
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-6 lg:p-8 min-h-screen">
+
+    <div class="max-w-5xl mx-auto">
+        <header class="text-center mb-12 border-b border-gray-900 pb-10">
+            <div class="inline-block bg-cyan-950/40 text-cyan-400 text-xs px-3 py-1 rounded-full font-bold uppercase tracking-widest mb-3 border border-cyan-800/40">
+                Tech Briefing & Infographic
+            </div>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl font-black text-white mb-4 tracking-tight leading-tight">
+                560GHzの衝撃：なぜ<br class="sm:hidden">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-emerald-400 to-indigo-400 font-tech neon-blue">
+                    「112Gbpsの無線」
+                </span>
+                が<br class="hidden sm:block">6G時代の救世主となるのか？
+            </h1>
+            <p class="text-gray-400 max-w-3xl mx-auto text-xs sm:text-sm md:text-base leading-relaxed">
+                従来の半導体・電子デバイスの限界点であった「350GHzの壁」を、光の技術（マイクロ光コム）によって完全に打破。
+                単一チャネルで112Gbpsという驚異的な無線伝送に成功した実証結果とその圧倒的意義。
+            </p>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div class="bg-slate-900/40 backdrop-blur-md rounded-2xl p-6 neon-card flex flex-col justify-between">
+                <div>
+                    <span class="text-xs font-bold text-cyan-400 tracking-wider uppercase block">実証された周波数</span>
+                    <h3 class="text-4xl font-black text-white font-tech mt-2 mb-1">560 <span class="text-lg font-normal text-gray-500">GHz</span></h3>
+                </div>
+                <p class="text-xs text-gray-400 border-t border-gray-800/80 pt-3 mt-4">
+                    ミリ波のさらに先、未踏の「サブテラヘルツ帯」。圧倒的な帯域幅（電波の道幅）を確保できる宝の山。
+                </p>
+            </div>
+            <div class="bg-slate-900/40 backdrop-blur-md rounded-2xl p-6 neon-card flex flex-col justify-between">
+                <div>
+                    <span class="text-xs font-bold text-emerald-400 tracking-wider uppercase block">単一チャネル通信速度</span>
+                    <h3 class="text-4xl font-black text-white font-tech mt-2 mb-1">112 <span class="text-lg font-normal text-gray-500">Gbps</span></h3>
+                </div>
+                <p class="text-xs text-gray-400 border-t border-gray-800/80 pt-3 mt-4">
+                    420GHz超の周波数において、100Gbpsを超える無線伝送を達成したのは<span class="text-emerald-400 font-medium">世界初</span>の快挙。
+                </p>
+            </div>
+            <div class="bg-slate-900/40 backdrop-blur-md rounded-2xl p-6 neon-card flex flex-col justify-between">
+                <div>
+                    <span class="text-xs font-bold text-indigo-400 tracking-wider uppercase block">ブレイクスルーの鍵</span>
+                    <h3 class="text-xl font-bold text-white mt-3 mb-1">マイクロ光コム</h3>
+                </div>
+                <p class="text-xs text-gray-400 border-t border-gray-800/80 pt-3 mt-4">
+                    ノーベル賞技術である超高精度レーザー「光コム」のチップ化に成功。光ファイバーから直結可能な革新構造。
+                </p>
+            </div>
+        </div>
+
+        <div class="bg-slate-900/20 rounded-2xl p-6 border border-gray-900 mb-12">
+            <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <span class="w-2 h-4 bg-cyan-400 rounded-xs"></span>
+                なぜこの技術が必要だったのか？（技術のパラダイムシフト）
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-slate-950/60 p-5 rounded-xl border-glow neon-card-amber">
+                    <div class="text-xs font-bold text-amber-400 uppercase tracking-wide mb-2">● 従来の限界（電子デバイス方式）</div>
+                    <h4 class="text-sm font-bold text-gray-200 mb-2">「350GHzの壁」と激しいノイズ</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        従来の電子回路で電波の周波数を引き上げる（倍周波など）方法では、350GHzを超えたあたりから信号が急激に弱まり、かつ「位相雑音（波の揺らぎ）」が激しくなり、データを乗せることが不可能でした。
+                    </p>
+                </div>
+                <div class="bg-slate-950/60 p-5 rounded-xl border-glow neon-card">
+                    <div class="text-xs font-bold text-cyan-400 uppercase tracking-wide mb-2">● 今回の突破口（光駆動テラヘルツ方式）</div>
+                    <h4 class="text-sm font-bold text-gray-200 mb-2">「光」の圧倒的な純度を電波へ移植</h4>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        超高精度な光のパルス列「マイクロ光コム」のビートを、超高速な光電変換器（UTC-PD）でそのまま電気に変換。極めてクリーンでノイズのない560GHzの正弦波を生み出し、16QAMという高度な多値変調に成功しました。
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-12">
+            <h2 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
+                <span class="w-2 h-4 bg-emerald-400 rounded-xs"></span>
+                なぜ「112Gbpsの無線」が6Gの救世主（セービア）なのか
+            </h2>
+
+            <div class="space-y-4">
+                <div class="bg-slate-900/40 p-5 rounded-xl border border-gray-900 flex flex-col sm:flex-row gap-4 items-start">
+                    <div class="bg-cyan-950 text-cyan-400 font-tech font-bold text-sm px-3 py-1.5 rounded-lg shrink-0">REASON 01</div>
+                    <div>
+                        <h4 class="text-sm font-bold text-white mb-1">光ファイバーを「引けない場所」を埋める極太の無線リンク</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            6G時代、各基地局（スモールセル）には100Gbps級の基幹回線（バックホール）が要求されます。しかし、川や道路を挟んだ対岸、あるいは災害被災地には光ファイバーを物理的に埋設できません。560GHz帯の112Gbps無線は、この**「光ファイバーの代替（ワイヤレス・バックホール）」**を瞬時に構築できます。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/40 p-5 rounded-xl border border-gray-900 flex flex-col sm:flex-row gap-4 items-start">
+                    <div class="bg-emerald-950 text-emerald-400 font-tech font-bold text-sm px-3 py-1.5 rounded-lg shrink-0">REASON 02</div>
+                    <div>
+                        <h4 class="text-sm font-bold text-white mb-1">チップスケール化が可能：実用化・量産化へのロードマップ</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            これまでのテラヘルツ実験装置は、部屋を占有するほどの巨大な光学定盤や無数のミラーが必要でした。今回の「マイクロ光コム」は半導体製造技術（シリコンフォトニクス）を使って**小型チップ（数ミリサイズ）に統合可能**なため、将来的に基地局機器やデバイスへ組み込める現実的なパッケージングが約束されています。
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-900/40 p-5 rounded-xl border border-gray-900 flex flex-col sm:flex-row gap-4 items-start">
+                    <div class="bg-indigo-950 text-indigo-400 font-tech font-bold text-sm px-3 py-1.5 rounded-lg shrink-0">REASON 03</div>
+                    <div>
+                        <h4 class="text-sm font-bold text-white mb-1">光と無線の一体化（アイオン構想・オールフォトニクスへの適合）</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            光ファイバーを伝わってきた光信号を、一度面倒な電子回路に戻すことなく、**「光のままテラヘルツ電波に変調」**して空中へ放射します。これにより、ネットワーク全体の消費電力を劇的に削減し、超低遅延（ミリ秒以下）の完全同期社会を実現します。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bg-slate-950 p-6 rounded-2xl border border-gray-900 mb-12 text-center">
+            <h4 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">光・テラヘルツシームレス変換フロー</h4>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-3 text-xs">
+                <div class="px-3 py-2 bg-slate-900 border border-gray-800 rounded-lg w-full sm:w-auto">
+                    <span class="text-cyan-400 font-bold block">1. マイクロ光コムチップ</span>
+                    光ファイバー内を等間隔な光パルスが走行
+                </div>
+                <div class="text-gray-600 font-bold sm:rotate-0 rotate-90">➔</div>
+                <div class="px-3 py-2 bg-slate-900 border border-gray-800 rounded-lg w-full sm:w-auto">
+                    <span class="text-emerald-400 font-bold block">2. 高速光電変換 (UTC-PD)</span>
+                    電子回路を通さず、一瞬で560GHz波を生成
+                </div>
+                <div class="text-gray-600 font-bold sm:rotate-0 rotate-90">➔</div>
+                <div class="px-3 py-2 bg-gradient-to-r from-indigo-950 to-slate-900 border border-indigo-900/60 rounded-lg w-full sm:w-auto">
+                    <span class="text-indigo-400 font-bold block">3. 112Gbps 空中放射</span>
+                    6G基地局間で光ファイバー級データを無線中継
+                </div>
+            </div>
+        </div>
+
+        <footer class="bg-gradient-to-br from-slate-950 via-cyan-950/10 to-slate-950 p-6 rounded-2xl border border-cyan-900/30 text-center sm:text-left sm:flex items-center justify-between gap-6">
+            <div>
+                <h3 class="text-base font-bold text-white mb-1.5">総括：実験室から、2030年代の現実社会へ</h3>
+                <p class="text-xs text-gray-400 max-w-2xl leading-relaxed">
+                    本実証が「衝撃」と呼ばれる理由は、単に変調速度の記録を塗り替えたからではありません。「マイクロ光コム」という、将来的な量産化・小型化が担保されたデバイスを用いてテラヘルツ波の制御に成功した点にあります。これこそが、都市部の電波逼迫や過疎地の情報格差を解消し、6Gを単なる絵に描いた餅に終わらせないための「真のコア技術」です。
+                </p>
+            </div>
+            <div class="mt-4 sm:mt-0 bg-cyan-400 text-slate-950 font-tech font-black text-xs px-4 py-2.5 rounded-xl tracking-wider shadow-lg shadow-cyan-400/10 whitespace-nowrap">
+                6G ERA READY
+            </div>
+        </footer>
+    </div>
+
+</body>
+</html>
