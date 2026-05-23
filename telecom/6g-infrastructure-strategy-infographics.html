@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6G次世代無線バックホール導入戦略提案書 | 560GHz帯技術によるインフラ革新</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #05070f;
+            color: #e2e8f0;
+        }
+        .font-tech {
+            font-family: 'Orbitron', sans-serif;
+        }
+        .glow-cyan {
+            text-shadow: 0 0 25px rgba(6, 182, 212, 0.4);
+        }
+        .card-cyan {
+            box-shadow: 0 0 40px rgba(6, 182, 212, 0.02);
+            border: 1px solid rgba(6, 182, 212, 0.15);
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-6 md:p-10 min-h-screen">
+
+    <div class="max-w-6xl mx-auto">
+        
+        <!-- Header Section -->
+        <header class="text-center mb-12 border-b border-gray-900 pb-10">
+            <div class="inline-block bg-cyan-950/50 text-cyan-400 text-xs px-4 py-1.5 rounded-full font-bold uppercase tracking-widest mb-4 border border-cyan-800/40">
+                Strategic Proposal for 6G Infrastructure
+            </div>
+            <h1 class="text-2xl sm:text-4xl md:text-5xl font-black text-white mb-4 tracking-tight leading-tight">
+                6G社会の実現に向けた<br class="sm:hidden">次世代無線バックホール導入戦略提案書<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-teal-400 to-indigo-400 font-tech glow-cyan">
+                    — 560GHz帯技術によるインフラ構築の革新 —
+                </span>
+            </h1>
+            <p class="text-gray-400 max-w-3xl mx-auto text-xs sm:text-sm md:text-base leading-relaxed mt-4">
+                6Gで求められる「超多数同時接続・超低遅延」を支えるため、光ファイバー未敷設エリアや都市部の電波逼迫を、世界初の実証に成功した「560GHz帯・100Gbps超」の光駆動型無線通信で解決する戦略的アプローチ。
+            </p>
+        </header>
+
+        <!-- Executive Summary Matrix (KPIs) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            <div class="bg-slate-900/40 rounded-2xl p-6 card-cyan flex flex-col justify-between">
+                <div>
+                    <span class="text-[10px] font-bold text-cyan-400 tracking-wider uppercase block">通信パフォーマンス</span>
+                    <h3 class="text-3xl font-black text-white font-tech mt-2">112 <span class="text-sm font-normal text-gray-500">Gbps</span></h3>
+                </div>
+                <p class="text-xs text-gray-400 pt-3 border-t border-gray-800 mt-4">
+                    単一チャネル（16QAM）で光ファイバーと同等以上の速度を無線で実現。
+                </p>
+            </div>
+            <div class="bg-slate-900/40 rounded-2xl p-6 card-cyan flex flex-col justify-between">
+                <div>
+                    <span class="text-[10px] font-bold text-teal-400 tracking-wider uppercase block">敷設コスト削減予測</span>
+                    <h3 class="text-3xl font-black text-white font-tech mt-2">最大 70<span class="text-sm font-normal text-gray-500">% 減</span></h3>
+                </div>
+                <p class="text-xs text-gray-400 pt-3 border-t border-gray-800 mt-4">
+                    道路の掘削や光ファイバー埋設工事が不要になり、初期投資（CAPEX）を激減。
+                </p>
+            </div>
+            <div class="bg-slate-900/40 rounded-2xl p-6 card-cyan flex flex-col justify-between">
+                <div>
+                    <span class="text-[10px] font-bold text-indigo-400 tracking-wider uppercase block">コアデバイス特性</span>
+                    <h3 class="text-xl font-bold text-white mt-2">超小型光コム</h3>
+                </div>
+                <p class="text-xs text-gray-400 pt-3 border-t border-gray-800 mt-4">
+                    シリコンチップ上に統合可能（半導体プロセス対応）。将来の量産化・低価格化を担保。
+                </p>
+            </div>
+            <div class="bg-slate-900/40 rounded-2xl p-6 card-cyan flex flex-col justify-between">
+                <div>
+                    <span class="text-[10px] font-bold text-purple-400 tracking-wider uppercase block">環境負荷（消費電力）</span>
+                    <h3 class="text-xl font-bold text-white mt-2">光・無線直結</h3>
+                </div>
+                <p class="text-xs text-gray-400 pt-3 border-t border-gray-800 mt-4">
+                    光信号から電子回路を介さず直接テラヘルツ波に変換するため、電力ロスを最小化。
+                </p>
+            </div>
+        </div>
+
+        <!-- Strategy Pillars & Application Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 mb-12">
+            
+            <!-- Left: The Infrastructure Challenge (5 cols) -->
+            <div class="lg:col-span-5 bg-slate-900/20 rounded-2xl p-6 border border-gray-900 flex flex-col justify-between">
+                <div>
+                    <h2 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+                        <span class="w-1.5 h-3.5 bg-cyan-400 rounded-sm"></span>
+                        解決すべきインフラの課題
+                    </h2>
+                    <p class="text-xs text-gray-400 mb-6">なぜ今、560GHz帯バックホールが必要なのか</p>
+                    
+                    <div class="space-y-4">
+                        <div class="p-4 bg-slate-950/60 rounded-xl border-l-2 border-amber-500/60">
+                            <h4 class="text-xs font-bold text-amber-400 mb-1">① ラストワンマイルの物理的限界</h4>
+                            <p class="text-[11px] text-gray-400 leading-relaxed">
+                                河川、高架道路、鉄道などを跨ぐエリアや、歴史的建造物の多い都市部では、物理的な光ファイバーの地下埋設工事が不可能、または莫大な時間とコストがかかる。
+                            </p>
+                        </div>
+                        <div class="p-4 bg-slate-950/60 rounded-xl border-l-2 border-amber-500/60">
+                            <h4 class="text-xs font-bold text-amber-400 mb-1">② 5Gミリ波基地局の「過密と息切れ」</h4>
+                            <p class="text-[11px] text-gray-400 leading-relaxed">
+                                6Gでは基地局（スモールセル）がさらに高密度化するため、各基地局を繋ぐ中継回線のデータ量がパンクする。従来の無線中継（E-band等）では100Gbps超の要求を満たせない。
+                            </p>
+                        </div>
+                        <div class="p-4 bg-slate-950/60 rounded-xl border-l-2 border-cyan-500/60 bg-gradient-to-r from-cyan-950/20 to-transparent">
+                            <h4 class="text-xs font-bold text-cyan-400 mb-1">➔ 560GHz帯が提供するソリューション</h4>
+                            <p class="text-[11px] text-gray-300 leading-relaxed">
+                                直進性が極めて高く、広大な帯域を持つ560GHz帯を「ピンポイントな直線中継（固定無線リンク）」として活用。光ファイバーと同等の極太回線を、空中を介して最短即日で開通可能にします。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="mt-6 p-3 bg-slate-950/40 rounded-xl border border-gray-800 text-[10px] text-gray-500">
+                    ※本提案は、徳島大学・岐阜大学等が実証した「Communications Engineering (Nature Portfolio) 掲載技術」をインフラ投資戦略へと応用したものです。
+                </div>
+            </div>
+
+            <!-- Right: 3-Phase Deployment Strategy (7 cols) -->
+            <div class="lg:col-span-7 bg-slate-900/20 rounded-2xl p-6 border border-gray-900">
+                <h2 class="text-lg font-bold text-white mb-2 flex items-center gap-2">
+                    <span class="w-1.5 h-3.5 bg-teal-400 rounded-sm"></span>
+                    段階的導入ロードマップ（3フェーズ戦略）
+                </h2>
+                <p class="text-xs text-gray-400 mb-6">大気減衰（雨や水蒸気）の特性を考慮した現実的な実用化ステップ</p>
+
+                <div class="space-y-4">
+                    <!-- Phase 1 -->
+                    <div class="p-4 bg-slate-950/50 rounded-xl border border-gray-800/80 hover:border-cyan-900/50 transition-colors">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-xs font-bold text-white flex items-center gap-2">
+                                <span class="px-2 py-0.5 bg-cyan-950 text-cyan-400 rounded font-tech text-[10px]">PHASE 01</span>
+                                固定間ピンポイント中継（D2D / ビル間専用リンク）
+                            </h4>
+                            <span class="text-[10px] text-cyan-400 font-mono">ターゲット: 短距離（~50m）</span>
+                        </div>
+                        <p class="text-[11px] text-gray-400 leading-relaxed">
+                            まずは大気減衰の影響を最小限に抑えられる「至近距離のビル間」や「同一施設内の棟間接続」に導入。ファイバー工事が困難なルートのピンポイント代替として、100Gbps超の安定稼働実績を構築。
+                        </p>
+                    </div>
+
+                    <!-- Phase 2 -->
+                    <div class="p-4 bg-slate-950/50 rounded-xl border border-gray-800/80 hover:border-teal-900/50 transition-colors">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-xs font-bold text-white flex items-center gap-2">
+                                <span class="px-2 py-0.5 bg-teal-950 text-teal-400 rounded font-tech text-[10px]">PHASE 02</span>
+                                6Gマクロ基地局・スモールセル混在型バックホール
+                            </h4>
+                            <span class="text-[10px] text-teal-400 font-mono">ターゲット: 中距離（~100m）</span>
+                        </div>
+                        <p class="text-[11px] text-gray-400 leading-relaxed">
+                            高利得アンテナや自動追尾（ビームフォーミング）技術を組み合わせ、数万局規模で展開される6Gスモールセルの基幹中継回線として本格展開。都市部の電波渋滞を完全に解消。
+                        </p>
+                    </div>
+
+                    <!-- Phase 3 -->
+                    <div class="p-4 bg-slate-950/50 rounded-xl border border-gray-800/80 hover:border-indigo-900/50 transition-colors">
+                        <div class="flex items-center justify-between mb-2">
+                            <h4 class="text-xs font-bold text-white flex items-center gap-2">
+                                <span class="px-2 py-0.5 bg-indigo-950 text-indigo-400 rounded font-tech text-[10px]">PHASE 03</span>
+                                災害時インフラ・移動体バックホール（UAV・空飛ぶクルマ）
+                            </h4>
+                            <span class="text-[10px] text-indigo-400 font-mono">ターゲット: 動的臨時リンク</span>
+                        </div>
+                        <p class="text-[11px] text-gray-400 leading-relaxed">
+                            デバイスの極小・軽量化が進むことで、ドローンや空飛ぶクルマ、移動式臨時基地局への搭載へと拡大。ファイバーが寸断された災害地でも、上空から一瞬でテラビット級のエリア復旧を実現。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- System Architecture Visual Matrix -->
+        <div class="bg-slate-900/30 rounded-2xl p-6 border border-gray-950 mb-12">
+            <h2 class="text-lg font-bold text-white mb-2">導入によるインフラのパラダイムシフト</h2>
+            <p class="text-xs text-gray-400 mb-6">従来の無線インフラと560GHz帯（マイクロ光コム駆動）の比較</p>
+            
+            <div class="overflow-x-auto">
+                <table class="w-full text-left text-xs border-collapse">
+                    <thead>
+                        <tr class="border-b border-gray-800 text-gray-400">
+                            <th class="pb-3 font-medium">評価項目</th>
+                            <th class="pb-3 font-medium text-amber-400">従来型無線中継 (E-band等)</th>
+                            <th class="pb-3 font-medium text-cyan-400">560GHz帯マイクロ光コム方式</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-900 text-gray-300">
+                        <tr>
+                            <td class="py-3.5 font-medium text-white">確保可能な帯域幅</td>
+                            <td class="py-3.5">狭い（数GHz幅が限界）</td>
+                            <td class="py-3.5 text-cyan-300 font-medium">極めて広い（数十GHz幅の未開拓領域）</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3.5 font-medium text-white">単一チャネル速度</td>
+                            <td class="py-3.5">10Gbps 〜 20Gbps</td>
+                            <td class="py-3.5 text-cyan-300 font-medium">112Gbps（実証済み）/ 将来的にTbps級</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3.5 font-medium text-white">信号の純度（雑音）</td>
+                            <td class="py-3.5">悪い（高周波化に伴い位相雑音が増大）</td>
+                            <td class="py-3.5 text-cyan-300 font-medium">極めて高い（光由来の超高精度・低ジッタ）</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3.5 font-medium text-white">装置の将来性</td>
+                            <td class="py-3.5">電子回路の限界（350GHzの物理的壁）</td>
+                            <td class="py-3.5 text-cyan-300 font-medium">半導体チップ化（シリコンフォトニクス）が可能</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Strategy Conclusion / Call to Action -->
+        <footer class="bg-gradient-to-r from-slate-950 via-cyan-950/20 to-slate-950 rounded-2xl p-6 border border-cyan-900/30 md:flex items-center justify-between gap-6 text-center md:text-left">
+            <div class="mb-4 md:mb-0">
+                <h3 class="text-base font-bold text-white mb-1.5">提言：先行投資による「電波支配権」の獲得</h3>
+                <p class="text-xs text-gray-400 max-w-3xl leading-relaxed">
+                    560GHz帯マイクロ光コム技術は、実験室の数値を競う段階から、実際のインフラコストを劇的に下げる「社会実装フェーズ」へと移行しつつあります。物理的な光ファイバー網の敷設限界を空中から補完するこのバックホール戦略は、2030年代の6Gシェア争いにおいて、競合他社に圧倒的なコスト優位性とエリア開通スピードの差をつけるゲームチェンジャーです。早期の技術インテグレーションと実証フィールドの確保を強く推奨します。
+                </p>
+            </div>
+            <div class="inline-block bg-gradient-to-r from-cyan-500 to-teal-500 text-slate-950 font-tech font-bold text-xs px-6 py-3 rounded-xl shadow-lg shadow-cyan-500/20 whitespace-nowrap tracking-wider">
+                APPROVE STRATEGY
+            </div>
+        </footer>
+        
+    </div>
+
+</body>
+</html>
