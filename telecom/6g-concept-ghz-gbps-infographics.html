@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【概念解説】GHzとGbpsの違い ＆ 高周波の特性</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Plus+Jakarta+Sans:wght@700;800&display=swap');
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #0f172a;
+            color: #e2e8f0;
+        }
+        .font-num {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+    </style>
+</head>
+<body class="p-4 sm:p-6 md:p-8 min-h-screen flex items-center justify-center">
+
+    <div class="max-w-4xl w-full bg-slate-900/80 backdrop-blur-md rounded-3xl p-6 md:p-8 border border-slate-800 shadow-2xl">
+        
+        <!-- Header -->
+        <header class="text-center mb-10 border-b border-slate-800 pb-6">
+            <h1 class="text-2xl sm:text-3xl font-black text-white tracking-tight mb-2">
+                【概念解説】通信の基本「GHz」と「Gbps」
+            </h1>
+            <p class="text-slate-400 text-xs sm:text-sm">
+                次世代通信（5G/6G）を理解するための「電波の道幅」と「データの車速」のカンバセーション
+            </p>
+        </header>
+
+        <!-- Section 1: GHz vs Gbps (The Analogy) -->
+        <div class="mb-10">
+            <h2 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
+                <span class="w-1.5 h-4 bg-blue-500 rounded-full"></span>
+                1. 「GHz」と「Gbps」の決定的な違い
+            </h2>
+            
+            <p class="text-xs text-slate-400 mb-4 bg-slate-950/40 p-3 rounded-xl border border-slate-800/60 leading-relaxed">
+                よく混同されますが、<strong>GHzは「電波そのものの性質」</strong>であり、<strong>Gbpsは「その電波を使って運べるデータの量・スピード」</strong>を指します。道路とトラックに例えると非常にすっきり理解できます。
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- GHz Card -->
+                <div class="bg-gradient-to-br from-blue-950/40 to-slate-950/60 p-5 rounded-2xl border border-blue-900/40">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold text-blue-400 tracking-wider uppercase">周波数（波の細かさ）</span>
+                        <span class="bg-blue-500/10 text-blue-400 text-[10px] px-2 py-0.5 rounded-md font-mono">Frequency</span>
+                    </div>
+                    <h3 class="text-3xl font-black text-white font-num">GHz <span class="text-sm font-normal text-slate-400">（ギガヘルツ）</span></h3>
+                    <div class="mt-4 p-3 bg-slate-900/80 rounded-xl border border-slate-800 text-xs text-slate-300 space-y-2">
+                        <p class="font-bold text-blue-300">🚚 例え：道路の「車線数（道幅）」</p>
+                        <p class="leading-relaxed">1秒間に電波の波が何億回往復するかを表す単位。周波数が高い（GHzが大きい）ほど、より多くの車線を確保できるため、一度に大量のデータを流すポテンシャルが生まれます。</p>
+                    </div>
+                </div>
+
+                <!-- Gbps Card -->
+                <div class="bg-gradient-to-br from-emerald-950/40 to-slate-950/60 p-5 rounded-2xl border border-emerald-900/40">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-xs font-bold text-emerald-400 tracking-wider uppercase">通信速度（データの量）</span>
+                        <span class="bg-emerald-500/10 text-emerald-400 text-[10px] px-2 py-0.5 rounded-md font-mono">Data Rate</span>
+                    </div>
+                    <h3 class="text-3xl font-black text-white font-num">Gbps <span class="text-sm font-normal text-slate-400">（ギガビット毎秒）</span></h3>
+                    <div class="mt-4 p-3 bg-slate-900/80 rounded-xl border border-slate-800 text-xs text-slate-300 space-y-2">
+                        <p class="font-bold text-emerald-300">📦 例え：1秒間に運べる「荷物の量」</p>
+                        <p class="leading-relaxed">1秒間に何ギガビットのデータをデジタル送信できたかを表す実効速度。道幅（GHz）が広く、最新の積載技術（変調方式）を使うほど、このGbpsの数値は跳ね上がります。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section 2: High Frequency Characteristics -->
+        <div>
+            <h2 class="text-lg font-bold text-white mb-6 flex items-center gap-2">
+                <span class="w-1.5 h-4 bg-purple-500 rounded-full"></span>
+                2. なぜ6Gは「560GHz」のような超高周波を狙うのか？
+            </h2>
+            
+            <p class="text-xs text-slate-400 mb-4 bg-slate-950/40 p-3 rounded-xl border border-slate-800/60 leading-relaxed">
+                電波は<strong>「周波数が高くなればなるほど、光（直進する性質）に近づく」</strong>という物理特性を持っています。これには強烈なメリットと、厄介なデメリット（トレードオフ）が存在します。
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <!-- Merit -->
+                <div class="p-4 bg-slate-950/60 rounded-xl border border-emerald-950/60">
+                    <h4 class="text-xs font-bold text-emerald-400 mb-2 flex items-center gap-1.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                        高周波のメリット（なぜ使うのか）
+                    </h4>
+                    <ul class="text-xs text-slate-300 space-y-2 list-disc pl-4 leading-relaxed">
+                        <li><strong class="text-white">超高速化（Tbps級）が可能：</strong>低い周波数帯（4Gなど）はすでに満席。高周波には誰も使っていない広大な未開拓の空き地（広い帯域幅）があるため、数百度〜数千倍のスピードを引き出せます。</li>
+                        <li><strong class="text-white">アンテナを極小化できる：</strong>電波の波長がミリ単位（テラヘルツ波ならサブミリ単位）に縮むため、アンテナ素子を数ミリ四方のチップに何百個も詰め込むことができます。</li>
+                    </ul>
+                </div>
+
+                <!-- Demerit -->
+                <div class="p-4 bg-slate-950/60 rounded-xl border border-rose-950/60">
+                    <h4 class="text-xs font-bold text-rose-400 mb-2 flex items-center gap-1.5">
+                        <span class="w-1.5 h-1.5 rounded-full bg-rose-400"></span>
+                        高周波のデメリット（克服すべき壁）
+                    </h4>
+                    <ul class="text-xs text-slate-300 space-y-2 list-disc pl-4 leading-relaxed">
+                        <li><strong class="text-white">障害物に極めて弱い：</strong>波が細かすぎるため、ビル、壁、さらには「人間の手」や「空気中の水蒸気・雨」にぶつかるだけで、電波が吸収されたり跳ね返ったりして、裏側に回り込めません（直進性が強すぎる）。</li>
+                        <li><strong class="text-white">遠くまで飛ばない：</strong>大気による減衰が激しいため、Wi-Fiのように何十メートルも先へ広く飛ばすのが苦手です。そのため「ピンポイントに狙いを定めて直線で結ぶ」中継通信などに使われます。</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Visual Concept Footer -->
+        <div class="mt-8 pt-4 border-t border-slate-800 text-center">
+            <span class="text-[11px] text-slate-500 font-mono tracking-wider">
+                SUMMARY: GHz（道幅）を広げることで、初めてGbps（通信速度）の限界値を爆発的に高めることができる。
+            </span>
+        </div>
+
+    </div>
+
+</body>
+</html>
