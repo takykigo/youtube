@@ -6,221 +6,245 @@
     <title>巨大銀河団 MACS J1141.6-1905 と画像解析技術：観測データの解読と光学的副産物の本質</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Noto+Sans+JP:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Noto+Sans+JP:wght@300;400;700;900&display=swap');
         
         body { 
             font-family: 'Noto Sans JP', sans-serif; 
-            background-color: #02040a; 
-            color: #f0f2f5; 
-            line-height: 2.1;
-            letter-spacing: 0.03em;
+            background-color: #030712; 
+            color: #f3f4f6; 
+            line-height: 1.8;
+            letter-spacing: 0.02em;
         }
 
-        /* 宇宙の微細な星屑を表現する背景効果 */
-        .space-bg {
-            background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
-            background-size: 32px 32px;
+        /* 宇宙空間の広がりと星屑を表現する背景グラデーション */
+        .space-dashboard {
+            background-image: 
+                radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 10% 70%, rgba(99, 102, 241, 0.08) 0%, transparent 40%),
+                radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+            background-size: 100% 100%, 100% 100%, 32px 32px;
         }
 
-        .main-wrapper { 
-            max-width: 960px; 
+        .main-container { 
+            max-w-7xl: 1200px;
             margin: 0 auto; 
-            padding: 40px 20px;
+            padding: 40px 24px;
         }
 
-        .article-card {
-            background: rgba(10, 15, 30, 0.6);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(56, 189, 248, 0.1);
+        /* インフォグラフィックの核となるカード型コンポーネント */
+        .info-panel {
+            background: rgba(15, 23, 42, 0.4);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(56, 189, 248, 0.15);
             border-radius: 24px;
-            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
         }
 
-        .image-container {
+        .tech-num {
+            font-family: 'Orbitron', sans-serif;
+            background: linear-gradient(to right, #38bdf8, #6366f1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* 3段階処理ステップの視覚化ライン */
+        .step-line {
             position: relative;
-            background: #000000;
-            border-bottom: 1px solid rgba(56, 189, 248, 0.15);
         }
-
-        .text-content-area {
-            padding: 80px 90px;
-        }
-
-        .scifi-tag {
-            font-family: 'Cinzel', serif;
-            font-size: 13px;
-            color: #38bdf8;
-            letter-spacing: 0.25em;
-            text-transform: uppercase;
-            display: block;
-            margin-bottom: 20px;
+        @media (min-width: 1024px) {
+            .step-line::after {
+                content: "→";
+                position: absolute;
+                right: -20px;
+                top: 40%;
+                color: #38bdf8;
+                font-size: 24px;
+                font-family: 'Orbitron', sans-serif;
+            }
+            .step-line:last-child::after { content: ""; }
         }
 
         h1 {
-            font-size: 30px;
+            font-size: 28px;
             font-weight: 900;
-            line-height: 1.5;
+            line-height: 1.4;
             color: #ffffff;
-            letter-spacing: -0.01em;
-            margin-bottom: 50px;
+            letter-spacing: -0.02em;
         }
 
         h2 { 
-            font-size: 21px; 
+            font-family: 'Orbitron', 'Noto Sans JP', sans-serif;
+            font-size: 18px; 
             font-weight: 900; 
-            color: #ffffff; 
-            margin-top: 70px; 
-            margin-bottom: 30px;
-            letter-spacing: -0.01em;
-            display: flex;
-            align-items: center;
-        }
-
-        h2::before {
-            content: "";
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            background-color: #38bdf8;
-            margin-right: 14px;
-            transform: rotate(45deg);
-            box-shadow: 0 0 12px #38bdf8;
+            color: #38bdf8; 
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
         }
 
         h3 {
-            font-size: 17px;
+            font-size: 16px;
             font-weight: 700;
-            margin-top: 35px;
-            margin-bottom: 15px;
             color: #7dd3fc;
         }
         
-        p { 
-            margin-bottom: 1.8rem; 
-            text-align: justify; 
+        p, li { 
             color: #cbd5e1; 
             font-weight: 300;
-            font-size: 16px;
+            font-size: 15px;
+            text-align: justify;
         }
 
         strong { 
             font-weight: 700; 
             color: #ffffff; 
         }
-        
-        /* 洗練されたミニマルな構造表 */
-        .minimal-table { 
-            width: 100%; 
-            border-collapse: collapse; 
-            margin: 40px 0; 
-            font-size: 15px;
-        }
-        .minimal-table th, .minimal-table td { 
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08); 
-            padding: 18px 20px; 
-            text-align: left; 
-        }
-        .minimal-table th { 
-            color: #38bdf8;
-            font-weight: 700; 
-            border-bottom: 2px solid rgba(56, 189, 248, 0.3);
-            background-color: rgba(56, 189, 248, 0.02);
-        }
-        .minimal-table tr:hover td {
-            background-color: rgba(255, 255, 255, 0.01);
-        }
-        
-        @media (max-width: 768px) {
-            .text-content-area { padding: 40px 25px; }
-            h1 { font-size: 22px; }
-            h2 { font-size: 18px; }
-            .minimal-table { display: block; overflow-x: auto; }
+
+        .section-block {
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            padding-top: 40px;
+            margin-top: 40px;
         }
     </style>
 </head>
-<body class="space-bg">
+<body class="space-dashboard p-4 md:p-8">
 
-    <div class="main-wrapper">
-        <div class="article-card">
+    <div class="max-w-[1140px] mx-auto info-panel overflow-hidden">
+        
+        <div class="w-full bg-black border-b border-[rgba(56,189,248,0.2)]">
+            <img src="macs-j1141-infographic.jpg" alt="巨大銀河団 MACS J1141.6-1905 と画像解析技術" class="w-full h-auto block mx-auto">
+        </div>
+
+        <div class="p-6 md:p-12 space-y-12">
             
-            <div class="image-container">
-                <img src="macs-j1141-infographic.jpg" alt="巨大銀河団 MACS J1141.6-1905 と画像解析技術" class="w-full h-auto block">
+            <div class="border-b border-slate-800 pb-8">
+                <div class="flex items-center space-x-3 mb-3">
+                    <span class="h-2 w-2 rounded-full bg-sky-400 animate-pulse shadow-[0_0_8px_#38bdf8]"></span>
+                    <span class="font-mono text-xs tracking-[0.2em] text-sky-400 font-bold uppercase">Space Imaging & Data Science Report</span>
+                </div>
+                <h1>巨大銀河団 MACS J1141.6-1905 と画像解析技術：観測データの解読と光学的副産物の本質</h1>
             </div>
 
-            <div class="text-content-area">
-                <span class="scifi-tag">Deep Space Observation & Data Science</span>
-                <h1>巨大銀河団 MACS J1141.6-1905 と画像解析技術：観測データの解読と光学的副産物の本質</h1>
+            <div class="bg-slate-900/40 border border-slate-800 rounded-2xl p-6 md:p-8">
+                <h2 class="mb-4 flex items-center"><span class="text-xs font-mono mr-2 text-sky-400">00 /</span> Executive Summary</h2>
+                <p class="mb-6">本資料は、ハッブル宇宙望遠鏡および Legacy Surveys（DECam 等）が捉えた巨大銀河団「MACS J1141.6-1905」の観測データに基づき、現代天文学における画像解析手法と光学現象の本質を解説するものである。主な要点は以下の通りである：</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                    <div class="p-4 bg-slate-950/40 rounded-xl border border-slate-800/60"><p class="mb-0"><strong>観測対象：</strong> 地球から約40億〜50億光年先に位置する巨大銀河団「MACS J1141.6-1905」は、数百から数千の銀河が重力で結びついた宇宙最大級の構造体である。</p></div>
+                    <div class="p-4 bg-slate-950/40 rounded-xl border border-slate-800/60"><p class="mb-0"><strong>画像解析技術：</strong> アルゴリズム「The Tractor」を用いた「Images（生画像）」「Models（数式モデル）」「Residuals（残差）」の3段階処理により、重なり合う天体を分離し、背後に隠れた遠方銀河を特定する。</p></div>
+                    <div class="p-4 bg-slate-950/40 rounded-xl border border-slate-800/60"><p class="mb-0"><strong>重力レンズ効果：</strong> 銀河団の巨大な質量が時空を歪め、背後の銀河を「アーク（光の弧）」として拡大・変形させる現象が確認されている。</p></div>
+                    <div class="p-4 bg-slate-950/40 rounded-xl border border-slate-800/60"><p class="mb-0"><strong>回折スパイク：</strong> 明るい恒星に見られる十字の光は、望遠鏡内部の構造（支柱）に起因する「光学的アーティファクト」であり、宇宙の実在物ではない。</p></div>
+                </div>
+            </div>
 
-                <h2>エグゼクティブ・サマリー</h2>
-                <p>本資料は、ハッブル宇宙望遠鏡および Legacy Surveys（DECam 等）が捉えた巨大銀河団「MACS J1141.6-1905」の観測データに基づき、現代天文学における画像解析手法と光学現象の本質を解説するものである。主な要点は以下の通りである：</p>
-                <p><strong>観測対象：</strong> 地球から約40億〜50億光年先に位置する巨大銀河団「MACS J1141.6-1905」は、数百から数千の銀河が重力で結びついた宇宙最大級の構造体である。</p>
-                <p><strong>画像解析技術：</strong> アルゴリズム「The Tractor」を用いた「Images（生画像）」「Models（数式モデル）」「Residuals（残差）」の3段階処理により、重なり合う天体を分離し、背後に隠れた遠方銀河を特定する。</p>
-                <p><strong>重力レンズ効果：</strong> 銀河団の巨大な質量が時空を歪め、背後の銀河を「アーク（光の弧）」として拡大・変形させる現象が確認されている。</p>
-                <p><strong>回折スパイク：</strong> 明るい恒星に見られる十字の光は、望遠鏡内部の構造（支柱）に起因する「光学的アーティファクト」であり、宇宙の実在物ではない。</p>
+            <div class="section-block">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div>
+                        <h2 class="flex items-center"><span class="tech-num text-2xl mr-3">01</span> Observation Target</h2>
+                        <p class="text-xs font-mono text-sky-400/70 mt-1">MACS J1141.6-1905</p>
+                    </div>
+                    <div class="lg:col-span-2 space-y-4">
+                        <h3 class="text-lg font-bold text-white">1. 観測対象：巨大銀河団 MACS J1141.6-1905</h3>
+                        <p>コップ座の方向に位置する MACS J1141.6-1905 は、極めて過密な天体集団である。</p>
+                        <p><strong>構造と規模：</strong> 数百から数千の銀河が重力によって結びついており、各銀河は数十億から数千億の星々を抱えている。</p>
+                        <p><strong>科学的意義：</strong> X線で非常に明るく輝くこの銀河団は、重力レンズ効果の研究や、銀河団中心部における物理的相互作用の解明を目的とした観測プログラムの対象となっている。</p>
+                    </div>
+                </div>
+            </div>
 
-                <h2>1. 観測対象：巨大銀河団 MACS J1141.6-1905</h2>
-                <p>コップ座の方向に位置する MACS J1141.6-1905 は、極めて過密な天体集団である。</p>
-                <p><strong>構造と規模：</strong> 数百から数千の銀河が重力によって結びついており、各銀河は数十億から数千億の星々を抱えている。</p>
-                <p><strong>科学的意義：</strong> X線で非常に明るく輝くこの銀河団は、重力レンズ効果の研究や、銀河団中心部における物理的相互作用の解明を目的とした観測プログラムの対象となっている。</p>
-
-                <h2>2. 画像解析アルゴリズム「The Tractor」による三段階処理</h2>
-                <p>Legacy Surveys 等で使用される解析手法は、密集した天体から「本当の宇宙の姿」を抽出するために、以下の3つのステップを踏む。</p>
-
-                <table class="minimal-table">
-                    <thead>
-                        <tr>
-                            <th>モード</th>
-                            <th>内容・特徴</th>
-                            <th>科学的な目的</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Images</strong></td>
-                            <td>望遠鏡が撮影した生の観測画像。天体が密集し、光が重なり合っている。</td>
-                            <td>ベースとなる観測データの確認。</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Models</strong></td>
-                            <td>物理・数学的に計算された「理想的な天体の形状」のシミュレーション。背景ノイズがない。</td>
-                            <td>天体の輝度分布を正確に数値化し、引き算の基準を作る。</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Residuals</strong></td>
-                            <td>「Images － Models」で導き出される差分画像。予測可能な天体が消去される。</td>
-                            <td>手前のまぶしい天体に隠された、かすかな構造や異常値を浮き彫りにする。</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <h2>3. 残差画像（Residuals）に現れる情報の分類</h2>
-                <p>残差画像に消されずに残る要素は、単なるノイズではなく、重要な科学的データまたはモデルの限界を示している。</p>
+            <div class="section-block">
+                <h2 class="mb-6 flex items-center"><span class="tech-num text-2xl mr-3">02</span> Image Processing Algorithm</h2>
+                <p class="mb-6"><strong>2. 画像解析アルゴリズム「The Tractor」による三段階処理</strong><br>Legacy Surveys 等で使用される解析手法は、密集した天体から「本当の宇宙の姿」を抽出するために、以下の3つのステップを踏む。</p>
                 
-                <h3>① 重力レンズアーク（遠方銀河の像）</h3>
-                <p>銀河団の巨大な重力が時空を歪めることで、真後ろにある遠方銀河（100億光年以上先）の光が細長く引き伸ばされて写り込む。アルゴリズムは通常の円形や楕円形の天体しかモデル化できないため、この不自然に歪んだ「光のアーク」は残差画像に明確に残される。</p>
-                
-                <h3>② 天体中心部の残差（フィッティングエラー）</h3>
-                <p>銀河の中心部は星が超高密度で集まっているため、数式モデルで完璧に再現しきれず、計算残りとしてドット状に残ることがある。これにより、手前の銀河に完全に重なっていた別の天体が露出することもある。</p>
-                
-                <h3>③ センサーノイズとモデル誤差</h3>
-                <p><strong>3色の微細な点：</strong> 異なるフィルター（g, r, zバンド）で撮影した際に発生するCCDカメラのランダムノイズや宇宙線。<br>
-                <strong>ぼやけた斑点：</strong> 背景のゆらぎや、モデルが「何もない空間」を天体と誤認した際の計算誤差。</p>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-4">
+                    <div class="p-5 bg-slate-900/30 border border-slate-800 rounded-xl step-line">
+                        <span class="font-mono text-xs text-sky-400 font-bold block mb-2">STAGE 01 / IMAGES</span>
+                        <h3 class="text-base font-bold text-white mb-2">Images (生画像)</h3>
+                        <p class="text-sm mb-4">望遠鏡が撮影した生の観測画像。天体が密集し、光が重なり合っている。</p>
+                        <div class="text-xs font-mono bg-slate-950/60 p-2 rounded border border-slate-800 text-slate-400">目的: ベースとなる観測データの確認。</div>
+                    </div>
+                    <div class="p-5 bg-slate-900/30 border border-slate-800 rounded-xl step-line">
+                        <span class="font-mono text-xs text-purple-400 font-bold block mb-2">STAGE 02 / MODELS</span>
+                        <h3 class="text-base font-bold text-white mb-2">Models (数式モデル)</h3>
+                        <p class="text-sm mb-4">物理・数学的に計算された「理想的な天体の形状」のシミュレーション。背景ノイズがない。</p>
+                        <div class="text-xs font-mono bg-slate-950/60 p-2 rounded border border-slate-800 text-slate-400">目的: 天体の輝度分布を正確に数値化し、引き算の基準を作る。</div>
+                    </div>
+                    <div class="p-5 bg-slate-900/30 border border-slate-800 rounded-xl">
+                        <span class="font-mono text-xs text-emerald-400 font-bold block mb-2">STAGE 03 / RESIDUALS</span>
+                        <h3 class="text-base font-bold text-white mb-2">Residuals (残差)</h3>
+                        <p class="text-sm mb-4">「Images － Models」で導き出される差分画像。予測可能な天体が消去される。</p>
+                        <div class="text-xs font-mono bg-slate-950/60 p-2 rounded border border-slate-800 text-slate-400">目的: 手前のまぶしい天体に隠された、かすかな構造や異常値を浮き彫りにする。</div>
+                    </div>
+                </div>
+            </div>
 
-                <h2>4. 回折スパイク（Diffraction Spikes）のメカニズム</h2>
-                <p>明るい星の周囲に見られる十字状の光の筋は、天体そのものの構造ではなく、望遠鏡の構造に由来する物理現象である。</p>
-                
-                <h3>生じる原因</h3>
-                <p>反射望遠鏡の内部には、中央の「副鏡」を固定するための「スパイダー（支柱）」と呼ばれる金属製の梁がある。星からの光がこの支柱の縁を通る際、光の波が回り込む「回折」という現象が起き、支柱と垂直な方向に光の筋が伸びる。</p>
-                
-                <h3>星と銀河の見え方の違い</h3>
-                <p><strong>恒星（点光源）：</strong> 非常に遠方にあるため「点」として写り、光が極めて高密度に集中するため、シャープで強い回折スパイクが発生する。<br>
-                <strong>銀河（面光源）：</strong> 無数の星が広がった「面」として写るため、光が分散し、基本的に回折スパイクは発生しない。</p>
-                
-                <h3>データ処理上の課題</h3>
-                <p>回折スパイクは不規則で長く伸びるため、数式（Models）での再現が困難である。そのため、残差画像においてもカラフルな線やノイズの筋として消し残る傾向があり、これを「本物の天体」と見間違えないよう厳密な選別が必要となる。</p>
+            <div class="section-block">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div>
+                        <h2 class="flex items-center"><span class="tech-num text-2xl mr-3">03</span> Residuals Classification</h2>
+                        <p class="text-xs font-mono text-sky-400/70 mt-1">Data Interpretation</p>
+                    </div>
+                    <div class="lg:col-span-2 space-y-6">
+                        <h3 class="text-lg font-bold text-white">3. 残差画像（Residuals）に現れる情報の分類</h3>
+                        <p>残差画像に消されずに残る要素は、単なるノイズではなく、重要な科学的データまたはモデルの限界を示している。</p>
+                        
+                        <div class="space-y-4">
+                            <div class="border-l-2 border-sky-500 pl-4">
+                                <h4 class="font-bold text-white text-base mb-1">① 重力レンズアーク（遠方銀河の像）</h4>
+                                <p class="text-sm">銀河団の巨大な重力が時空を歪めることで、真後ろにある遠方銀河（100億光年以上先）の光が細長く引き伸ばされて写り込む。アルゴリズムは通常の円形や楕円形の天体しかモデル化できないため、この不自然に歪んだ「光のアーク」は残差画像に明確に残される。</p>
+                            </div>
+                            
+                            <div class="border-l-2 border-purple-500 pl-4">
+                                <h4 class="font-bold text-white text-base mb-1">② 天体中心部の残差（フィッティングエラー）</h4>
+                                <p class="text-sm">銀河の中心部は星が超高密度で集まっているため、数式モデルで完璧に再現しきれず、計算残りとしてドット状に残ることがある。これにより、手前の銀河に完全に重なっていた別の天体が露出することもある。</p>
+                            </div>
+                            
+                            <div class="border-l-2 border-emerald-500 pl-4">
+                                <h4 class="font-bold text-white text-base mb-1">③ センサーノイズとモデル誤差</h4>
+                                <p class="text-sm"><strong>3色の微細な点：</strong> 異なるフィルター（g, r, zバンド）で撮影した際に発生するCCDカメラのランダムノイズや宇宙線。<br><strong>ぼやけた斑点：</strong> 背景のゆらぎや、モデルが「何もない空間」を天体と誤認した際の計算誤差。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
-                <h2>5. 結論</h2>
-                <p>宇宙観測とは、単に撮影された画像を眺めることではなく、望遠鏡が生む錯覚（回折スパイク）、センサーのノイズ、数式モデルの限界を正確に把握し、それらを分離していく科学的なプロセスである。MACS J1141.6-1905 のような巨大構造の解析を通じて、人類は重力が曲げる光や暗闇に隠れた遠方銀河の痕跡を特定し、宇宙の真実の姿へと近づいている。</p>
+            <div class="section-block">
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <div>
+                        <h2 class="flex items-center"><span class="tech-num text-2xl mr-3">04</span> Diffraction Spikes</h2>
+                        <p class="text-xs font-mono text-sky-400/70 mt-1">Optical Artifacts</p>
+                    </div>
+                    <div class="lg:col-span-2 space-y-6">
+                        <h3 class="text-lg font-bold text-white">4. 回折スパイク（Diffraction Spikes）のメカニズム</h3>
+                        <p>明るい星の周囲に見られる十字状の光の筋は、天体そのものの構造ではなく、望遠鏡の構造に由来する物理現象である。</p>
+                        
+                        <div class="bg-slate-900/60 p-5 rounded-xl border border-slate-800">
+                            <span class="text-xs font-mono text-sky-400 block mb-1">[ 生じる原因 ]</span>
+                            <p class="text-sm mb-0">反射望遠鏡の内部には、中央の「副鏡」を固定するための「スパイダー（支柱）」と呼ばれる金属製の梁がある。星からの光がこの支柱の縁を通る際、光の波が回り込む「回折」という現象が起き、支柱と垂直な方向に光の筋が伸びる。</p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div class="p-4 bg-slate-950/40 rounded-xl border border-slate-800/80">
+                                <span class="text-xs font-mono text-amber-400 block mb-1">恒星 (点光源)</span>
+                                <p class="text-sm mb-0">非常に遠方にあるため「点」として写り、光が極めて高密度に集中するため、シャープで強い回折スパイクが発生する。</p>
+                            </div>
+                            <div class="p-4 bg-slate-950/40 rounded-xl border border-slate-800/80">
+                                <span class="text-xs font-mono text-indigo-400 block mb-1">銀河 (面光源)</span>
+                                <p class="text-sm mb-0">無数の星が広がった「面」として写るため、光が分散し、基本的に回折スパイクは発生しない。</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <span class="text-xs font-mono text-rose-400 block mb-1">[ データ処理上の課題 ]</span>
+                            <p class="text-sm mb-0">回折スパイクは不規則で長く伸びるため、数式（Models）での再現が困難である。そのため、残差画像においてもカラフルな線やノイズの筋として消し残る傾向があり、これを「本物の天体」と見間違えないよう厳密な選別が必要となる。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section-block border-t border-slate-800 pt-8">
+                <div class="bg-gradient-to-r from-sky-950/30 to-indigo-950/30 border border-sky-900/50 rounded-2xl p-6 md:p-8">
+                    <h2 class="mb-3 flex items-center text-white"><span class="tech-num text-xl mr-2">05 /</span> Conclusion</h2>
+                    <p class="mb-0 text-slate-300"><strong>5. 結論</strong><br>宇宙観測とは、単に撮影された画像を眺めることではなく、望遠鏡が生む錯覚（回折スパイク）、センサーのノイズ、数式モデルの限界を正確に把握し、それらを分離していく科学的なプロセスである。MACS J1141.6-1905 のような巨大構造の解析を通じて、人類は重力が曲げる光や暗闇に隠れた遠方銀河の痕跡を特定し、宇宙の真実の姿へと近づいている。</p>
+                </div>
             </div>
 
         </div>
