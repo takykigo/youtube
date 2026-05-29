@@ -6,259 +6,176 @@
     <title>宇宙の引き算：隠れた真実を暴く「科学的推論シート」</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Noto+Sans+JP:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
         
         body { 
             font-family: 'Noto Sans JP', sans-serif; 
-            background-color: #02040a; 
-            color: #f0f2f5; 
-            line-height: 1.9;
-            letter-spacing: 0.02em;
+            background-color: #030712; 
+            background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+            background-size: 32px 32px;
+            color: #f3f4f6; 
+            line-height: 2.0; 
         }
-
-        .space-dashboard {
-            background-image: 
-                radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.06) 0%, transparent 40%),
-                radial-gradient(circle at 10% 70%, rgba(139, 92, 246, 0.06) 0%, transparent 40%),
-                radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-            background-size: 100% 100%, 100% 100%, 32px 32px;
+        .main-container { 
+            max-width: 900px; 
+            margin: 60px auto; 
+            background: #0f172a; 
+            border-radius: 16px; 
+            overflow: hidden; 
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
-
-        .info-panel {
-            background: rgba(13, 18, 30, 0.5);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(56, 189, 248, 0.12);
-            border-radius: 24px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+        .header-banner {
+            background: linear-gradient(135deg, #1e1b4b 0%, #030712 100%);
+            padding: 60px 50px;
+            border-bottom: 3px solid #38bdf8;
+            text-align: left;
         }
-
-        .tech-num {
-            font-family: 'Orbitron', sans-serif;
-            background: linear-gradient(to right, #38bdf8, #a78bfa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        h1 {
-            font-size: 26px;
+        .meta-tag {
+            background-color: #38bdf8;
+            color: #030712;
+            font-size: 11px;
             font-weight: 900;
-            line-height: 1.4;
-            color: #ffffff;
-            letter-spacing: -0.02em;
-        }
-
-        h2 { 
-            font-family: 'Orbitron', 'Noto Sans JP', sans-serif;
-            font-size: 18px; 
-            font-weight: 900; 
-            color: #38bdf8; 
-            letter-spacing: 0.05em;
+            padding: 3px 12px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 15px;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
         }
-
-        h3 {
-            font-size: 16px;
-            font-weight: 700;
-            color: #7dd3fc;
+        .content-body { padding: 55px 65px; }
+        
+        h1 { font-size: 24px; font-weight: 900; line-height: 1.5; color: #ffffff; }
+        h2 { 
+            font-size: 20px; 
+            font-weight: 900; 
+            margin-top: 50px; 
+            margin-bottom: 25px; 
+            color: #38bdf8;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 8px;
         }
         
-        p, li { 
-            color: #cbd5e1; 
-            font-weight: 300;
-            font-size: 15px;
-            text-align: justify;
-        }
-
-        strong { 
-            font-weight: 700; 
-            color: #ffffff; 
-        }
-
-        .section-block {
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding-top: 40px;
-            margin-top: 40px;
-        }
-
-        .custom-table { 
+        p { margin-bottom: 1.6rem; text-align: justify; color: #cbd5e1; }
+        strong { font-weight: 700; color: #ffffff; }
+        
+        .data-table { 
             width: 100%; 
             border-collapse: collapse; 
-            margin: 25px 0; 
+            margin: 30px 0; 
             font-size: 14px;
+            background-color: #1e293b;
+            border-radius: 8px;
+            overflow: hidden;
         }
-        .custom-table th, .custom-table td { 
-            border: 1px solid rgba(255, 255, 255, 0.1); 
+        .data-table th, .data-table td { 
+            border: 1px solid #334155; 
             padding: 14px; 
             text-align: left; 
         }
-        .custom-table th { 
-            background-color: rgba(15, 23, 42, 0.6); 
+        .data-table th { 
+            background-color: #0f172a; 
             color: #38bdf8;
             font-weight: 700; 
         }
         
-        @media (max-width: 768px) {
-            .custom-table { display: block; overflow-x: auto; }
+        @media (max-width: 640px) {
+            .content-body { padding: 30px 20px; }
+            h1 { font-size: 18px; }
+            h2 { font-size: 17px; }
+            .data-table { display: block; overflow-x: auto; }
         }
     </style>
 </head>
-<body class="space-dashboard p-4 md:p-8">
+<body>
 
-    <div class="max-w-[1140px] mx-auto info-panel overflow-hidden">
-        
-        <div class="p-6 md:p-12 space-y-12">
-            
-            <div class="border-b border-slate-800 pb-8">
-                <div class="flex items-center space-x-3 mb-3">
-                    <span class="h-2 w-2 rounded-full bg-sky-400 animate-pulse shadow-[0_0_8px_#38bdf8]"></span>
-                    <span class="font-mono text-xs tracking-[0.2em] text-sky-400 font-bold uppercase">Scientific Inference Document</span>
-                </div>
-                <h1>宇宙の引き算：隠れた真実を暴く「科学的推論シート」</h1>
-            </div>
+    <div class="main-container">
+        <header class="header-banner">
+            <span class="meta-tag">Astronomy & Data Science</span>
+            <h1>宇宙の引き算：隠れた真実を暴く「科学的推論シート」</h1>
+        </header>
 
-            <div class="bg-slate-900/40 border border-slate-800 rounded-2xl p-6 md:p-8">
-                <h2 class="mb-4 flex items-center"><span class="text-xs font-mono mr-2 text-sky-400">01 /</span> Introduction</h2>
-                <h3 class="text-lg font-bold text-white mb-3">1. 導入：私たちは「そのままの宇宙」を見ていない</h3>
-                <p class="mb-0">遥か深宇宙から届く光は、決して「そのままの姿」で私たちの目に届くわけではありません。望遠鏡が捉えた画像には、宇宙の真実だけでなく、望遠鏡自身の構造による錯覚、センサーが生むノイズ、そして手前にある天体のまぶしさが幾重にも重なっています。「宇宙観測とは、単に美しい写真を眺めることではありません。望遠鏡が生み出す光学的な『皮』を一枚ずつ数学的に剥ぎ取り、その奥の暗闇に隠された『本物の光』を探し出す、スリリングな知の捜査なのです。」天文学者が行う画像解析は、いわば<strong>情報の皮むき</strong>です。何重ものレイヤーを論理的に分解することで、目には見えなかった100億年前の光が姿を現します。では、その解析の核心となる「魔法の方程式」を紐解していきましょう。</p>
-            </div>
+        <div class="content-body">
+            <h2>1. 導入：私たちは「そのままの宇宙」を見ていない</h2>
+            <p>遥か深宇宙から届く光は、決して「そのままの姿」で私たちの目に届くわけではありません。望遠鏡が捉えた画像には、宇宙の真実だけでなく、望遠鏡自身の構造による錯覚、センサーが生むノイズ、状態として手前にある天体のまぶしさが幾重にも重なっています。「宇宙観測とは、単に美しい写真を眺めることではありません。望遠鏡が生み出す光学的な『皮』を一枚ずつ数学的に剥ぎ取り、その奥の暗闇に隠された『本物の光』を探し出す、スリリングな知の捜査なのです。」天文学者が行う画像解析は、いわば<strong>情報の皮むき</strong>です。何重ものレイヤーを論理的に分解することで、目には見えなかった100億年前の光が姿を現します。では、その解析の核心となる「魔法の方程式」を紐解いていきましょう。</p>
 
-            <div class="section-block">
-                <h2 class="mb-6 flex items-center"><span class="tech-num text-2xl mr-3">02</span> Mathematical Equation</h2>
-                <h3 class="text-lg font-bold text-white mb-3">2. 宇宙を解剖する「視覚的方程式」</h3>
-                <p>Legacy Surveysなどで採用されている解析アルゴリズム「The Tractor（ザ・トラクター）」は、複雑な宇宙の姿を論理的に分解します。その基本原理は、驚くほどシンプルな引き算です。</p>
-                
-                <p class="font-bold text-white mt-4 mb-2">解析の核となる3要素</p>
-                <table class="custom-table">
-                    <thead>
-                        <tr>
-                            <th>要素名</th>
-                            <th>内容</th>
-                            <th>天文学者の注目ポイント</th>
-                            <th>具体的なモデルの例</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Images（観測画像）</strong></td>
-                            <td>望遠鏡が捉えた生の姿。光が密集し、飽和している状態。</td>
-                            <td>どの天体が重なり、背後の天体を隠してしまっているかを確認する。</td>
-                            <td>ハッブルやDECamが撮影した「生データ」</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Models（数式モデル）</strong></td>
-                            <td>物理法則に基づき数学的に再現された「理想的な天体の姿」。</td>
-                            <td>Sersicプロファイル （銀河の輝度分布）や PSF （点光源の広がり）が現実と一致するか。</td>
-                            <td>数式で描かれた「滑らかな楕円銀河」</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Residuals（残差）</strong></td>
-                            <td>Images － Models 。予測可能な光を消し去った「差分」。</td>
-                            <td><strong>「モデルの失敗（消し残り）」</strong>の中にこそ、未知の発見がないか。</td>
-                            <td>背後に隠れていた「かすかな遠方銀河」</td>
-                        </tr>
-                    </tbody>
-                </table>
-                
-                <p class="mt-4">この方程式を、コップ座の方向に位置する約40億〜50億光年先の巨大銀河団「MACS J1141.6-1905」に適用してみましょう。</p>
-            </div>
+            <h2>2. 宇宙を解剖する「視覚的方程式」</h2>
+            <p>Legacy Surveysなどで採用されている解析アルゴリズム「The Tractor（ザ・トラクター）」は、複雑な宇宙の姿を論理的に分解します。その基本原理は、驚くほどシンプルな引き算です。</p>
+            <p><strong>解析の核となる3要素</strong></p>
 
-            <div class="section-block">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    <div>
-                        <h2 class="flex items-center"><span class="tech-num text-2xl mr-3">03</span> Applied Subtraction</h2>
-                        <p class="text-xs font-mono text-sky-400/70 mt-1">MACS J1141.6-1905</p>
-                    </div>
-                    <div class="lg:col-span-2 space-y-4">
-                        <h3 class="text-lg font-bold text-white">3. 実践：巨大銀河団を「引き算」する</h3>
-                        <p>銀河団は「宇宙の超大都市」ですが、その過密さゆえに「そのまま」では背後の真実が見えません。天文学者は「霧を晴らす」ように解析を進めます。</p>
-                        
-                        <div class="space-y-4 pt-2">
-                            <div class="p-4 bg-slate-950/40 rounded-xl border border-slate-800">
-                                <span class="text-xs font-mono text-sky-400 block mb-1">光の重なりを認識する</span>
-                                <p class="text-sm mb-2">銀河団の中心部は光が密集し、手前の銀河が背後の天体を完全に覆い隠しています。</p>
-                                <p class="text-xs text-slate-400 font-mono italic mb-0">天文学者の思考：「このまぶしい光の霧を取り除けば、10 billion years（100億年）以上の時を越えて届く、かすかな古代の光見えるはずだ。」</p>
-                            </div>
-                            <div class="p-4 bg-slate-950/40 rounded-xl border border-slate-800">
-                                <span class="text-xs font-mono text-purple-400 block mb-1">物理法則という「型」を当てる</span>
-                                <p class="text-sm mb-2">既知の楕円銀河の輝度分布（Sersicプロファイルなど）に基づき、理想的なモデルを作成します。</p>
-                                <p class="text-xs text-slate-400 font-mono italic mb-0">天文学者の思考：「もし我々の銀河モデルが正しければ、この引き算で画面は完璧な空白になるはずだ。もし何かが残れば、それは既存のモデルでは説明できない『新しい何か』だ。」</p>
-                            </div>
-                            <div class="p-4 bg-slate-950/40 rounded-xl border border-slate-800">
-                                <span class="text-xs font-mono text-emerald-400 block mb-1">情報の引き算（Residualsの生成）を実行する</span>
-                                <p class="text-sm mb-2">観測画像から数式モデルを差し引きます。</p>
-                                <p class="text-xs text-slate-400 font-mono italic mb-0">天文学者の思考：「よし、予測可能な手前の巨大銀河はすべて消去した。さあ、暗闇の中に何が浮かび上がってきたか確認しよう。」</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <table class="data-table">
+                <thead>
+                    <tr>
+                        <th>要素名</th>
+                        <th>内容</th>
+                        <th>天文学者の注目ポイント</th>
+                        <th>具体的なモデルの例</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Images（観測画像）</strong></td>
+                        <td>望遠鏡が捉えた生の姿。光が密集し、飽和している状態。</td>
+                        <td>どの天体が重なり、背後の天体を隠してしまっているかを確認する。</td>
+                        <td>ハッブルやDECamが撮影した「生データ」</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Models（数式モデル）</strong></td>
+                        <td>物理法則に基づき数学的に再現された「理想的な天体の姿」。</td>
+                        <td>Sersicプロファイル（銀河の輝度分布）やPSF（点光源の広がり）が現実と一致するか。</td>
+                        <td>数式で描かれた「滑らかな楕円銀河」</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Residuals（残差）</strong></td>
+                        <td>Images － Models。予測可能な光を消し去った「差分」。</td>
+                        <td><strong>「モデルの失敗（消し残り）」</strong>の中にこそ、未知の発見がないか。</td>
+                        <td>背後に隠れていた「かすかな遠方銀河」</td>
+                    </tr>
+                </tbody>
+            </table>
 
-            <div class="section-block">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    <div>
-                        <h2 class="flex items-center"><span class="tech-num text-2xl mr-3">04</span> Residuals Analysis</h2>
-                        <p class="text-xs font-mono text-sky-400/70 mt-1">The Three Elements</p>
-                    </div>
-                    <div class="lg:col-span-2 space-y-6">
-                        <h3 class="text-lg font-bold text-white">4. 残差（Residuals）に潜む3つの正体</h3>
-                        <p>「引き算」を終えた画面は一見すると黒いシミだらけですが、そこには「モデル化できなかった真実」が3つの姿で残されています。</p>
-                        
-                        <div class="space-y-4">
-                            <div class="border-l-2 border-sky-500 pl-4">
-                                <h4 class="font-bold text-white text-base mb-1">① 重力レンズアーク（オレンジの筋）</h4>
-                                <p class="text-sm"><strong>原因:</strong> 銀河団の強大な重力が時空を歪め、背後にある<strong>100億光年以上先</strong>の遠方銀河の光を、虫眼鏡のように引き伸ばしたもの。<br><strong>洞察:</strong> アルゴリズムは「通常の楕円形の銀河」しかモデル化できないため、この不自然に歪んだアークを消せません。これこそが、モデルの限界によって暴かれた「時空の歪みの証拠」です。</p>
-                            </div>
-                            
-                            <div class="border-l-2 border-purple-500 pl-4">
-                                <h4 class="font-bold text-white text-base mb-1">② フィッティングエラー（銀河中心の点）</h4>
-                                <p class="text-sm"><strong>原因:</strong> 銀河のコア（中心部）は極めて高密度であり、標準的な数式モデルではその輝度のピークを完璧に再現しきれない「計算残り」。<br><strong>洞察:</strong> この「フィッティングエラー」を分析することで、銀河中心部における星の密集度や複雑な物理構造を理解する手がかりが得られます。</p>
-                            </div>
-                            
-                            <div class="border-l-2 border-emerald-500 pl-4">
-                                <h4 class="font-bold text-white text-base mb-1">③ アーティファクトとバンド別ノイズ</h4>
-                                <p class="text-sm"><strong>原因:</strong> CCDカメラの特性。<strong>gバンド（青）</strong>、<strong>rバンド（緑）</strong>、<strong>zバンド（赤）</strong>の各フィルター撮影時に発生した宇宙線やランダムノイズ。<br><strong>洞察:</strong> 特定の色（単色）でパキッと光る点は天体ではなく、観測機器の限界を示しています。これらを「フェイク」として正しく除外することが、真実への近道です。</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <p>この方程式を、コップ座の方向に位置する約40億〜50億光年先の巨大銀河団「MACS J1141.6-1905」に適用してみましょう。</p>
 
-            <div class="section-block">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    <div>
-                        <h2 class="flex items-center"><span class="tech-num text-2xl mr-3">05</span> Deep Dive Spikes</h2>
-                        <p class="text-xs font-mono text-sky-400/70 mt-1">Checklist & Mechanism</p>
-                    </div>
-                    <div class="lg:col-span-2 space-y-6">
-                        <h3 class="text-lg font-bold text-white">5. 深掘り：十字の光「回折スパイク」の正体</h3>
-                        <p>画像の中で美しく輝く十字の光。実はこれは宇宙の現象ではなく、<strong>望遠鏡の構造そのものが作り出した幻</strong>です。<br>
-                        <strong>仕組み:</strong> 反射望遠鏡の内部で、副鏡を支える「スパイダー（支柱）」が光を回折（波が回り込む現象）させることで発生します。<br>
-                        <strong>解析の壁:</strong> 回折スパイクは非パラメトリックな形状を持ち、非常に多くのピクセルにわたって長く複雑に伸びるため、数学的なモデル化が極めて困難です。そのため、引き算をしてもResidualsにカラフルな線として無残に残ってしまうのです。</p>
+            <h2>3. 実践：巨大銀河団を「引き算」する</h2>
+            <p>銀河団は「宇宙の超大都市」ですが、その過密さゆえに「そのまま」では背後の真実が見えません。天文学者は「霧を晴らす」ように解析を進めます。</p>
+            <p><strong>光の重なりを認識する</strong><br>
+            銀河団の中心部は光が密集し、手前の銀河が背後の天体を完全に覆い隠しています。<br>
+            天文学者の思考：「このまぶしい光の霧を取り除けば、10 billion years（100億年）以上の時を越えて届く、かすかな古代の光が見えるはずだ。」</p>
+            <p><strong>物理法則という「型」を当てる</strong><br>
+            既知の楕円銀河の輝度分布（Sersicプロファイルなど）に基づき、理想的なモデルを作成します。<br>
+            天文学者の思考：「もし我々の銀河モデルが正しければ、この引き算で画面は完璧な空白になるはずだ。もし何かが残れば、それは既存のモデルでは説明できない『新しい何か』だ。」</p>
+            <p><strong>情報の引き算（Residualsの生成）を実行する</strong><br>
+            観測画像から数式モデルを差し引きます。<br>
+            天文学者の思考：「よし、予測可能な手前の巨大銀河はすべて消去した。さあ、暗闇の中に何が浮かび上がってきたか確認しよう。」</p>
 
-                        <p class="font-bold text-white mb-2">「星」と「銀河」の判別チェックリスト</p>
-                        <ul class="space-y-3 bg-slate-950/40 p-5 rounded-xl border border-slate-800 text-sm">
-                            <li class="flex items-start"><span class="text-sky-400 mr-2">◆</span><div><strong>光源の性質：</strong><strong>星</strong>は「点光源（1点に集中）」だが、<strong>銀河</strong>は「面光源（広がった面）」である。</div></li>
-                            <li class="flex items-start"><span class="text-sky-400 mr-2">◆</span><div><strong>スパイクの有無：</strong>強烈な十字の光が現れるのは<strong>星</strong>だけ。銀河は光が分散しているため、スパイクは基本的に発生しない。</div></li>
-                            <li class="flex items-start"><span class="text-sky-400 mr-2">◆</span><div><strong>存在場所：</strong>画像でスパイクを放つ星は、私たちの<strong>天の川銀河内</strong>にある手前の天体。一方、銀河はその遥か彼方の深宇宙にある。</div></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <h2>4. 残差（Residuals）に潜む3つの正体</h2>
+            <p>「引き算」を終えた画面は一見すると黒いシミだらけですが、そこには「モデル化できなかった真実」が3つの姿で残されています。</p>
+            <p><strong>① 重力レンズアーク（オレンジの筋）</strong><br>
+            原因：銀河団の強大な重力が時空を歪め、背後にある<strong>100億光年以上先</strong>の遠方銀河の光を、虫眼鏡のように引き伸ばしたもの。<br>
+            洞察：アルゴリズムは「通常の楕円形の銀河」しかモデル化できないため、この不自然に歪んだアークを消せません。これこそが、モデルの限界によって暴かれた「時空の歪みの証拠」です。</p>
+            <p><strong>② フィッティングエラー（銀河中心の点）</strong><br>
+            原因：銀河のコア（中心部）は極めて高密度であり、標準的な数式モデルではその輝度のピークを完璧に再現しきれない「計算残り」。<br>
+            洞察：この「フィッティングエラー」を分析することで、銀河中心部における星の密集度や複雑な物理構造を理解する手がかりが得られます。</p>
+            <p><strong>③ アーティファクトとバンド別ノイズ</strong><br>
+            原因：CCDカメラの特性。<strong>gバンド（青）</strong>、<strong>rバンド（緑）</strong>、<strong>zバンド（赤）</strong>の各フィルター撮影時に発生した宇宙線やランダムノイズ。<br>
+            洞察：特定の色（単色）でパキッと光る点は天体ではなく、観測機器の限界を示しています。これらを「フェイク」として正しく除外することが、真実への近道です。</p>
 
-            <div class="section-block border-t border-slate-800 pt-8">
-                <div class="bg-gradient-to-r from-sky-950/30 to-purple-950/30 border border-sky-900/50 rounded-2xl p-6 md:p-8">
-                    <h2 class="mb-3 flex items-center text-white"><span class="tech-num text-xl mr-2">06 /</span> Conclusion</h2>
-                    <p class="mb-4 text-slate-300"><strong>6. 結論：ノイズを剥ぎ取った先にある「真実」</strong><br>科学的推論の本質とは、単にデータを受け入れることではなく、<strong>「モデル（予測）」と「現実」の乖離を愛すること</strong>にあります。完璧な引き算ができなかったその「残りカス」の中にこそ、アインシュタインの予言や未知の銀河といった、人類の想像を超える真実が眠っているからです。</p>
-                    
-                    <p class="font-bold text-white text-sm mb-2">本日の学び：3つのキーポイント</p>
-                    <p class="text-sm text-slate-300 pl-4 mb-2"><strong>科学は「不完全さ」から始まる：</strong>お届けするモデルで消し去れなかった「残差（Residuals）」こそが、新しい発見の入り口である。</p>
-                    <p class="text-sm text-slate-300 pl-4 mb-2"><strong>光学の癖を見抜く眼：</strong>回折スパイクのような「望遠鏡の自己紹介」を正しく理解して初めて、100億光年前の「本物の光」を誤認せずに抽出できる。</p>
-                    <p class="text-sm text-slate-300 pl-4 mb-4"><strong>クリティカルな視点を持つ：</strong>AIやアルゴリズムがすべてを完璧に処理する現代において、モデルが「失敗」したその場所にこそ、人間の発見の価値が残されている。</p>
-                    
-                    <p class="text-sm text-slate-400 mb-0">明日から宇宙の画像を見るときは、その美しい十字の光や奇妙なオレンジの歪みを、ただの「絵」としてではなく、解析を待つ「情報の層」として眺めてみてください。そこには、まだ誰も名付けていない宇宙の秘密が、あなたの発見を待っているかもしれません。</p>
-                </div>
-            </div>
+            <h2>5. 深掘り：十字の光「回折スパイク」の正体</h2>
+            <p>画像の中で美しく輝く十字の光。実はこれは宇宙の現象ではなく、<strong>望遠鏡の構造そのものが作り出した幻</strong>です。<br>
+            仕組み：反射望遠鏡の内部で、副鏡を支える「スパイダー（支柱）」が光を回折（波が回り込む現象）させることで発生します。<br>
+            解析の壁：回折スパイクは非パラメトリックな形状を持ち、非常に多くのピクセルにわたって長く複雑に伸びるため、数学的なモデル化が極めて困難です。そのため、引き算をしてもResidualsにカラフルな線として無残に残ってしまうのです。</p>
+            <p><strong>「星」と「銀河」の判別チェックリスト</strong></p>
+            <p>・<strong>光源の性質：</strong><strong>星</strong>は「点光源（1点に集中）」だが、<strong>銀河</strong>は「面光源（広がった面）」である。<br>
+            ・<strong>スパイクの有無：</strong>強烈な十字の光が現れるのは<strong>星</strong>だけ。銀河は光が分散しているため、スパイクは基本的に発生しない。<br>
+            ・<strong>存在場所：</strong>画像でスパイクを放つ星は、私たちの<strong>天の川銀河内</strong>にある手前の天体。一方、銀河はその遥か彼方の深宇宙にある。</p>
 
+            <h2>6. 結論：ノイズを剥ぎ取った先にある「真実」</h2>
+            <p>科学的推論の本質とは、単にデータを受け入れることではなく、<strong>「モデル（予測）」と「現実」の乖離を愛すること</strong>にあります。完璧な引き算ができなかったその「残りカス」の中にこそ、アインシュタインの予言や未知の銀河といった、人類の想像を超える真実が眠っているからです。</p>
+            <p><strong>本日の学び：3つのキーポイント</strong></p>
+            <p><strong>科学は「不完全さ」から始まる：</strong>お届けするモデルで消し去れなかった「残差（Residuals）」こそが、新しい発見の入り口である。</p>
+            <p><strong>光学の癖を見抜く眼：</strong>回折スパイクのような「望遠鏡の自己紹介」を正しく理解して初めて、100億光年前の「本物の光」を誤認せずに抽出できる。</p>
+            <p><strong>クリティカルな視点を持つ：</strong>AIやアルゴリズムがすべてを完璧に処理する現代において、モデルが「失敗」したその場所にこそ、人間の発見の価値が残されている。</p>
+            <p>明日から宇宙の画像を見るときは、その美しい十字の光や奇妙なオレンジの歪みを、ただの「絵」としてではなく、解析を待つ「情報の層」として眺めてみてください。そこには、まだ誰も名付けていない宇宙の秘密が、あなたの発見を待っているかもしれません。</p>
         </div>
     </div>
 
