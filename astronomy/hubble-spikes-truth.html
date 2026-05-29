@@ -6,146 +6,104 @@
     <title>【宇宙の嘘を暴く】ハッブル望遠鏡の「十字の光」に隠された驚きの真実 5選</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@700;900&family=Noto+Sans+JP:wght@300;400;700;900&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
         
         body { 
             font-family: 'Noto Sans JP', sans-serif; 
-            background-color: #02040a; 
-            color: #f0f2f5; 
-            line-height: 1.9;
-            letter-spacing: 0.02em;
+            background-color: #030712; 
+            background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+            background-size: 32px 32px;
+            color: #f3f4f6; 
+            line-height: 2.0; 
         }
-
-        .space-dashboard {
-            background-image: 
-                radial-gradient(circle at 80% 20%, rgba(56, 189, 248, 0.06) 0%, transparent 40%),
-                radial-gradient(circle at 10% 70%, rgba(139, 92, 246, 0.06) 0%, transparent 40%),
-                radial-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px);
-            background-size: 100% 100%, 100% 100%, 32px 32px;
+        .main-container { 
+            max-width: 900px; 
+            margin: 60px auto; 
+            background: #0f172a; 
+            border-radius: 16px; 
+            overflow: hidden; 
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
         }
-
-        .info-panel {
-            background: rgba(13, 18, 30, 0.5);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(56, 189, 248, 0.12);
-            border-radius: 24px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+        .header-banner {
+            background: linear-gradient(135deg, #1e1b4b 0%, #030712 100%);
+            padding: 60px 50px;
+            border-bottom: 3px solid #38bdf8;
+            text-align: left;
         }
-
-        .tech-num {
-            font-family: 'Orbitron', sans-serif;
-            background: linear-gradient(to right, #38bdf8, #a78bfa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        h1 {
-            font-size: 26px;
+        .meta-tag {
+            background-color: #38bdf8;
+            color: #030712;
+            font-size: 11px;
             font-weight: 900;
-            line-height: 1.4;
-            color: #ffffff;
-            letter-spacing: -0.02em;
-        }
-
-        h2 { 
-            font-family: 'Orbitron', 'Noto Sans JP', sans-serif;
-            font-size: 18px; 
-            font-weight: 900; 
-            color: #38bdf8; 
-            letter-spacing: 0.05em;
+            padding: 3px 12px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 15px;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
         }
-
-        h3 {
-            font-size: 16px;
-            font-weight: 700;
-            color: #7dd3fc;
+        .content-body { padding: 55px 65px; }
+        
+        h1 { font-size: 24px; font-weight: 900; line-height: 1.5; color: #ffffff; }
+        h2 { 
+            font-size: 20px; 
+            font-weight: 900; 
+            margin-top: 50px; 
+            margin-bottom: 25px; 
+            color: #38bdf8;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 8px;
         }
         
-        p, li { 
-            color: #cbd5e1; 
-            font-weight: 300;
-            font-size: 15px;
-            text-align: justify;
-        }
-
-        strong { 
-            font-weight: 700; 
-            color: #ffffff; 
-        }
-
-        .section-block {
-            border-top: 1px solid rgba(255, 255, 255, 0.08);
-            padding-top: 40px;
-            margin-top: 40px;
+        p { margin-bottom: 1.6rem; text-align: justify; color: #cbd5e1; }
+        strong { font-weight: 700; color: #ffffff; }
+        
+        @media (max-width: 640px) {
+            .content-body { padding: 30px 20px; }
+            h1 { font-size: 18px; }
+            h2 { font-size: 17px; }
         }
     </style>
 </head>
-<body class="space-dashboard p-4 md:p-8">
+<body>
 
-    <div class="max-w-[1140px] mx-auto info-panel overflow-hidden">
-        
-        <div class="p-6 md:p-12 space-y-12">
-            
-            <div class="border-b border-slate-800 pb-8">
-                <div class="flex items-center space-x-3 mb-3">
-                    <span class="h-2 w-2 rounded-full bg-sky-400 animate-pulse shadow-[0_0_8px_#38bdf8]"></span>
-                    <span class="font-mono text-xs tracking-[0.2em] text-sky-400 font-bold uppercase">Deconstruction of Deep Space Images</span>
-                </div>
-                <h1>【宇宙の嘘を暴く】ハッブル望遠鏡の「十字の光」に隠された驚きの真実 5選</h1>
-            </div>
+    <div class="main-container">
+        <header class="header-banner">
+            <span class="meta-tag">Astronomy & Data Science</span>
+            <h1>【宇宙の嘘を暴く】ハッブル望遠鏡の「十字の光」に隠された驚きの真実 5選</h1>
+        </header>
 
-            <div class="bg-slate-900/40 border border-slate-800 rounded-2xl p-6 md:p-8">
-                <h2 class="mb-4 flex items-center"><span class="text-xs font-mono mr-2 text-sky-400">01 /</span> Introduction</h2>
-                <h3 class="text-lg font-bold text-white mb-3">1. イントロダクション：私たちは「鏡」を通して宇宙を見ている</h3>
-                <p class="mb-0">ハッブル宇宙望遠鏡が捉えた深宇宙のパノラマを目にするとき、私たちの心をもっとも惹きつけるのは、明るい星々から鋭く伸びる<strong>「十字の輝き」</strong>ではないでしょうか。それは宇宙の深淵を象徴する聖なる光のようにさえ見えます。しかし、知的な観測者として、私たちは一度立ち止まって自問しなければなりません。「私たちは今、宇宙のありのままの姿を見ているのか、それとも宇宙を映し出す鏡の歪みを見ているのか？」と。実は、私たちが「美しい」と感じる光景の多くは、観測装置が生み出した幻影――<strong>光学的なアーティファクト（副産物）</strong>に過ぎません。本稿では、最新の画像解析アルゴリズムが暴き出した「宇宙写真の裏側」にある5つの真実を、サイエンスの視点からデコンストラクション（解体）していきます。</p>
-            </div>
+        <div class="content-body">
+            <h2>1. イントロダクション：私たちは「鏡」を通して宇宙を見ている</h2>
+            <p>ハッブル宇宙望遠鏡が捉えた深宇宙のパノラマを目にするとき、私たちの心をもっとも惹きつけるのは、明るい星々から鋭く伸びる<strong>「十字の輝き」</strong>ではないでしょうか。それは宇宙の深淵を象徴する聖なる光のようにさえ見えます。しかし、知的な観測者として、私たちは一度立ち止まって自問しなければなりません。「私たちは今、宇宙のありのままの姿を見ているのか、それとも宇宙を映し出す鏡の歪みを見ているのか？」と。実は、私たちが「美しい」と感じる光景の多くは、観測装置が生み出した幻影――<strong>光学的なアーティファクト（副産物）</strong>に過ぎません。本稿では、最新の画像解析アルゴリズムが暴き出した「宇宙写真の裏側」にある5つの真実を、サイエンスの視点からデコンストラクション（解体）していきます。</p>
 
-            <div class="section-block">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    <div>
-                        <h2 class="flex items-center"><span class="tech-num text-2xl mr-3">02</span> Diffraction Spikes</h2>
-                        <p class="text-xs font-mono text-sky-400/70 mt-1">Optical Illusion</p>
-                    </div>
-                    <div class="lg:col-span-2 space-y-4">
-                        <h3 class="text-lg font-bold text-white">2. あの「十字の輝き」は宇宙に実在しない</h3>
-                        <p>星から放たれる美しい十字の光。天文学においてこれは<strong>「回折スパイク（Diffraction Spikes）」と呼ばれる、望遠鏡の構造に由来する人工的な現象です。反射望遠鏡の内部には、中央の副鏡を固定するための「スパイダー」と呼ばれる細い金属製の支柱が存在します。遥か彼方から届いた光の波がこの支柱の縁を通過する際、物理現象としての「回折」が起こり、光が本来の進路を外れて漏れ出します。これが画像上では、支柱の配置に応じた十字の筋となって現れるのです。回折スパイクは“宇宙の現象”ではなく“望遠鏡の構造による人工的な光学効果”であり、科学的なデータ収集において、このスパイクは背後にある微細な天体を隠してしまう「ノイズ」</strong>として扱われます。私たちが「宇宙の神秘」と呼んでいたものは、皮肉にも、私たちが宇宙を見るための「道具の影」だったのです。</p>
-                    </div>
-                </div>
-            </div>
+            <h2>2. あの「十字の輝き」は宇宙に実在しない</h2>
+            <p>星から放たれる美しい十字の光。天文学においてこれは<strong>「回折スパイク（Diffraction Spikes）」</strong>と呼ばれる、望遠鏡の構造に由来する人工的な現象です。反射望遠鏡の内部には、中央の副鏡を固定するための<strong>「スパイダー」と呼ばれる細い金属製の支柱</strong>が存在します。遥か彼方から届いた光の波がこの支柱の縁を通過する際、物理現象としての「回折」が起こり、光が本来の進路を外れて漏れ出します。これが画像上では、支柱の配置に応じた十字の筋となって現れるのです。回折スパイクは“宇宙の現象”ではなく“望遠鏡の構造による人工的な光学効果”であり、科学的なデータ収集において、このスパイクは背後にある微細な天体を隠してしまう<strong>「ノイズ」</strong>として扱われます。私たちが「宇宙の神秘」と呼んでいたものは、皮肉にも、私たちが宇宙を見るための「道具の影」だったのです。</p>
 
-            <div class="section-block">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    <div>
-                        <h2 class="flex items-center"><span class="tech-num text-2xl mr-3">03</span> Light Sources</h2>
-                        <p class="text-xs font-mono text-sky-400/70 mt-1">Point vs Extended</p>
-                    </div>
-                    <div class="lg:col-span-2 space-y-4">
-                        <h3 class="text-lg font-bold text-white">3. なぜ「星」にはトゲがあり、「銀河」にはないのか？</h3>
-                        <p>宇宙の写真をつぶさに観察すると、ある法則に気づくはずです。十字のトゲを持つのは「星（恒星）」だけであり、「銀河」にはそれが見られません。この違いは、光源の性質――<strong>「点光源」と「面光源」</strong>の差にあります。</p>
-                        
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
-                            <div class="p-4 bg-slate-950/40 rounded-xl border border-slate-800">
-                                <span class="text-xs font-mono text-sky-400 block mb-1">恒星（点光源）</span>
-                                <p class="text-sm mb-0">あまりに遠距離にあるため、望遠鏡には大きさを持たない「点」として写ります。エネルギーが極めて狭い範囲に集中するため、回折現象が劇的に強調され、シャープなスパイクを形成します。</p>
-                            </div>
-                            <div class="p-4 bg-slate-950/40 rounded-xl border border-slate-800">
-                                <span class="text-xs font-mono text-purple-400 block mb-1">銀河（面光源）</span>
-                                <p class="text-sm mb-0">数千億の星が集まった巨大な集団であり、画像上では広がりのある「面」として捉えられます。光が分散しているため回折が目立たず、スパイクは発生しません。</p>
-                            </div>
-                        </div>
-                        
-                        <p class="pt-2">次に夜空の深部を写したコンポジット画像を見る際は、この知識を「プロの識別眼」として使ってください。トゲがあるものは手前にある天の川銀河の星、トゲがないものは遥か彼方の銀河です。</p>
-                    </div>
-                </div>
-            </div>
+            <h2>3. なぜ「星」にはトゲがあり、「銀河」にはないのか？</h2>
+            <p>宇宙の写真をつぶさに観察すると、ある法則に気づくはずです。十字のトゲを持つのは「星（恒星）」だけであり、「銀河」にはそれが見られません。この違いは、光源の性質――<strong>「点光源」と「面光源」</strong>の差にあります。</p>
+            <p><strong>恒星（点光源）：</strong>あまりに遠距離にあるため、望遠鏡には大きさを持たない「点」として写ります。エネルギーが極めて狭い範囲に集中するため、回折現象が劇的に強調され、シャープなスパイクを形成します。</p>
+            <p><strong>銀河（面光源）：</strong>数千億の星が集まった巨大な集団であり、画像上では広がりのある「面」として捉えられます。光が分散しているため回折が目立たず、スパイクは発生しません。</p>
+            <p>次に夜空の深部を写したコンポジット画像を見る際は、この知識を「プロの識別眼」として使ってください。トゲがあるものは手前にある天の川銀河の星、トゲがないものは遥か彼方の銀河です。</p>
 
-            <div class="section-block">
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                    <div>
-                        <h2 class="flex items-center"><span class="tech-num text-2xl mr-3">04</span> Mathematical Decomposition</h2>
-                        <p class="text-xs font-mono text-sky-400/70 mt-1">The Tractor Algorithm</p>
-                    </div>
-                    <div class="lg:col-span-2 space-y-4">
-                        <h3 class="text-lg font-bold text-white">4. 数学的メスで宇宙を解剖するアルゴリズム：The Tractor</h3>
-                        <p>天文学者が「真実の宇宙」を抽出するために用いるのが、<strong>「The Tractor（ザ・トラクター）」という高度な画像解析アルゴリズムです。彼らは、以下の知的な方程式を用いて画像を数学的に解体します。</strong></p>
+            <h2>4. 数学的メスで宇宙を解剖するアルゴリズム：The Tractor</h2>
+            <p>天文学者が「真実の宇宙」を抽出するために用いるのが、<strong>「The Tractor（ザ・トラクター）」</strong>という高度な画像解析アルゴリズムです。彼らは、以下の知的な方程式を用いて画像を数学的に解体します。</p>
+            <p><strong>Images（生の観測画像） － Models（数式モデル） ＝ Residuals（残差）</strong></p>
+            <p>まず、アルゴリズムが観測画像に基づき、「物理学的に計算すれば、ここにある天体はこういう形状であるはずだ」という<strong>「数式モデル」</strong>を設計します。そして生の画像からそのモデルを引き算するのです。この「数学的引き算」を行う目的は、手前にあるまぶしい天体の光を外科手術のように取り除き、その影に隠された「未知の構造」を露出させることにあります。</p>
+
+            <h2>5. 「残差（Residuals）」にこそ、色彩豊かな真実が眠っている</h2>
+            <p>引き算の果てに得られる<strong>「残差（Residuals）」</strong>画像。一見すると、天体が消し去られた後の「黒いシミ」だらけの不完全な画像に見えるかもしれません。しかし、ここにはモデルでは予測し得なかった<strong>「宇宙の生きた証拠」</strong>が凝縮されています。特に、残差に現れる「色」には重要な科学的意味が込められています。</p>
+            <p><strong>オレンジとブルーの点：</strong>銀河の核心部（コア）で引き算しきれなかった光です。オレンジは老いた星、ブルーは若い星が密集していることを示しており、銀河の進化の歴史を物語ります。</p>
+            <p><strong>赤・緑・青の鋭いドット：</strong>これらは天体ではなく、CCDカメラのセンサーに飛び込んだ「宇宙線」やドット抜けです。Legacy Surveysではg(青), r(緑), z(赤)のカラーフィルターを重ねて合成するため、特定のフィルターにのみ記録されたノイズが、このように鮮やかな原色の点として浮き彫りになるのです。「暗闇の中にこそ、宇宙の真実が潜んでいるのです。」</p>
+
+            <h2>6. アルゴリズムが敗北する場所：重力レンズという「歪み」</h2>
+            <p>この数学的デコンストラクションにおいて、最もエキサイティングな瞬間は、アルゴリズムが「引き算に失敗したとき」に訪れます。銀河団<strong>「MACS J1141.6-1905」</strong>を解析すると、残差画像の中に、引き伸ばされたオレンジ色の奇妙な弧（アーク）が鮮明に残ります。これは重力レンズ効果によって歪められた遠方銀河の姿です。「The Tractor」は、天体を「通常の丸型や楕円型」としてモデル化するようにプログラムされています。しかし、巨大な重力が時空を歪めて作り出すこの「宇宙の虫眼鏡」は、光を不自然に、精度高く劇的に引き伸ばします。アルゴリズムが幾何学的な限界ゆえに<strong>「モデル化を拒絶」</strong>したこの歪みこそが、100億光年以上先の宇宙から届いた、加工されていない本物の光なのです。</p>
+
+            <h2>結論：ノイズを剥ぎ取った先に見えるもの</h2>
+            <p>宇宙観測とは、単に美しい写真をコレクションすることではありません。それは、望遠鏡がもたらす光学的なアーティファクト、センサーが拾うノイズ、精度を高める数式モデルの限界といった<strong>「不完全さ」と戦いながら、真実を抽出するプロセス</strong>です。私たちが「美」として愛でていた十字の光を、あえて「ノイズ」として剥ぎ取る。その勇気ある引き算の先に、重力レンズが描き出す真実の宇宙の姿が浮かび上がります。次にあなたが宇宙の画像を見るときは、こう問いかけてみてください。「私は今、宇宙を見ているのか。それとも、私の視覚が作り出した心地よい幻影を見ているのか？」その思索の先に、科学という名の新たな視界が開けるはずです。</p>
+        </div>
+    </div>
+
+</body>
+</html>
