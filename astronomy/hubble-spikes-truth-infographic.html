@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【総括図解】ハッブル望遠鏡の「十字の光」に隠された驚きの真実 5選</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+        
+        body { 
+            font-family: 'Noto Sans JP', sans-serif; 
+            background-color: #020617; 
+            background-image: radial-gradient(rgba(139, 92, 246, 0.15) 1px, transparent 1px);
+            background-size: 24px 24px;
+            color: #f1f5f9; 
+            line-height: 2.0; 
+        }
+        .container-box { 
+            max-width: 900px; 
+            margin: 60px auto; 
+            background: rgba(15, 23, 42, 0.8); 
+            backdrop-filter: blur(12px);
+            border-radius: 24px; 
+            overflow: hidden; 
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(139, 92, 246, 0.2);
+        }
+        .inner-padding { padding: 60px; }
+        
+        h2 { 
+            font-size: 24px; 
+            font-weight: 900; 
+            color: #ffffff; 
+            letter-spacing: -0.02em;
+            margin-top: 50px; 
+            margin-bottom: 25px;
+            display: flex;
+            align-items: center;
+        }
+        h2::before {
+            content: "";
+            display: inline-block;
+            width: 16px;
+            height: 4px;
+            background: linear-gradient(90deg, #a78bfa, #38bdf8);
+            margin-right: 12px;
+            border-radius: 2px;
+        }
+        
+        p { margin-bottom: 1.8rem; text-align: justify; color: #cbd5e1; font-size: 16px; }
+        
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 35px;
+        }
+        
+        .detail-card {
+            background: linear-gradient(135deg, rgba(30, 41, 59, 0.7) 0%, rgba(15, 23, 42, 0.9) 100%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 32px;
+            transition: all 0.3s ease;
+        }
+        .detail-card:hover {
+            border-color: rgba(139, 92, 246, 0.4);
+            transform: translateY(-2px);
+        }
+        
+        .card-header-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            color: #a78bfa;
+            font-size: 18px;
+            margin-bottom: 14px;
+            letter-spacing: -0.01em;
+        }
+        
+        .image-wrapper {
+            background-color: #020617;
+            border-bottom: 1px solid rgba(139, 92, 246, 0.2);
+            position: relative;
+        }
+        
+        @media (max-width: 768px) {
+            .grid-container { grid-template-columns: 1fr; gap: 20px; }
+            .inner-padding { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container-box">
+        <div class="image-wrapper">
+            <img src="hubble-spikes-truth.jpg" alt="ハッブル望遠鏡の十字の光に隠された驚きの真実 総括インフォグラフィック" class="w-full h-auto block">
+        </div>
+
+        <div class="inner-padding">
+            <h2>インフォグラフィックス解説</h2>
+            <p>
+                本図解は、深宇宙画像において誰もが目にする「十字の光」の物理的な発生メカニズムと、最新の画像解析アルゴリズム「The Tractor」がノイズを剥ぎ取り真実を解剖するプロセスを視覚的に整理したものです。
+            </p>
+
+            <div class="grid-container">
+                <div class="detail-card">
+                    <div class="card-header-text">回折スパイクの幻影</div>
+                    <p class="text-sm text-slate-400 mb-0">
+                        明るい星に見られる十字のトゲは宇宙の実在物ではなく、望遠鏡内部の副鏡を固定する金属支柱（スパイダー）の縁で光の波が回り込む「回折現象」が生んだ人工的な光学効果（アーティファクト）です。
+                    </p>
+                </div>
+
+                <div class="detail-card">
+                    <div class="card-header-text">点光源と面光源の法則</div>
+                    <p class="text-sm text-slate-400 mb-0">
+                        大きさを物理的に持たない「点光源（恒星）」はエネルギーが集中するためシャープなトゲが発生します。対して、無数の星が広がる「面光源（銀河）」は光が分散するためスパイクが発生しないという識別眼の基準を示します。
+                    </p>
+                </div>
+
+                <div class="detail-card">
+                    <div class="card-header-text">数学的メス「The Tractor」</div>
+                    <p class="text-sm text-slate-400 mb-0">
+                        「生画像（Images）－ 数式モデル（Models）＝ 残差（Residuals）」の方程式により、予測可能なまぶしい天体の光を外科手術のように引き算します。これにより、手前の天体に隠されていた深部の未知の構造を露出させます。
+                    </p>
+                </div>
+
+                <div class="detail-card">
+                    <div class="card-header-text">残差が暴く重力レンズ</div>
+                    <p class="text-sm text-slate-400 mb-0">
+                        通常の円形・楕円形モデルでは計算できず、アルゴリズムがモデル化を拒絶した「消し残りのオレンジ色のアーク」。これこそが巨大な銀河団の重力で時空が歪められた、100億光年以上先の「加工されていない本物の宇宙の姿」です。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
