@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【総括図解】巨大銀河団 MACS J1141.6-1905 と画像解析技術</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap');
+        
+        body { 
+            font-family: 'Noto Sans JP', sans-serif; 
+            background-color: #030712; 
+            color: #f3f4f6; 
+            line-height: 1.9; 
+        }
+        .main-container { 
+            max-width: 950px; 
+            margin: 50px auto; 
+            background: #0f172a; 
+            border-radius: 16px; 
+            overflow: hidden; 
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .content-inner { padding: 45px; }
+        
+        h2 { 
+            font-size: 22px; 
+            font-weight: 900; 
+            color: #38bdf8; 
+            border-left: 6px solid #38bdf8;
+            padding-left: 15px;
+            margin-top: 40px;
+            margin-bottom: 20px;
+        }
+        
+        p { margin-bottom: 1.5rem; text-align: justify; color: #cbd5e1; }
+        
+        .grid-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-top: 25px;
+        }
+        
+        .card-detail {
+            background-color: #1e293b;
+            border: 1px solid #334155;
+            border-radius: 8px;
+            padding: 24px;
+        }
+        
+        .card-title {
+            font-weight: 900;
+            color: #7dd3fc;
+            font-size: 17px;
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .grid-box { grid-template-columns: 1fr; }
+            .content-inner { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <img src="macs-j1141-infographic.jpg" alt="巨大銀河団 MACS J1141.6-1905 と画像解析技術 総括インフォグラフィック" class="w-full h-auto">
+
+        <div class="content-inner">
+            <h2>インフォグラフィックス解説</h2>
+            <p>
+                本図解は、宇宙最大級の構造体である巨大銀河団「MACS J1141.6-1905」の観測データ解読プロセスと、天体画像解析における光学現象の本質を視覚的に1枚に凝縮したものです。
+            </p>
+
+            <div class="grid-box">
+                <div class="card-detail">
+                    <div class="card-title">■ 巨大銀河団 MACS J1141.6-1905 の規模</div>
+                    <p class="text-sm text-slate-400 mb-0">
+                        地球から約40億〜50億光年先に位置し、数百から数千の銀河が強大な重力によって結びついた天体過密集団です。中心部はX線で激しく輝き、宇宙の質量分布や構造進化を解明するための重要な鍵を握っています。
+                    </p>
+                </div>
+
+                <div class="card-detail">
+                    <div class="card-title">■ 解析アルゴリズム「The Tractor」の3段階処理</div>
+                    <p class="text-sm text-slate-400 mb-0">
+                        生の観測画像（Images）から、数式モデル（Models）で計算された理想的な天体形状を差し引くことで、残差画像（Residuals）を抽出。まぶしい手前の天体に隠された、かすかな宇宙の構造を浮き彫りにします。
+                    </p>
+                </div>
+
+                <div class="card-detail">
+                    <div class="card-title">■ 残差画像が捉える「重力レンズアーク」</div>
+                    <p class="text-sm text-slate-400 mb-0">
+                        通常の円形・楕円形モデルでは計算しきれない、不自然に引き伸ばされた光の弧（アーク）を検出します。これは銀河団の莫大な質量が時空を歪め、真後ろにある100億光年以上先の遠方銀河を拡大・変形させて投影した天然のレンズ現象です。
+                    </p>
+                </div>
+
+                <div class="card-detail">
+                    <div class="card-title">■ 回折スパイクという「光学的アーティファクト」</div>
+                    <p class="text-sm text-slate-400 mb-0">
+                        明るい恒星の周囲に見られる十字状の光の筋は、宇宙の実在物ではなく、望遠鏡内部の副鏡を支える金属支柱（スパイダー）の縁で光の波が回り込む「回折現象」によって生じる錯覚です。データ処理において本物の天体と厳密に識別されます。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
