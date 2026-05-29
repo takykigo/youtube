@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>画像解析で暴く深宇宙</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+        
+        body { 
+            font-family: 'Noto Sans JP', sans-serif; 
+            background-color: #030712; 
+            background-image: radial-gradient(rgba(255, 255, 255, 0.15) 1px, transparent 1px);
+            background-size: 32px 32px;
+            color: #f3f4f6; 
+            line-height: 2.0; 
+        }
+        .main-container { 
+            max-width: 900px; 
+            margin: 60px auto; 
+            background: #0f172a; 
+            border-radius: 16px; 
+            overflow: hidden; 
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .header-banner {
+            background: linear-gradient(135deg, #1e1b4b 0%, #030712 100%);
+            padding: 60px 50px;
+            border-bottom: 3px solid #38bdf8;
+            text-align: left;
+        }
+        .meta-tag {
+            background-color: #38bdf8;
+            color: #030712;
+            font-size: 11px;
+            font-weight: 900;
+            padding: 3px 12px;
+            border-radius: 4px;
+            display: inline-block;
+            margin-bottom: 15px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+        }
+        .content-body { padding: 55px 65px; }
+        
+        h1 { font-size: 24px; font-weight: 900; line-height: 1.5; color: #ffffff; }
+        h2 { 
+            font-size: 20px; 
+            font-weight: 900; 
+            margin-top: 50px; 
+            margin-bottom: 25px; 
+            color: #38bdf8;
+            border-bottom: 1px solid #334155;
+            padding-bottom: 8px;
+        }
+        
+        p { margin-bottom: 1.6rem; text-align: justify; color: #cbd5e1; }
+        strong { font-weight: 700; color: #ffffff; }
+        
+        @media (max-width: 640px) {
+            .content-body { padding: 30px 20px; }
+            h1 { font-size: 18px; }
+            h2 { font-size: 17px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="main-container">
+        <header class="header-banner">
+            <span class="meta-tag">Astronomy & Data Science</span>
+            <h1>画像解析で暴く深宇宙</h1>
+        </header>
+
+        <div class="w-full bg-black">
+            <img src="画像解析で暴く深宇宙.jpg" alt="画像解析で暴く深宇宙" class="w-full h-auto block">
+        </div>
+
+        <div class="content-body">
+            <h2>添付画像の要約説明</h2>
+            <p>本画像は、巨大銀河団「MACS J1141.6-1905」の天体観測データを基に、天文学者が用いる「The Tractor」アルゴリズムの解析プロセスを視覚化した解説画像です。</p>
+            <p>画像内では左から右へのフローが示されており、望遠鏡が捉えた生の観測データ（Images）から、天体の物理的・数学的特性をシミュレートした理想的な設計図（Models）を構築し、それらを引き算することで導き出される差分データ（Residuals）の構造が一覧化されています。</p>
+            <p>特に「Residuals（残差）」の領域においては、まぶしい前景天体が消去されたことで、通常は隠されて見えない、強大な質量が時空を歪めて描くオレンジ色の「重力レンズアーク」や、数理モデルのフィッティングエラーによって露出する「銀河中心部の残差（微細なドット）」が明確に捉えられており、数理モデル化による背景透視技術の有効性を直感的に証明する資料となっています。</p>
+        </div>
+    </div>
+
+</body>
+</html>
