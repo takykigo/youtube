@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>【実録】スマホのバッテリー膨張緊急対処マニュアル</title>
+    <style>
+        :root {
+            --danger-color: #e63946;
+            --warning-color: #ffb703;
+            --safe-color: #2a9d8f;
+            --bg-color: #f8f9fa;
+            --text-color: #2b2d42;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, 'Hiragino Kaku Gothic ProN', 'Hiragino Sans', Meiryo, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            margin: 0;
+            padding: 10px;
+        }
+
+        .container {
+            max-width: 850px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 4px dashed #dee2e6;
+            padding-bottom: 20px;
+            margin-bottom: 25px;
+        }
+
+        header h1 {
+            color: var(--danger-color);
+            font-size: 26px;
+            margin: 0 0 12px 0;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+
+        header p {
+            font-size: 18px;
+            color: #6c757d;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        .steps-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .step-card {
+            display: flex;
+            background: #fff;
+            border: 3px solid #dee2e6;
+            border-radius: 14px;
+            overflow: hidden;
+        }
+
+        .step-card.step1 { border-color: var(--danger-color); }
+        .step-card.step2 { border-color: var(--warning-color); }
+        .step-card.step3 { border-color: var(--safe-color); }
+
+        .step-badge {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            padding: 20px;
+            min-width: 110px;
+            text-align: center;
+            font-size: 18px;
+        }
+
+        .step1 .step-badge { background-color: var(--danger-color); }
+        .step2 .step-badge { background-color: var(--warning-color); color: var(--text-color); }
+        .step3 .step-badge { background-color: var(--safe-color); }
+
+        .step-badge .number {
+            font-size: 44px;
+            display: block;
+            line-height: 1;
+            margin-bottom: 5px;
+        }
+
+        .step-content {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .step-card { flex-direction: column; }
+            .step-content { flex-direction: column; align-items: stretch; padding: 20px; }
+            .step-badge { flex-direction: row; gap: 15px; min-width: auto; padding: 12px; justify-content: center; }
+            .step-badge .number { font-size: 28px; margin-bottom: 0; }
+            .step-image { width: 100% !important; height: 200px !important; margin-top: 15px; }
+            header h1 { font-size: 22px; }
+            header p { font-size: 15px; }
+        }
+
+        .step-text {
+            flex: 1;
+        }
+
+        .step-text h2 {
+            margin: 0 0 15px 0;
+            font-size: 22px;
+            font-weight: bold;
+            line-height: 1.4;
+        }
+        .step1 h2 { color: var(--danger-color); }
+        .step2 h2 { color: #cc9200; }
+        .step3 h2 { color: var(--safe-color); }
+
+        .step-text ul {
+            margin: 0;
+            padding-left: 25px;
+        }
+
+        .step-text li {
+            margin-bottom: 12px;
+            font-size: 17px;
+        }
+
+        .step-text li strong {
+            color: var(--danger-color);
+            background-color: #ffe3e3;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        .step-image {
+            width: 220px;
+            height: 150px;
+            background-color: #e9ecef;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 15px;
+            color: #6c757d;
+            overflow: hidden;
+            border: 1px solid #dee2e6;
+            flex-shrink: 0;
+        }
+
+        .step-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        footer {
+            margin-top: 35px;
+            padding-top: 20px;
+            border-top: 2px solid #dee2e6;
+        }
+
+        .tips-box {
+            background-color: #f1f5f9;
+            border-left: 6px solid #475569;
+            padding: 20px;
+            border-radius: 6px;
+            font-size: 16px;
+            margin-bottom: 25px;
+        }
+
+        .tips-box h3 {
+            margin: 0 0 10px 0;
+            font-size: 18px;
+            color: #334155;
+            font-weight: bold;
+        }
+
+        .disclaimer {
+            font-size: 13px;
+            color: #94a3b8;
+            text-align: center;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>【実録】もしもスマホのバッテリーが膨張したら？<br>命を守る3ステップ</h1>
+        <p>「まさか」の時に焦らないための、安全確保と正しい処分マニュアル</p>
+    </header>
+
+    <div class="steps-wrapper">
+        <div class="step-card step1">
+            <div class="step-badge">
+                <span class="number">1</span>
+                <span>STOP</span>
+            </div>
+            <div class="step-content">
+                <div class="step-text">
+                    <h2>操作中止・充電厳禁！無理に押さない</h2>
+                    <ul>
+                        <li>画面や背面パネルが浮いているのを見つけたら、即座に使用を中止する。</li>
+                        <li><strong>絶対に充電コードを繋がない！</strong>（熱でガスが増え、爆発の危険が高まります）</li>
+                        <li><strong>無理に指で押し込まない！</strong>（圧力をかけると内部ショートを起こし、一瞬で火柱が上がります）</li>
+                    </ul>
+                </div>
+                <div class="step-image">
+                    <img src="IMG_9831.jpg" alt="バッテリー膨張により背面パネルがはがれたスマホの写真">
+                </div>
+            </div>
+        </div>
+
+        <div class="step-card step2">
+            <div class="step-badge">
+                <span class="number">2</span>
+                <span>SAFE</span>
+            </div>
+            <div class="step-content">
+                <div class="step-text">
+                    <h2>不燃性の容器（鍋など）に入れてフタをする</h2>
+                    <ul>
+                        <li>万が一の突然の発火やバーストに備え、初期隔離を行う。</li>
+                        <li><strong>ステンレス製の鍋や土鍋など、燃えない容器</strong>の中にスマホを避難させる。</li>
+                        <li>煙や火花が周囲に飛び散るのを防ぎ、酸素を遮断するために<strong>必ずしっかりフタを閉める</strong>。</li>
+                    </ul>
+                </div>
+                <div class="step-image">
+                    <img src="IMG_9834.jpg" alt="安全のためスマホを鍋に入れ、しっかりふたをした写真">
+                </div>
+            </div>
+        </div>
+
+        <div class="step-card step3">
+            <div class="step-badge">
+                <span class="number">3</span>
+                <span>CALL</span>
+            </div>
+            <div class="step-content">
+                <div class="step-text">
+                    <h2>確実な処分先へ「必ず事前に電話確認」</h2>
+                    <ul>
+                        <li><strong>第一候補：携帯ショップ</strong>（ドコモ・au・ソフトバンク等の店舗へまず連絡）</li>
+                        <li><strong>第二候補：お住まいの自治体</strong>（役所の窓口や清鎖センターへ相談）</li>
+                        <li>⚠️ 家電量販店の回収BOXは「正常な機器」が前提の場合が多く、膨張スマホは安全上の理由から断られるケースが多発しています。持ち込む前に必ず電話で確認を。</li>
+                    </ul>
+                </div>
+                <div class="step-image">
+                    <div style="padding: 10px; text-align: center; font-weight: bold; font-size: 16px; color: #6c757d;">📞<br>ショップや役所へ<br>事前に電話確認</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="tips-box">
+            <h3>💡 知っておきたいリアルなルール</h3>
+            <p>スマホと一体になっている内蔵バッテリーはショップで引き取ってもらえますが、外付けの「充電用モバイルバッテリー単体」は回収対象外になるケースがあります。何でも一括で引き取れるわけではないので、これらも合わせて事前に電話で確認しておくとスムーズです。</p>
+        </div>
+        <div class="disclaimer">
+            本マニュアルは投稿者の実体験に基づく安全対策の一例です。リチウムイオン電池の膨張は大変危険ですので、実際の対処にあたっては、必ず最寄りの専門機関や自治体の指示・ルールに従ってください。
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>
